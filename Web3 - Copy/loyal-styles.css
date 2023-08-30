@@ -1,0 +1,268 @@
+
+   /* Navbar styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;  /* Changed this line */
+    padding: 1rem;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;  /* Added this line */
+    top: 0;  /* Added this line */
+    left: 0px;  /* Added this line */
+    width: 100%;  /* Added this line */
+    z-index: 9999;  /* Added this line */
+  }
+  /* Logo */
+  .logo {
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: static;
+    padding-left: 0px;
+  }
+  .logo a {
+text-decoration: none; /* Remove underline */
+color: white;  /* Set text color */
+}
+
+/* Style for when mouse hovers over the link */
+.logo a:hover {
+color: #ddd;  /* Slightly lighter text color */
+}
+  /* Nav links */
+  .nav-links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    transition: background 0s ease-in-out;
+  }
+
+  .nav-links a:hover {
+    background: #444;
+    border-radius: 10px;
+  }
+
+  /* Icons */
+  .icons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 32px;
+  }
+
+  .icons a {
+    margin-left: 1.5rem;
+  }
+
+  .icons i {
+    font-size: 1.2rem;
+    color: white;
+  }
+
+  .icons i:hover {
+    color: #ddd;
+  }
+
+
+
+
+
+
+
+
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url('images/Fall.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: #FFFFFF;
+}
+
+.loyalty-container {
+  max-width: 1000px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 2rem;
+}
+
+.loyalty-header h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.loyalty-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.loyalty-info {
+  flex: 1;
+  padding: 20px;
+  background-color: #181818;
+  border-radius: 10px;
+}
+
+.loyalty-info h2 {
+  font-size: 36px;
+}
+
+.loyalty-info ul {
+  list-style: none;
+}
+
+.loyalty-info ul li {
+  font-size: 20px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.loyalty-info ul li i {
+  margin-right: 15px;
+  font-size: 24px;
+}
+
+.loyalty-subscribe {
+  flex: 1;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+}
+
+.loyalty-subscribe h2 {
+  font-size: 36px;
+}
+
+.loyalty-subscribe p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.subscribe-button {
+  background-color: #1DB954;
+  padding: 12px 40px;
+  border-radius: 25px;
+  color: white;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-button:hover {
+  background-color: #1ed760;
+}
+
+.loyalty-footer {
+  margin-top: 40px;
+  font-size: 18px;
+}
+
+.loyalty-footer a {
+  color: #1DB954;
+  text-decoration: none;
+}
+
+.loyalty-footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;  /* semi-transparent black */
+  color: white;
+  text-align: center;
+  padding: 1px 0;
+  z-index: 1000;  /* high z-index to float above other elements */
+}
+  
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns */
+    grid-gap: 1px; /* Adjust the gap between columns */
+    max-width: 600px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+  .footer-column {
+    flex: 1;
+    flex-basis: calc(33.33% - 100px); /* Adjust as needed */
+    margin: 0 5px; /* Adjust margin for spacing */
+  }
+  .footer-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .footer-item {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+/* General styles before media queries here ... */
+
+/* General styles before media queries here ... */
+
+/* For tablets */
+@media only screen and (max-width: 768px) {
+  .loyalty-main {
+    flex-direction: column;
+  }
+  /* Add more stylings for tablets */
+}
+
+/* For mobile phones */
+@media only screen and (max-width: 480px) {
+  .loyalty-main {
+    flex-direction: column;
+  }
+  .nav-links {
+    display: none; /* or switch to a dropdown */
+  }
+  /* Add more stylings for mobile phones */
+}
+
+/* For larger screens */
+@media only screen and (min-width: 1200px) {
+  .navbar {
+    /* Adjust the styles for the navbar on larger screens */
+  }
+  .loyalty-container {
+    margin: 150px auto; /* Adjust the margin as needed */
+  }
+  /* Add more stylings for larger screens */
+}
