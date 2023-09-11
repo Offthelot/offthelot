@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Your Car Detailing Service</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('images/reloy.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+    }
+    body {
+  cursor: url('path-to-cursor.png'), auto;
+}
+
+    .hero {
+      background-image: url('your-hero-image.jpg');
+      height: 800px;
+      background-size: cover;
+      background-position: center;
+      color: #ffffff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero h1, .hero p {
+      margin: 0;
+      padding: 0;
+    }
+    .hero h1 {
+      font-size: 3.5em;
+  margin-bottom: 0.2em;
+  letter-spacing: 2px;
+  font-weight: 300;
+    }
+    .hero p {
+      font-size: 1.5em;
+      margin-top: 10px;
+     
+    }
+    .hero1 p {
+      font-size: 1.5em;
+      margin-top: 10px;
+      color: white;
+       opacity: 1;
+    }
+    .content {
+      padding: 80px;
+      text-align: center;
+      background-color: #ffffff00;
+    }
+    .content h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    .two-columns {
+      display: flex;
+      justify-content: space-between;
+      padding: 80px;
+      background-color: #f9f9f9;
+      /* animation: slideIn 1s ease-in-out; */  /* Commented out this line */
+    }
+    .two-columns > div {
+      width: 45%;
+    }
+    .text-container h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+    .image-container img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0;  /* Added this line */
+    transition: opacity 1s ease-in-out;  /* Added this line */
+    border-radius: 10px;
+  }
+    
+    /* Navbar styling */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: transparent;
+      padding: 1rem;
+      color: white;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    /* Logo */
+    .logo {
+      flex: 1;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      position: static;
+      padding-left: 0px;
+    }
+    .logo a {
+      text-decoration: none;
+      color: white;
+    }
+    /* Style for when mouse hovers over the link */
+    .logo a:hover {
+      color: #555555;
+    }
+    /* Nav links */
+    .nav-links {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 400;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      padding: 0.5rem 1rem;
+      transition: background 0s ease-in-out;
+    }
+    .nav-links a:hover {
+      background: #444;
+      border-radius: 10px;
+    }
+    /* Icons */
+    .icons {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 32px;
+    }
+    .icons a {
+      margin-left: 1.5rem;
+    }
+    .icons i {
+      font-size: 1.2rem;
+      color: white;
+    }
+    .icons i:hover {
+      color: #555555;
+    }
+    
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .text-container ul li,
+.image-container ul li {
+  font-size: 2em; /* Adjust the value to your preferred font size */
+  margin-bottom: 10px; /* Add some spacing between list items */
+}
+
+/* CSS */
+li.included,
+li.not-included {
+  list-style-type: none; /* Remove default bullet point */
+  position: relative; /* Positioning context for pseudo-element */
+  padding-left: 40px; /* Increased space for check mark */
+}
+
+li.included::before,
+li.not-included::before {
+  content: "\f058"; /* FontAwesome check mark */
+  font-family: "Font Awesome 5 Free"; /* Font Awesome font-family */
+  font-weight: 900; /* Font Awesome font weight for solid icons */
+  position: absolute; /* Absolute positioning */
+  left: 0; /* Align to left */
+  top: 50%; /* Align to vertical middle */
+  transform: translateY(-50%); /* Center vertically */
+}
+
+li.included::before {
+  color: green; /* Green color for included */
+}
+
+li.not-included::before {
+  color: grey; /* Grey color for not included */
+}
+
+.section-content button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 24px 48px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2em;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation: buttonSizeIncrease 1s forwards ease-out;
+}
+
+.section-content button:hover {
+  background-color: white;
+  color: black;
+}
+
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo"><a href="index.html">Off The Lot</a></div>
+    <div class="nav-links">
+      <a href="Loyal.html">Loyalty</a>
+      <a href="#">Services</a>
+      <a href="#">Place</a>
+      <a href="#">Gallery</a>
+    </div>
+    <div class="icons">
+      <a href="#" title="My Account"><i class="fas fa-user"></i></a>
+      <a href="#" title="Customer Support"><i class="fas fa-headset"></i></a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Full Detail</h1>
+    <p>Clean Beyond Clean.</p>
+    <div class="hero1">
+    <p>Starting at $180</p>
+    <div class="section-content">
+      <a href="#"><button>Book Now</button></a>
+    </div>
+  </div>
+  </div>
+
+  <div class="two-columns">
+    <div class="text-container">
+      <h2>Exterior Features</h2>
+      <ul>
+        <li class="included">Full Exterior Wash</li>
+        <li class="included">Exterior Wax</li>
+        <li class="included">Door Jam Clean</li>    
+        <li class="included">Tire Cleaning</li>
+        <li class="not-included">Sap Removal (+25)</li>
+        <li class="not-included">Extra Dirty Cars (+25)</li>
+        <li class="not-included">Trucks and Vans(+25)</li>
+      </ul>
+    </div>
+    <div class="image-container">
+      <img src="images/reloy.jpg" alt="Car detailing">
+    </div>
+  </div>
+
+  <div class="two-columns">
+    <div class="image-container">
+      <img src="images/reloy.jpg" alt="Car detailing">
+    </div>
+    <div class="text-container">
+      <h2>Interior Features</h2>  
+         <ul>
+        <li class="included">Full Interior Vacuum</li>
+        <li class="included">Floor Mat Clean</li>
+        <li class="included">Trash Removal</li>
+        <li class="included">Interior Wipe Down</li>
+        <li class="not-included">Dog Hair Removal (+25)</li>
+        <li class="not-included">Extra Dirty Cars (+25)</li>
+        <li class="not-included">Trucks and Vans (+25)</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <script>
+    // JavaScript to trigger animations when elements are in view
+    document.addEventListener("DOMContentLoaded", function () {
+      const elements = document.querySelectorAll(".image-container");
+  
+      const isInViewport = (element) => {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        return (
+          rect.top <= windowHeight &&
+          rect.bottom >= 1000  /* Changed this line to make animation trigger earlier */
+        );
+      };
+  
+      const handleScroll = () => {
+        elements.forEach((element) => {
+          if (isInViewport(element)) {
+            element.querySelector('img').style.opacity = '1';  /* Changed this line */
+          }
+        });
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+    });
+    
+  </script>
+</body>
+</html>

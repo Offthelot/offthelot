@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loyalty Program</title>
+  <link rel="stylesheet" href="loyal-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="images/bubble.png" type="image/x-icon">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo"><a href="index.html">Off The Lot</a></div>
+    <div class="nav-links"> <!--
+      <a href="Loyal.html">Loyalty</a>
+      <a href="#">Services</a>
+      <a href="#">Place</a>
+      <a href="#">Gallery</a>-->
+    </div>
+    <div class="icons">
+      <a href="#" title="My Account"><i class="fas fa-user"></i></a>
+      <a href="#" title="Customer Support"><i class="fas fa-headset"></i></a>
+    </div>
+  </div>
+      </div>
+    </div>    
+  <div class="loyalty-container">
+    <header class="loyalty-header">
+      <h1>Loyalty Program</h1>
+    </header>
+    
+    <section class="loyalty-main">
+      <div class="loyalty-info">
+        <h2>Explore Premium Benefits</h2>
+          <ul>
+            <li class="benefit" id="car-detailing"><i class="fas fa-car"></i> Car detailing once a month</li>
+            <li class="benefit" id="priority-service"><i class="fas fa-calendar-alt"></i> Priority service booking</li>
+            <li class="benefit" id="exclusive-discounts"><i class="fas fa-percent"></i> Exclusive discounts</li>
+            <li class="benefit" id="special-offers"><i class="fas fa-gift"></i> Special offers and gifts</li>        <div class="subscribe-links">
+          <a href="learn-more.html" class="learn-more-link">Learn More</a>
+          <a href="offer-terms.html" class="offer-terms-link">Terms & Conditions</a>
+        </div>
+          </ul>
+          
+      </div>
+      
+      <div class="loyalty-subscribe">
+        <h2 class="subscribe-title">Premium for $95 a Month</h2>
+        <p class="subscribe-description">Get all premium benefits worth over $400 for just $95!</p>
+        <button class="subscribe-button">Subscribe Now</button>
+
+      </div>
+      
+    </section>
+    
+    <footer class="loyalty-footer">
+      Already a member? <a href="Coming.html">Log in</a>
+    </footer>
+  </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footer-container">
+          <div class="footer-column">
+            <a href="" class="footer-item">&copy;OTL</a>
+          </div>
+          <div class="footer-column">
+            <a href="#" class="footer-item">Loyalty</a>
+          </div>
+
+          <div class="footer-column">
+            <a href="#" class="footer-item">Services</a>
+          </div>
+          <div class="footer-column">
+            <a href="#" class="footer-item">FAQ</a>
+          </div>
+          <div class="footer-column">
+            <a href="#" class="footer-item">Gallery</a>
+          </div>
+          <div class="footer-column">
+            <a href="#" class="footer-item">About Us</a>
+        </div>
+
+        <script>  const benefitItems = document.querySelectorAll('.benefit');
+          const subscribeTitle = document.querySelector('.subscribe-title');
+          const subscribeDescription = document.querySelector('.subscribe-description');
+          const benefitInfoElements = document.querySelectorAll('.subscribe-benefit-info');
+      
+          benefitItems.forEach(item => {
+            item.addEventListener('click', () => {
+              const benefitId = item.getAttribute('id');
+              
+              switch (benefitId) {
+                case 'car-detailing':
+                  updateContent(
+                    benefitId,
+                    'Monthly Car Detailing',
+                    'Full Detail once a month. Discounted and easy upgradabilty to more premuim services. ' 
+                  );
+                  break;
+                case 'priority-service':
+                  updateContent(
+                    benefitId,
+                    'Priority Booking',
+                    'All premium booking options included. In full schedules members are given priority '
+                  );
+                  break;
+                case 'exclusive-discounts':
+                  updateContent(
+                    benefitId,
+                    'Exclusive Discounts',
+                    '20% off all services 25% off all add-ons'
+                  );
+                  break;
+                case 'special-offers':
+                  updateContent(
+                    benefitId,
+                    'Special Bonuses',
+                    'Keep a look out for free upgrades, add ons and more.'
+                  );
+                  break;
+                // Add cases for other benefits
+              }
+            });
+          });
+      
+          function updateContent(benefitId, titleText, descriptionText) {
+            subscribeTitle.textContent = titleText;
+            subscribeDescription.textContent = descriptionText;
+          }
+      
+          document.querySelector('.loyalty-main').addEventListener('mouseleave', () => {
+            updateContent(
+              null,
+              'Premium for $95 a Month',
+              'Get all premium benefits worth over $400 for just $95!'
+            );
+          });
+          </script>
+</body>
+</html>
