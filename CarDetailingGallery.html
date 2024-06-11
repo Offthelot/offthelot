@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="icon" href="images/OffTheLot.png" type="image/x-icon">
+  <title>Off The Lot Gallery</title>
+</head>
+
+<body>
+
+
+  <div class="navbar">
+    <div class="logo"><a href="index.html"><img src="images/mainlogo.png" alt="Logo" /></a></div>
+    <div class="nav-links">
+      
+ 
+      <a href="LoyaltyProgram.html">Membership</a>
+      <a href="CarDetailingServices.html">Detailing</a>
+     <a href="CarDetailingGallery.html">Gallery</a>
+    
+    </div>  
+    <div class="icons">
+      <a href="#" title="Customer Support" id="support-icon"><i class="fas fa-headset"></i></a>
+      <div id="contact-info" class="dropdown-content">
+        <p>Phone: 206-841-7619</p>
+        <p>Email: offthelotservices@gmail.com</p>
+      </div>
+    </div>
+  </div>
+
+    
+        
+  
+      <div id="Login" class="tabcontent">
+        <form id="loginForm">
+          <input type="text" placeholder="Email" name="username" required>
+          <input type="password" placeholder="Password" name="password" required>
+          <button type="submit">Login</button>
+          <hr>
+          <br>
+          <button class="tablinks" onclick="openTab(event, 'Signup')">Not a Member? Create Account Here.</button>
+        </form>
+      </div>
+
+      <div id="Signup" class="tabcontent">
+        <form id="signupForm">
+        <input type="text" placeholder="Your Name" name="newusername" required>    
+        <input type="email" placeholder="Email" name="email" required>
+        <input type="email" placeholder="Email Again" name="email" required>
+          <input type="password" placeholder="Password" name="newpassword" required>
+          <input type="password" placeholder="Password Again" name="newpassword" required>
+          <button type="submit">Create Account</button>
+          <br>
+          <hr>
+          <button class="tablinks" onclick="openTab(event, 'Login')">Already a Member? Login here.</button>
+        </form>
+      </div>
+    </div>
+  </div>
+   
+    <div class="hero">
+      <h1>Gallery</h1>
+    </div>
+  
+    <div>
+         
+        <div class="gallery">
+      <div class="image-section">
+        <div class="image-column">
+          <img src="gallery/PXL_20221108_032717473.MP2.JPG" alt="Image 1" id="slide1">
+          
+          <!-- Rating Meter -->
+          <div class="rating">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        
+          <!-- Testimonials -->
+          <div class="testimonials">
+            <p>"Very good job!"</p>
+          </div>
+        
+          <div class="section-content">
+            <a href="booking2.html"><button>Get a Quote!</button></a>
+          </div>
+        </div>
+
+
+
+
+
+        
+        <div class="image-column">
+          <img src="gallery/IMG_0665.jpg" alt="Image 2" id="slide2">
+       <div class="rating">
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+      </div>
+    
+      <!-- Testimonials -->
+      <div class="testimonials">
+        <p>"Very good job!"</p>
+      </div>
+    
+      <div class="section-content">
+        <a href="booking2.html"><button>Get a Quote!</button></a>
+      </div>
+    </div>
+
+        <div class="image-column">
+          <img src="gallery/Mazda1.jpg" alt="Image 3" id="slide3">
+          <!-- Rating Meter -->
+          <div class="rating">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        
+          <!-- Testimonials -->
+          <div class="testimonials">
+            <p>"It looks better than I bought it!"</p>
+          </div>
+        
+          <div class="section-content">
+            <a href="booking2.html"><button>Get a Quote!</button></a>
+          </div>
+        </div>
+
+  <!--this div must be removed after this part is unhidden or something divs in this area are confusing-->
+</div>
+ 
+ 
+   <!-- HIDDEN STARTS HERE -->
+  <div class="image-section">
+    <div class="image-column">
+      <img src="gallery/Blue1.jpg" alt="Image 1" id="slide4">
+      <!-- Rating Meter -->
+      <div class="rating">
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+      </div>
+    
+      <!-- Testimonials -->
+      <div class="testimonials">
+        <p>"You were perfect!"</p>
+      </div>
+    
+      <div class="section-content">
+        <a href="booking2.html"><button>Book Now</button></a>
+      </div>
+    </div>
+  
+
+    <div class="image-column">
+      <img src="gallery/Redtruck.jpg" alt="Image 2" id="slide5">
+     <!-- Rating Meter -->
+     <div class="rating">
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+    </div>
+  
+    <!-- Testimonials -->
+    <div class="testimonials">
+      <p>afdadfs</p>
+    </div>
+  
+    <div class="section-content">
+      <a href="#"><button>Book Now</button></a>  <!---->
+</div> 
+<div id="loadMoreButton" class="load-more-button">
+  <button onclick="loadMoreImages()">Load More</button>
+    </div>
+  </div>
+
+    <div class="image-column">
+      <img src="gallery/Corsair1.jpg" alt="Image 3" id="slide6">
+ <!-- Rating Meter -->
+ <div class="rating">
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+</div>
+
+<!-- Testimonials -->
+<div class="testimonials">
+  <p>Customer testimonial goes here...</p>
+</div>
+
+<div class="section-content">
+  <a href="#"><button>Book Now</button></a>
+
+</div>
+</div>
+     
+
+
+</div>
+<div id="hiddenImages" style="display: none;">
+  <div>
+    <div class="image-section">
+      <div class="image-column">
+        <img src="gallery/Subi1.jpg" alt="Image 1" id="slide">
+        
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+        
+        <!-- Testimonials -->
+        <div class="testimonials">
+          <p>Customer testimonial goes here...</p>
+        </div>
+        <div class="section-content">
+          <a href="#"><button>Book Now</button></a>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+  </div>
+  
+<div>
+
+  
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="overlay" id="overlay">
+  <div class="content" id="content"><div class="description" id="description"><h1>Deep Package</h1>
+   
+
+    <ul>
+    <li>Chrysler 300</li>
+    <li>1979</li>
+    <li>8.5 Hours </li>
+    <li>$480</li>
+</ul>
+<a href="booking2.html" ><button>Book Now</button></a>
+      </div>
+    <div class="image-description" id="image-description">
+      <div class="image" id="image">
+        <img src="gallery/PXL_20221108_032717473.MP2.JPG" id="centralImageSlider">
+        
+        
+      </div>
+      
+    </div>
+  </div>
+
+<div class="side" id="side">
+    <div id="arrow-up" class="arrow-up"></div> 
+    <img src="gallery/PXL_20221108_032717473.MP2.JPG" id="image1">
+    <img src="gallery/chrysler1.jpg" id="image2">
+   
+    <img src="gallery/chrysler3.jpg" id="image3">
+     <img src="gallery/chrysler2.jpg" id="image3">
+     <img src="gallery/IMG_0056.JPG" id="image3">
+
+    <div id="arrow-down" class="arrow-down"></div>
+</div>
+</div>
+
+
+
+
+<div class="overlay" id="overlay2">
+  <div class="content" id="content2"><div class="description" id="description2"><h1>Deep Package</h1>
+    
+    <ul>
+      <li>Mercedes GLC300</li>
+      <li>2016</li>
+     <li>8 Hours</li>
+    <li>$480</li>
+</ul>
+<a href="booking2.html" ><button>Book Now</button></a>
+      </div>
+    <div class="image-description" id="image-description2">
+      <div class="image" id="image2">
+        <img src="gallery/glc300 8.jpg" id="centralImageSlider2">
+              <!--<div class="button-container" id="button-container">
+ <button id="toggleExteriorInteriorButton">Toggle Interior</button>
+          <button id="toggleBeforeAfterButton">Toggle Before</button>
+        </div>-->
+      </div>
+      
+    </div>
+  </div>
+
+<div class="side" id="side2">
+    <div id="arrow-up2" class="arrow-up"></div> 
+    <img src="gallery/glc300 8.jpg" id="image16">
+    <img src="gallery/glc300 5.jpg" id="image17">
+    <img src="gallery/glc300 4.jpg" id="image18">
+    <img src="gallery/glc300 6.jpg" id="image19">
+   <img src="gallery/glc300 10.jpg" id="image20">
+     <img src="gallery/glc300 9.jpg" id="image19">
+    <img src="gallery/glc300 14.jpg" id="image21">
+    <img src="gallery/glc300 13.jpg" id="image22">
+    <img src="gallery/glc300 11.jpg" id="image23">
+    <img src="gallery/glc300 12.jpg" id="image24">
+
+    <div id="arrow-down2" class="arrow-down"></div>
+</div>
+</div>
+
+</div>
+
+<div class="overlay" id="overlay3">
+  <div class="content" id="content3"><div class="description" id="description3"><h1>Clean Package</h1>
+    <ul>
+    <li>Mazda CX-50</li>
+    <li>2023</li>
+    <li>2 hours</li>
+    <li>$207</li>
+</ul>
+<a href="booking2.html" ><button>Book Now</button></a>
+      </div>
+    <div class="image-description" id="image-description3">
+      <div class="image" id="image3">
+        <img src="gallery/Mazda1.jpg" id="centralImageSlider3">
+            <!--<div class="button-container" id="button-container">
+ <button id="toggleExteriorInteriorButton">Toggle Interior</button>
+          <button id="toggleBeforeAfterButton">Toggle Before</button>
+        </div>-->
+      </div>
+      
+    </div>
+  </div>
+
+<div class="side" id="side3">
+    <div id="arrow-up3" class="arrow-up"></div> 
+    <img src="gallery/Mazda1.jpg" id="image24">
+    <img src="gallery/Mazda2.jpg" id="image24">
+    <img src="gallery/Mazda3.jpg" id="image24">
+    <img src="gallery/Mazda4.jpg" id="image24">
+    <img src="gallery/Mazda5.jpg" id="image24">
+    <img src="gallery/Mazda6.jpg" id="image24">
+    <img src="gallery/Mazda7.jpg" id="image24">
+    <img src="gallery/Mazda8.jpg" id="image24">
+    <img src="gallery/Mazda9.jpg" id="image24">
+    <img src="gallery/Mazda10.jpg" id="image24">
+    <img src="gallery/Mazda11.jpg" id="image24">
+    <img src="gallery/Mazda12.jpg" id="image24">
+    <div id="arrow-down3" class="arrow-down"></div>
+</div>
+</div>
+
+ 
+
+<div class="overlay" id="overlay4">
+  <div class="content" id="content4"><div class="description" id="description4"><h1>Shine Package</h1>
+    <ul>
+    <li>Prius C</li>
+    <li>2012
+    </li>
+    <li>6 hours</li>
+    <li>$350</li>
+</ul>
+<a href="booking2.html" ><button>Book Now</button></a>
+      </div>
+    <div class="image-description" id="image-description4">
+      <div class="image" id="image4">
+        <img src="gallery/Blue1.jpg" id="centralImageSlider4">
+         
+      </div>
+      
+    </div>
+  </div>
+
+<div class="side" id="side4">
+    <div id="arrow-up4" class="arrow-up"></div> 
+    <img src="gallery/Blue1.jpg" id="image31">
+    <img src="gallery/Blue2.jpg" id="image31">
+    <img src="gallery/Blue3.jpg" id="image31">
+    <img src="gallery/Blue4.jpg" id="image31">
+    <img src="gallery/Blue5.jpg" id="image31">    
+    <img src="gallery/Blue11.jpg" id="image31">
+    <img src="gallery/Blue6.jpg" id="image31">
+    <img src="gallery/Blue7.jpg" id="image31">
+    <img src="gallery/Blue8.jpg" id="image31">
+    <img src="gallery/Blue10.jpg" id="image31">
+ <img src="gallery/Blue12.jpg" id="image31">
+    <img src="gallery/Blue13.jpg" id="image31">
+    <img src="gallery/Blue14.jpg" id="image31"> 
+    <img src="gallery/Blue15.jpg" id="image31"> 
+    <img src="gallery/Blue16.jpg" id="image31"> 
+    <img src="gallery/Blue17.jpg" id="image31"> 
+    <img src="gallery/Blue18.jpg" id="image31"> 
+    <img src="gallery/Blue19.jpg" id="image31"> 
+    <img src="gallery/Blue20.jpg" id="image31"> 
+    <img src="gallery/Blue21.jpg" id="image31"> 
+    <img src="gallery/Blue22.jpg" id="image31"> 
+    <img src="gallery/Blue23.jpg" id="image31"> 
+    <img src="gallery/Blue24.jpg" id="image31"> 
+    <img src="gallery/Blue25.jpg" id="image31"> 
+    <img src="gallery/Blue26.jpg" id="image31"> 
+    <div id="arrow-down4" class="arrow-down"></div>
+</div>
+</div>
+
+<div class="overlay" id="overlay5">
+  <div class="content" id="content5"><div class="description" id="description5"><h1>Shine Package</h1>
+    <ul>
+    <li>Prius C</li>
+    <li>2012
+    </li>
+    <li>6 hours</li>
+    <li>$350</li>
+</ul>
+<a href="booking2.html" ><button>Book Now</button></a>
+      </div>
+    <div class="image-description" id="image-description5">
+      <div class="image" id="image5">
+        <img src="gallery/Redtruck.jpg" id="centralImageSlider5">
+         
+      </div>
+      
+    </div>
+  </div>
+
+<div class="side" id="side5">
+    <div id="arrow-up5" class="arrow-up"></div> 
+    <img src="gallery/Redtruck.jpg" id="image31"> 
+    <img src="gallery/Redtruck1.jpg" id="image31"> 
+    <img src="gallery/Redtruck2.jpg" id="image31"> 
+    <img src="gallery/Redtruck3.jpg" id="image31"> 
+    <img src="gallery/Redtruck4.jpg" id="image31"> 
+    <img src="gallery/Blue26.jpg" id="image31"> 
+    <div id="arrow-down5" class="arrow-down"></div>
+</div>
+</div>
+
+<div class="overlay" id="overlay6">
+  <div class="content" id="content6"><div class="description" id="description6"><h1>Shine Package</h1>
+    <ul>
+    <li>Prius C</li>
+    <li>2012
+    </li>
+    <li>6 hours</li>
+    <li>$350</li>
+</ul>
+<a href="booking2.html" ><button>Book Now</button></a>
+      </div>
+    <div class="image-description" id="image-description6">
+      <div class="image" id="image6">
+        <img src="gallery/Corsair1.jpg" id="centralImageSlider6">
+         
+      </div>
+      
+    </div>
+  </div>
+
+<div class="side" id="side6">
+    <div id="arrow-up6" class="arrow-up"></div> 
+  
+    <div id="arrow-down6" class="arrow-down"></div>
+</div>
+</div>
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <a href="index.html" class="footer-item">&copy;OTL</a>
+        </div>
+        <div class="footer-column">
+          <a href="LoyaltyProgram.html" class="footer-item">Membership</a>
+        </div>
+
+        <div class="footer-column">
+          <a href="CarDetailingServices.html" class="footer-item">Detailing</a>
+        </div>
+        <div class="footer-column">
+          <a href="faq.html" class="footer-item">FAQ</a>
+        </div>
+        <div class="footer-column">
+          <a href="CarDetailingGallery.html" class="footer-item">Gallery</a>
+        </div>
+        <div class="footer-column">
+          <a href="about.html" class="footer-item">About Me</a>
+      </div>
+
+
+      
+  <script>
+
+  
+    function loadMoreImages() {
+        const hiddenImages = document.getElementById("hiddenImages");
+        const loadMoreButton = document.getElementById("loadMoreButton");
+
+        // Toggle the visibility of the hidden images and the button
+        if (hiddenImages.style.display === "none") {
+            hiddenImages.style.display = "block";
+            loadMoreButton.style.display = "none";
+        } else {
+            hiddenImages.style.display = "none";
+        }
+    }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const overlay = document.querySelector(".overlay");
+  const triggerImage = document.querySelector("#slide1");
+  const overlay2 = document.querySelector("#overlay2");
+  const triggerImage2 = document.querySelector("#slide2");
+  const overlay3 = document.querySelector("#overlay3");
+  const triggerImage3 = document.querySelector("#slide3");
+  const overlay4 = document.querySelector("#overlay4");
+  const triggerImage4 = document.querySelector("#slide4");
+  const overlay5 = document.querySelector("#overlay5");
+  const triggerImage5 = document.querySelector("#slide5");
+  const overlay6 = document.querySelector("#overlay6");
+  const triggerImage6 = document.querySelector("#slide6");
+
+  function showOverlay(overlayElement) {
+    overlayElement.style.display = "block";
+    document.body.classList.add("overlay-active");
+  }
+  function hideOverlay(overlayElement) {
+    overlayElement.style.display = "none";
+    document.body.classList.remove("overlay-active");
+  }
+
+//1 Overlay
+
+  triggerImage.addEventListener("click", function () {
+    showOverlay(overlay);
+  });
+  overlay.addEventListener("click", function (event) {
+    if (event.target === overlay) {
+      hideOverlay(overlay);
+    }
+  });
+
+//2 Overlay
+
+  triggerImage2.addEventListener("click", function () {
+    showOverlay(overlay2);
+  });
+  overlay2.addEventListener("click", function (event) {
+    if (event.target === overlay2) {
+      hideOverlay(overlay2);
+    }
+  });
+
+//3 Overlay
+
+  triggerImage3.addEventListener("click", function () {
+    showOverlay(overlay3);
+  });
+  overlay3.addEventListener("click", function (event) {
+    if (event.target === overlay3) {
+      hideOverlay(overlay3);
+    }
+  });
+
+//4 Overlay
+
+triggerImage4.addEventListener("click", function () {
+    showOverlay(overlay4);
+  });
+  overlay4.addEventListener("click", function (event) {
+    if (event.target === overlay4) {
+      hideOverlay(overlay4);
+    }
+  });
+
+
+//5 Overlay
+
+triggerImage5.addEventListener("click", function () {
+    showOverlay(overlay5);
+  });
+  overlay5.addEventListener("click", function (event) {
+    if (event.target === overlay5) {
+      hideOverlay(overlay5);
+    }
+  });
+
+
+//6 Overlay
+
+triggerImage6.addEventListener("click", function () {
+    showOverlay(overlay6);
+  });
+  overlay6.addEventListener("click", function (event) {
+    if (event.target === overlay6) {
+      hideOverlay(overlay6);
+    }
+  });
+
+
+
+//1 Scroll
+
+ const arrowUp = document.getElementById("arrow-up");
+const arrowDown = document.getElementById("arrow-down");
+const sideContainer = document.querySelector("#side");
+
+function moveImagesUp() {
+  const firstImage = sideContainer.querySelector("img:not(:last-child)");
+  if (firstImage !== sideContainer.lastElementChild) {
+    sideContainer.insertBefore(firstImage, sideContainer.lastElementChild);
+  }
+}
+function moveImagesDown() {
+  const lastImage = sideContainer.querySelector("img:nth-last-child(2)");
+  sideContainer.insertBefore(lastImage, sideContainer.firstElementChild.nextSibling);
+}
+arrowUp.addEventListener("click", moveImagesUp);
+arrowDown.addEventListener("click", moveImagesDown);
+
+//2 Scroll
+
+ const arrowUp2 = document.getElementById("arrow-up2");
+const arrowDown2 = document.getElementById("arrow-down2");
+const side2Container = document.querySelector("#side2");
+
+function moveImagesUp2() {
+  const firstImage = side2Container.querySelector("img:not(:last-child)");
+  if (firstImage !== side2Container.lastElementChild) {
+    side2Container.insertBefore(firstImage, side2Container.lastElementChild);
+  }
+}
+function moveImagesDown2() {
+  const lastImage = side2Container.querySelector("img:nth-last-child(2)");
+  side2Container.insertBefore(lastImage, side2Container.firstElementChild.nextSibling);
+}
+arrowUp2.addEventListener("click", moveImagesUp2);
+arrowDown2.addEventListener("click", moveImagesDown2);
+
+//3 Scroll
+
+const arrowUp3 = document.getElementById("arrow-up3");
+const arrowDown3 = document.getElementById("arrow-down3");
+const side3Container = document.querySelector("#side3");
+
+function moveImagesUp3() {
+  const firstImage = side3Container.querySelector("img:not(:last-child)");
+  if (firstImage !== side3Container.lastElementChild) {
+    side3Container.insertBefore(firstImage, side3Container.lastElementChild);
+  }
+}
+function moveImagesDown3() {
+  const lastImage = side3Container.querySelector("img:nth-last-child(2)");
+  side3Container.insertBefore(lastImage, side3Container.firstElementChild.nextSibling);
+}
+arrowUp3.addEventListener("click", moveImagesUp3);
+arrowDown3.addEventListener("click", moveImagesDown3);
+
+//4 Scroll
+
+const arrowUp4 = document.getElementById("arrow-up4");
+const arrowDown4 = document.getElementById("arrow-down4");
+const side4Container = document.querySelector("#side4");
+
+function moveImagesUp4() {
+  const firstImage = side4Container.querySelector("img:not(:last-child)");
+  if (firstImage !== side4Container.lastElementChild) {
+    side4Container.insertBefore(firstImage, side4Container.lastElementChild);
+  }
+}
+function moveImagesDown4() {
+  const lastImage = side4Container.querySelector("img:nth-last-child(2)");
+  side4Container.insertBefore(lastImage, side4Container.firstElementChild.nextSibling);
+}
+arrowUp4.addEventListener("click", moveImagesUp4);
+arrowDown4.addEventListener("click", moveImagesDown4);
+
+//5 Scroll
+
+const arrowUp5 = document.getElementById("arrow-up5");
+const arrowDown5 = document.getElementById("arrow-down5");
+const side5Container = document.querySelector("#side5");
+
+function moveImagesUp5() {
+  const firstImage = side5Container.querySelector("img:not(:last-child)");
+  if (firstImage !== side5Container.lastElementChild) {
+    side5Container.insertBefore(firstImage, side5Container.lastElementChild);
+  }
+}
+function moveImagesDown5() {
+  const lastImage = side5Container.querySelector("img:nth-last-child(2)");
+  side5Container.insertBefore(lastImage, side5Container.firstElementChild.nextSibling);
+}
+arrowUp5.addEventListener("click", moveImagesUp5);
+arrowDown5.addEventListener("click", moveImagesDown5);
+
+
+//6 Scroll
+
+const arrowUp6 = document.getElementById("arrow-up6");
+const arrowDown6 = document.getElementById("arrow-down6");
+const side6Container = document.querySelector("#side6");
+
+function moveImagesUp6() {
+  const firstImage = side6Container.querySelector("img:not(:last-child)");
+  if (firstImage !== side6Container.lastElementChild) {
+    side6Container.insertBefore(firstImage, side6Container.lastElementChild);
+  }
+}
+function moveImagesDown6() {
+  const lastImage = side6Container.querySelector("img:nth-last-child(2)");
+  side6Container.insertBefore(lastImage, side6Container.firstElementChild.nextSibling);
+}
+arrowUp6.addEventListener("click", moveImagesUp6);
+arrowDown6.addEventListener("click", moveImagesDown6);
+});
+//1 Click
+  
+  const Trans = document.querySelectorAll("#overlay .side img");
+  const Big = document.getElementById("centralImageSlider");
+
+  Trans.forEach(function (image, index) {
+    image.addEventListener("click", function () {
+      Big.src = image.src;
+    });
+  });
+  
+ //2 Click 
+
+  const Trans2 = document.querySelectorAll("#overlay2 .side img");
+  const Big2 = document.getElementById("centralImageSlider2");
+
+  Trans2.forEach(function (image, index) {
+    image.addEventListener("click", function () {
+      Big2.src = image.src;
+    });
+  });
+
+//3 Click
+
+  const Trans3 = document.querySelectorAll("#overlay3 .side img");
+  const Big3 = document.getElementById("centralImageSlider3");
+  Trans3.forEach(function (image, index) {
+    image.addEventListener("click", function () {
+      Big3.src = image.src;
+    });
+  });
+
+//4 Click
+
+const Trans4 = document.querySelectorAll("#overlay4 .side img");
+  const Big4 = document.getElementById("centralImageSlider4");
+  Trans4.forEach(function (image, index) {
+    image.addEventListener("click", function () {
+      Big4.src = image.src;
+    });
+  });
+
+
+//5 Click
+
+const Trans5 = document.querySelectorAll("#overlay5 .side img");
+  const Big5 = document.getElementById("centralImageSlider5");
+  Trans5.forEach(function (image, index) {
+    image.addEventListener("click", function () {
+      Big5.src = image.src;
+    });
+  });
+
+
+
+//6 Click
+
+const Trans6 = document.querySelectorAll("#overlay6 .side img");
+  const Big6 = document.getElementById("centralImageSlider6");
+  Trans6.forEach(function (image, index) {
+    image.addEventListener("click", function () {
+      Big6.src = image.src;
+    });
+  });
+
+
+//1 Translate
+
+const sideImages = document.querySelectorAll("#overlay .side img");
+const centralImageSlider = document.getElementById("centralImageSlider");
+let currentIndex = 0;
+
+function updateCentralImage() {
+  centralImageSlider.src = sideImages[currentIndex].src;
+}
+function scrollImages(direction) {
+  currentIndex += direction;
+  if (currentIndex < 0) {
+    currentIndex = sideImages.length - 1;
+  } else if (currentIndex >= sideImages.length) {
+    currentIndex = 0;
+  }
+  updateCentralImage();
+}
+
+document.getElementById("arrow-up").addEventListener("click", function () {
+  scrollImages(1);
+});
+document.getElementById("arrow-down").addEventListener("click", function () {
+  scrollImages(-1);
+});
+
+//2 Translate
+
+const sideImages2 = document.querySelectorAll("#overlay2 .side img");
+const centralImageSlider2 = document.getElementById("centralImageSlider2");
+let currentIndex2 = 0;
+
+function updateCentralImage2() {
+  centralImageSlider2.src = sideImages2[currentIndex2].src;
+}
+function scrollImages2(direction) {
+  currentIndex2 += direction;
+  if (currentIndex2 < 0) {
+    currentIndex2 = sideImages2.length - 1;
+  } else if (currentIndex2 >= sideImages2.length) {
+    currentIndex2 = 0;
+  }
+  updateCentralImage2();
+}
+document.getElementById("arrow-up2").addEventListener("click", function () {
+  scrollImages2(1);
+});
+document.getElementById("arrow-down2").addEventListener("click", function () {
+  scrollImages2(-1);
+});
+
+//3 Translate
+
+const sideImages3 = document.querySelectorAll("#overlay3 .side img");
+const centralImageSlider3 = document.getElementById("centralImageSlider3");
+let currentIndex3 = 0;
+
+function updateCentralImage3() {
+  centralImageSlider3.src = sideImages3[currentIndex3].src;
+}
+function scrollImages3(direction) {
+  currentIndex3 += direction;
+  if (currentIndex3 < 0) {
+    currentIndex3 = sideImages3.length - 1;
+  } else if (currentIndex3 >= sideImages3.length) {
+    currentIndex3 = 0;
+  }
+  updateCentralImage3();
+}
+document.getElementById("arrow-up3").addEventListener("click", function () {
+  scrollImages3(1);
+});
+document.getElementById("arrow-down3").addEventListener("click", function () {
+  scrollImages3(-1);
+});
+
+//4 Translate
+
+const sideImages4 = document.querySelectorAll("#overlay4 .side img");
+const centralImageSlider4 = document.getElementById("centralImageSlider4");
+let currentIndex4 = 0;
+
+function updateCentralImage4() {
+  centralImageSlider4.src = sideImages4[currentIndex4].src;
+}
+function scrollImages4(direction) {
+  currentIndex4 += direction;
+  if (currentIndex4 < 0) {
+    currentIndex4 = sideImages4.length - 1;
+  } else if (currentIndex4 >= sideImages4.length) {
+    currentIndex4 = 0;
+  }
+  updateCentralImage4();
+}
+document.getElementById("arrow-up4").addEventListener("click", function () {
+  scrollImages4(1);
+});
+document.getElementById("arrow-down4").addEventListener("click", function () {
+  scrollImages4(-1);
+});
+
+//5 Translate
+
+const sideImages5 = document.querySelectorAll("#overlay5 .side img");
+const centralImageSlider5 = document.getElementById("centralImageSlider5");
+let currentIndex5 = 0;
+
+function updateCentralImage5() {
+  centralImageSlider5.src = sideImages5[currentIndex5].src;
+}
+function scrollImages5(direction) {
+  currentIndex5 += direction;
+  if (currentIndex5 < 0) {
+    currentIndex5 = sideImages5.length - 1;
+  } else if (currentIndex5 >= sideImages5.length) {
+    currentIndex5 = 0;
+  }
+  updateCentralImage5();
+}
+document.getElementById("arrow-up5").addEventListener("click", function () {
+  scrollImages5(1);
+});
+document.getElementById("arrow-down5").addEventListener("click", function () {
+  scrollImages5(-1);
+});
+
+//6 Translate
+
+const sideImages6 = document.querySelectorAll("#overlay6 .side img");
+const centralImageSlider6 = document.getElementById("centralImageSlider6");
+let currentIndex6 = 0;
+
+function updateCentralImage6() {
+  centralImageSlider6.src = sideImages6[currentIndex6].src;
+}
+function scrollImages6(direction) {
+  currentIndex6 += direction;
+  if (currentIndex6 < 0) {
+    currentIndex6 = sideImages6.length - 1;
+  } else if (currentIndex6 >= sideImages6.length) {
+    currentIndex6 = 0;
+  }
+  updateCentralImage6();
+}
+document.getElementById("arrow-up6").addEventListener("click", function () {
+  scrollImages6(1);
+});
+document.getElementById("arrow-down6").addEventListener("click", function () {
+  scrollImages6(-1);
+});
+
+
+document.getElementById('support-icon').addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent the default action
+  var dropdownContent = document.getElementById('contact-info');
+  if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
+    dropdownContent.style.display = "block";
+  } else {
+    dropdownContent.style.display = "none";
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  function isLandscape() {
+    return window.innerWidth > window.innerHeight;
+  }
+
+  function tryShowOverlay(overlayElement) {
+    if (!isLandscape()) {
+      alert("Please switch to landscape mode to view this content.");
+    } else {
+      overlayElement.style.display = "block";
+      document.body.classList.add("overlay-active");
+    }
+  }
+
+  const triggers = document.querySelectorAll("[id^='slide']"); // Selects all elements with id starting with 'slide'
+
+  triggers.forEach(trigger => {
+    // Assuming there's a direct correlation between trigger ID and overlay class
+    const overlayNumber = trigger.id.replace('slide', ''); // Get the number part from the trigger's ID
+    const overlay = document.querySelector(".overlay" + overlayNumber); // Construct the selector based on the trigger
+
+    trigger.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent default action, especially important if the trigger is a link or button
+      tryShowOverlay(overlay);
+    });
+  });
+});
+
+window.addEventListener("resize", function() {
+  // Here you could recheck the orientation and handle logic as needed when the window is resized
+});
+
+
+  </script>
+</body>
+</html>

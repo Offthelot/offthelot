@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="service.css">
+    <link rel="icon" href="images/OffTheLot.png" type="image/x-icon">
+  <title>Off The Lot Detailing Services</title>
+
+
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo"><a href="index.html"><img src="images/mainlogo.png" alt="Logo" /></a></div>
+    <div class="nav-links">
+      <a href="LoyaltyProgram.html">Membership</a>
+      <a href="CarDetailingServices.html">Detailing</a>
+     <a href="CarDetailingGallery.html">Gallery</a>
+    </div>
+    <div class="icons">
+      <a href="#" title="Customer Support" id="support-icon"><i class="fas fa-headset"></i></a>
+      <div id="contact-info" class="dropdown-content">
+        <p>Phone: 206-841-7619</p>
+        <p>Email: offthelotservices@gmail.com</p>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>    
+
+
+  <div class="main-content">
+   
+    
+          
+ 
+
+
+ 
+
+  
+    <div class="section" id="section2">
+     
+      <div class="section-content">
+        <div class="services-images">
+          <div class="service-item">
+            <div class="service-label" id="service-label1">Clean Package</div>
+            <img src="images/OffTheLot.png" alt="Service 1" id="service1" data-service="1">
+          </div>
+          <div class="service-item">
+            <div class="service-label" id="service-label2">Shine Upgrade</div>
+            <div class="service-tag-wrapper">
+              <img src="images/OffTheLot.png" alt="Service 2" id="service2" data-service="2">
+              <span class="most-popular-tag">MOST POPULAR!</span>
+            </div>
+          </div>
+          <div class="service-item">
+            <div class="service-label" id="service-label3">Deep Upgrade</div>
+            <img src="images/OffTheLot.png" alt="Service 3" id="service3" data-service="3">
+          </div>
+          </div>
+        
+
+          <div class="services-extra">
+
+            <div class="service-box silver-border" id="serviceBox1">
+              <div class="service-details">
+                <div class="service-interior">
+                    <h4>Interior</h4>
+                    <p>Complete Vacuum</p>
+
+                      <p>Complete Wipe </p>
+                      
+                      <p> Floor Mat Cleaning </p>
+                      
+                      <p>  Console Brushing </p>
+                      
+                      <p> Glass Cleaning </p>
+                    <p class="Price">Interior: $180</p> 
+                </div>
+                <div class="service-exterior">
+                    <h4>Exterior</h4>
+                   <p> Complete Wash</p>
+
+                   <p> Complete Wax </p>
+                    
+                   <p>  Door Jamb Cleaning</p>
+                    
+                   <p>   Tire Cleaning </p>
+                    
+                   <p> Glass Cleaning </p>
+                    <p class="Price">Exterior: $180</p> 
+                </div>
+            </div>
+             </div>
+            
+             
+           
+     <div class="service-box silver-border" id="serviceBox2">
+      <h3>Clean Package</h3>
+      <p>A comprehensive clean that covers every inch of your vehicle, inside and out.
+
+      </p>
+      <div class="service-price">$250</div>
+      <div class="button-container">
+        <a href="booking2.html" class="service-quote-button">Get a Quote!</a>
+    </div>
+     
+     </div>
+  
+      <div class="service-box gold-border" id="serviceBox3" style="display none;">
+        <h3>Click The Bubbles!</h3>
+      </div>
+   
+      
+      </div>
+    </div>
+    </div>
+
+  </div>
+  <div class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <a href="index.html" class="footer-item">&copy;OTL</a>
+      </div>
+      <div class="footer-column">
+        <a href="LoyaltyProgram.html" class="footer-item">Membership</a>
+      </div>
+      <div class="footer-column">
+        <a href="CarDetailingServices.html" class="footer-item">Detailing</a>
+      </div>
+      <div class="footer-column">
+        <a href="faq.html" class="footer-item">FAQ</a>
+      </div>
+      <div class="footer-column">
+        <a href="CarDetailingGallery.html" class="footer-item">Gallery</a>
+      </div>
+      <div class="footer-column">
+        <a href="about.html" class="footer-item">About Me</a>
+    </div>
+   
+  <script>
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceImages = document.querySelectorAll('.services-images img');
+    
+    // Update service details with arrays for interior and exterior features
+    const serviceDetails = {
+        '1': {
+            title: "Clean Package",
+            interior: {
+                features: [
+                  
+                    "Complete Vacuum ",
+                    "Complete Wipe",
+                    "Floor Mat Cleaning",
+                    "Console Brushing",
+                    "Glass Cleaning"
+                ],
+                price: "$180"
+            },
+            exterior: {
+                features: [
+                    "Complete Wash",
+                    "Complete Wax",
+                    "Door Jamb Cleaning",
+                    "Tire Cleaning",
+                    "Glass Cleaning"
+                ],
+                price: "$180"
+            },
+            description: "A comprehensive clean that covers every inch of your vehicle, inside and out.",
+            price: "$250"
+        },
+        '2': {
+            title: "Shine Upgrade",
+            interior: {
+                features: [
+                    "Clean Package +",
+                    "Complete Shampoo",
+                    "Complete Brushing",
+                    "Leather Conditioner",
+                    "Door Jamb Cleaning"
+                ],
+                price: "+ $70"
+            },
+            exterior: {
+                features: [
+                    "Clean Package +",
+                    "Paint Decontamination",
+                    "Premium Topper",
+                    
+                    "Tire Dressing"
+                ],
+                price: "+ $70"
+            },
+            description: "Shine Upgrade Package. Superior Protection, Clean and Shine.",
+            price: "+ $70"
+        },
+        '3': {
+            title: "Deep Upgrade",
+            interior: {
+                features: [
+                    "Shine Upgrade +",
+                    "Upholstery Extraction",
+                    "Spot Removal",
+                    "Carpet Extraction"
+                ],
+                price: "+ $140"
+            },
+            exterior: {
+                features: [
+                    "Shine Upgrade +",
+                   
+                    "Clay Treatment",
+                    "Wheel Well Clean",
+                   
+                    "Engine Bay Clean", 
+                    "Premium Topper"
+                ],
+                price: "+ $140"
+            },
+            description: "Our most luxurious package for the ultimate car care experience.",
+            price: "Clean Package + $140"
+        }
+    };
+
+    serviceImages.forEach(image => {
+        image.addEventListener('click', function() {
+            const serviceId = this.getAttribute('data-service');
+            const service = serviceDetails[serviceId];
+
+            // Generate paragraphs for interior and exterior features
+            const interiorFeaturesHtml = service.interior.features.map(feature => `<p>${feature}</p>`).join('');
+            const exteriorFeaturesHtml = service.exterior.features.map(feature => `<p>${feature}</p>`).join('');
+
+            // Update Service Box 1 with features
+            const serviceBox1 = document.getElementById('serviceBox1');
+            serviceBox1.innerHTML = `
+                <div class="service-details">
+                    <div class="service-interior">
+                        <h4>Interior</h4>
+                        ${interiorFeaturesHtml}
+                        <p class="Price">Interior: ${service.interior.price}</p> 
+                    </div>
+                    <div class="service-exterior">
+                        <h4>Exterior</h4>
+                        ${exteriorFeaturesHtml}
+                        <p class="Price">Exterior: ${service.exterior.price}</p> 
+                    </div>
+                </div>
+            `;
+
+            // Update Service Box 2 with general info
+            const serviceBox2 = document.getElementById('serviceBox2');
+            serviceBox2.innerHTML = `
+                <h3>${service.title}</h3>
+                <p class="description">${service.description}</p>
+                <div class="service-price"> ${service.price}</div>
+                <div class="button-container">
+                    <a href="booking2.html" class="service-quote-button">Get a Quote!</a>
+                </div>
+            `;
+            const serviceBox3 = document.getElementById('serviceBox3');
+            serviceBox3.innerHTML = `
+            <h3>${service.title}</h3>
+            <p class="description">${service.description}</p>
+            <hr>
+                <div class="service-details">
+                    <div class="service-interior">
+                        <h4>Interior</h4>
+                        ${interiorFeaturesHtml}
+                        <p class="Price">Interior: ${service.interior.price}</p> 
+                    </div>
+                    <div class="service-exterior">
+                        <h4>Exterior</h4>
+                        ${exteriorFeaturesHtml}
+                        <p class="Price">Exterior: ${service.exterior.price}</p> 
+                    </div>
+                </div>
+                <div class="service-price">Starting at ${service.price}</div>
+                <div class="button-container">
+                    <a href="booking2.html" class="service-quote-button">Get a Quote!</a>
+                </div>
+            `;
+        });
+    });
+});
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const serviceImages = document.querySelectorAll('.services-images img');
+    const serviceBoxes = document.querySelectorAll('.service-box');
+
+    // Function to reset borders to default (gold border in this case)
+    function resetToDefaultBorder() {
+        serviceBoxes.forEach(box => {
+            box.classList.remove('silver-border', 'ult-border'); // Remove all other borders
+            box.classList.add('gold-border'); // Add default gold border
+        });
+    }
+
+    // Function to remove all border classes
+    function removeAllBorderClasses() {
+        serviceBoxes.forEach(box => {
+            box.classList.remove('silver-border', 'gold-border', 'ult-border'); // Remove all border classes
+        });
+    }
+
+    // Event listeners for service images
+    serviceImages.forEach(image => {
+        image.addEventListener('click', function() {
+            removeAllBorderClasses(); // Clear existing borders
+
+            let borderClass = '';
+            switch (this.id) {
+                case 'service1':
+                    borderClass = 'silver-border'; // Assign silver border for service1
+                    break;
+                case 'service2':
+                    borderClass = 'gold-border'; // Assign gold border for service2
+                    break;
+                case 'service3':
+                    borderClass = 'ult-border'; // Assign gradient border for service3
+                    break;
+                default:
+                    resetToDefaultBorder(); // Reset to gold border if nothing matches
+                    return;
+            }
+
+            // Apply the new border class to all service boxes
+            serviceBoxes.forEach(box => {
+                box.classList.add(borderClass);
+            });
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+document.getElementById('support-icon').addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent the default action
+  var dropdownContent = document.getElementById('contact-info');
+  if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
+    dropdownContent.style.display = "block";
+  } else {
+    dropdownContent.style.display = "none";
+  }
+});
+
+
+function disableScrolling() {
+    document.body.addEventListener('touchmove', preventScroll, { passive: false });
+}
+
+function enableScrolling() {
+    document.body.removeEventListener('touchmove', preventScroll, { passive: false });
+}
+
+function preventScroll(e) {
+    e.preventDefault();
+}
+
+function showOverlay(overlayElement) {
+    overlayElement.style.display = "block";
+    document.body.classList.add("no-scroll");
+}
+
+function hideOverlay(overlayElement) {
+    overlayElement.style.display = "none";
+    document.body.classList.remove("no-scroll");
+}
+
+
+  </script>
+  
+  
+  
+</body>
+</html>

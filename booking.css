@@ -1,0 +1,1317 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  line-height: 1.6;
+  background-image: url('images/mountain.jpeg'); /* Path to your image */
+  background-size: cover; /* Cover the entire page */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+
+}
+
+
+/* Navbar styling */
+.navbar {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 1rem;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure it fills the width */
+  position: fixed; /* Fixed at the top */
+  top: 0; /* Stick to the top */
+  left: 0; /* Align to the left */
+  z-index: 1000; /* Ensure it's above other elements */
+}
+/* Logo */
+.logo {
+  flex: 1;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+}
+.logo a {
+text-decoration: none; /* Remove underline */
+color: white;  /* Set text color */
+text-shadow:
+0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for when mouse hovers over the link */
+.logo a:hover {
+color: #555555;  /* Slightly lighter text color */
+
+}
+
+
+.logo img {
+  height: 5vh; /* Adjust based on your logo size and navbar height */
+  width: auto; /* Keeps the aspect ratio of the image */
+  /* Add more styling as needed */
+}
+
+
+
+h2 {
+  color: #333;
+  text-align: center;
+  font-size: 4vh;
+}
+
+form {
+  background: #fff;
+  padding: 1.2vh;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-top: 3px;
+  color: #666;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+  font-size: .9vw;
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.info-container {
+  width: 24%; /* Adjust width as needed */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 8px;
+  height: 75vh;
+
+}
+.form-container {
+width: 34vw; /* Adjust width as needed */
+height: 75vh; /* Set a fixed height */
+overflow-y: auto; /* Enable vertical scrolling */
+padding: 20px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+background: #fff;
+border-radius: 8px;
+margin-left: 12%;
+font-size: .9vw;
+position: relative; /* To maintain the layout */
+}
+
+
+
+
+/* Style for radio buttons and their labels */
+.form-container input[type="radio"] {
+  display: inline-block;
+  margin-right: 10px; /* Adds some space between the radio button and the label */
+}
+
+.form-container label {
+  display: inline-block;
+  margin-right: 20px; /* Adds some space between each radio button-label pair */
+}
+#card-element {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  background: white;
+}
+
+#infoFormContainer {
+margin-left: 20px; /* Space between form and info section */
+margin-right: 12%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 75vh;
+font-size: 1.5rem;
+overflow-y: auto;
+width: 25vw;
+}
+.info-container::-webkit-scrollbar {
+width: 6px; /* Width of the scrollbar */
+}
+
+.info-container::-webkit-scrollbar-track {
+background: #f1f1f1; /* Track color */
+}
+
+.info-container::-webkit-scrollbar-thumb {
+background: #888; /* Handle color */
+}
+
+.info-container::-webkit-scrollbar-thumb:hover {
+background: #555; /* Handle color on hover */
+}
+.info-item {
+width: 100%;
+text-align: center;
+margin-bottom: .25vh; /* Reduce the space between items */
+}
+
+
+.info-title {
+font-size: 2.7vh;
+}
+
+.info-answer {  
+font-weight: bold;
+font-size: 2.5vh;
+margin-bottom: 2vh;
+}
+.info-answer span {
+margin-right: 10px; /* Space between each addon */
+white-space: nowrap; /* Prevents breaking into new line */
+}
+.price {
+margin-top: auto; /* Pushes the price section to the bottom */
+}
+
+.addon-container {
+display: flex;
+flex-wrap: wrap;
+align-items: flex-start; /* Align items to the top */
+justify-content: center; /* Align items to the left */
+}
+
+.addon-item {
+width: 8.7vw; /* Fixed width */
+display: none; /* Hide all initially */
+
+}
+
+
+/* Displayed class for visible items */
+.addon-item.displayed {
+display: flex; /* Show item */
+}
+
+.addon-item input[type="checkbox"] {
+margin-bottom: 5px; /* Space between checkbox and label */
+}
+.addon-item input[type="checkbox"] {
+display: none; /* Hide the actual checkbox */
+}
+
+.addon-item .addon-label {
+color: white; /* White text */
+width: 100%; /* Take full width */
+height: 100%; /* Take full height */
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+/* Optional: change hover effect on the addon item */
+.addon-background:hover {
+filter: grayscale(0%);
+transform: scale(1.01); /* Increase the size by 5% on hover */
+transition: transform 0.2s ease-in-out;    
+}
+.addon-background {
+position: relative; /* This is essential for absolute positioning inside */
+background-size: cover;
+background-position: center;
+width: 100%;
+height: 12vh; /* Adjust the height as needed */
+filter: grayscale(100%);
+border-radius: 10px;
+margin-left: 15px;
+}
+.price-container {
+display: flex;
+flex-direction: column; /* Stack elements vertically */
+align-items: center; /* Center items horizontally */
+justify-content: center; /* Center items vertically */
+border: 1px solid #ccc; /* Add a border */
+padding: 15px; /* Add some padding */
+border-radius: 8px; /* Round the corners */
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+background-color: #f8f8f8; /* Background color */
+width: auto; /* Adjust the width based on content */
+margin: 20px auto; /* Add top/bottom margin and auto for left/right */
+}
+
+/* Styling the price */
+.price {
+ /* Space between price and button */
+font-size: 2.5vh; /* Larger font size for price */
+font-weight: bold; /* Make the price bold */
+
+}
+
+/* Styling the checkout button */
+#checkoutButton {
+width: auto; /* Auto width based on content */
+padding: 10px 15px; /* Padding inside the button */
+font-size: 2.5vh; /* Slightly larger font size */
+border-radius: 10px; /* Rounded corners for the button */
+color: white; /* Text color */
+background-color: #4CAF50; /* Background color */
+border: none; /* No border */
+cursor: pointer; /* Cursor pointer */
+}
+
+#checkoutButton:hover {
+background-color: #45a049; /* Darker shade on hover */
+}
+
+/* Ensuring that the price container fits well on smaller screens */
+@media screen and (max-width: 768px) {
+.price-container {
+    width: 90%; /* Making the width 90% of the screen size */
+    margin: 10px auto; /* Adjusting top/bottom margin */
+}
+}
+
+.addon-text, .addon-price {
+position: absolute;
+left: 0;
+right: 0;
+margin: auto;
+text-align: center;
+color: white;
+font-weight: bold;
+/*  background-color: rgba(0, 0, 0, 0.5); */
+text-shadow:
+  -1px -1px 0px rgba(0, 0, 0, 0.25), /* top left */
+  1px -1px 0px rgba(0, 0, 0, 0.25), /* top right */
+  -1px  1px 0px rgba(0, 0, 0, 0.25), /* bottom left */
+  1px  1px 0px rgba(0, 0, 0, 0.25); /* bottom right */
+}
+
+.addon-text {
+top: 10px;
+}
+
+.addon-price {
+bottom: 10px;
+}
+
+#addon1-background {
+background-image: url('images/PetHair.png');
+}
+#addon2-background {
+background-image: url('images/Sap.PNG');
+}
+#addon3-background {
+background-image: url('images/BugTar.PNG');
+}
+#addon4-background {
+background-image: url('images/BioSpills.PNG');
+}
+#addon5-background {
+background-image: url('images/PaintSpills.PNG');
+}
+#addon6-background {
+background-image: url('images/NoElectricity.PNG');
+}
+#addon7-background {
+background-image: url('images/HighSoilExterior.PNG');
+}
+#addon8-background {
+background-image: url('images/HighSoilInteior.PNG');
+}
+#addon9-background {
+background-image: url('images/Mold.PNG');
+}
+#addon10-background {
+background-image: url('images/DeluxeDetail.jpg');
+}
+#addon11-background {
+background-image: url('images/DeluxeDetail.jpg');
+}
+#addon12-background {
+background-image: url('images/DeluxeDetail.jpg');
+}
+
+.addon-item input[type="checkbox"]:checked + .addon-label .addon-background,
+.addon-item input[type="checkbox"]:checked ~ .addon-background {
+  filter: grayscale(0%);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+  transform: scale(1.03); /* Increase the size by 5% on hover */
+}
+
+.info-icon {
+position: relative;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.info-popup {
+visibility: hidden;
+width: 120px;
+background-color: black;
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 5px 0;
+position: absolute;
+z-index: 1;
+bottom: 125%;
+left: 50%;
+margin-left: -60px;
+opacity: 0;
+transition: opacity 0.3s, visibility 0.3s; /* Smooth transition for visibility and opacity */
+
+}
+
+
+.service-type-container {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+.service-item {
+flex: 1;
+margin-right: 10px; /* Space between items */
+cursor: pointer;
+text-align: center;
+}
+
+.service-item:last-child {
+margin-right: 0;
+}
+
+.service-item input[type="radio"] {
+display: none;
+}
+
+.service-background {
+background-size: cover;
+background-position: center;
+height: 18vh; /* Set a specific height */
+width: 18vh; /* Ensure width is the same as height for a circle */
+border-radius: 50%; /* This makes the square a circle */
+display: flex;
+align-items: center;
+justify-content: center;
+margin: auto; /* Center the div if it's inside a flex container or similar */
+box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+}
+
+.service-item:hover .service-background {
+transform: scale(1.02); /* Scale up when hovered */
+transition: transform .25s ease-in-out;
+transform: translateY(-2.5px); /* Slight lift on hover */
+}
+
+.service-label {
+position: relative; /* Make this a relative container */
+padding-top: 20px; /* Add space for the label above */
+}
+
+
+
+.service-background label {
+position: absolute; /* Absolute positioning */
+top: -6vh; /* Move it above the box */
+left: 50%; /* Center horizontally */
+transform: translateX(-50%); /* Adjust for exact centering */
+background-color: rgb(255, 255, 255); /* Background color of the label */
+padding: 0 1vh; /* Padding inside the label */
+border-radius: 5px; /* Rounded corners */
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for better visibility */
+font-size: 3vh;
+font-weight: bold;
+
+}
+
+.service-text {
+color: white;
+font-weight: bold;
+text-shadow: 1px 1px 2px black;
+}
+
+#service1-background {
+background-image: url('images/OffTheLot.png');
+filter: sepia(.8) saturate(2) brightness(1) contrast(1.2);
+
+}
+
+#service2-background {
+background-image: url('images/OffTheLot.png');
+filter: brightness(1.1) contrast(1.2) grayscale(.9);
+
+
+}
+
+#service3-background {
+background-image: url('images/OffTheLot.png');
+filter: saturate(2) brightness(1) contrast(1.2);
+
+}
+
+.service-item input[type="radio"]:checked + .service-label .service-background {
+filter: grayscale(0%);
+}
+
+
+
+
+
+.select-type-container {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+.select-item {
+flex: 1;
+margin-right: 10px; /* Space between items */
+cursor: pointer;
+text-align: center;
+}
+
+.select-item:last-child {
+margin-right: 0;
+}
+
+.select-item input[type="radio"] {
+display: none;
+}
+
+.select-background {
+background-size: cover;
+background-position: center;
+height: 18vh; /* Set a specific height */
+width: 18vh; /* Ensure width is the same as height for a circle */
+border-radius: 10%; /* This makes the square a circle */
+display: flex;
+align-items: center;
+justify-content: center;
+margin: auto; /* Center the div if it's inside a flex container or similar */
+box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+}
+
+.select-item:hover .select-background {
+transform: scale(1.02); /* Scale up when hovered */
+}
+
+.select-label {
+position: relative; /* Make this a relative container */
+padding-top: 20px; /* Add space for the label above */
+}
+
+.select-background {
+position: relative; /* Ensure this is positioned relative */
+height: 150px; /* Adjust as needed */
+padding-top: 20px; /* Add space at the top inside the box */
+box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+}
+
+.select-background label {
+position: absolute; /* Absolute positioning */
+top: -50px; /* Move it above the box */
+left: 50%; /* Center horizontally */
+transform: translateX(-50%); /* Adjust for exact centering */
+background-color: rgb(255, 255, 255); /* Background color of the label */
+padding: 0 10px; /* Padding inside the label */
+border-radius: 5px; /* Rounded corners */
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for better visibility */
+font-size: 3vh;
+font-weight: bold;
+}
+
+.select-text {
+color: white;
+font-weight: bold;
+text-shadow: 1px 1px 2px black;
+}
+
+#select1-background {
+background-image: url('images/ExteriorDetail.jpg');
+}
+
+#select2-background {
+background-image: url('images/ExteriorDetail.jpg');
+
+}
+
+#select3-background {
+background-image: url('images/InteriorDetail.jpeg');
+}
+
+.select-item input[type="radio"]:checked + .service-label .service-background {
+filter: grayscale(0%);
+}
+
+
+
+
+
+
+
+
+
+.grayed-out {
+filter: grayscale(0%);
+transform: scale(.7) translateY(4vh); /* Scale and move down */
+transition: transform 0.2s ease-in-out;  
+}
+
+.info-bubble {
+display: none; /* Hidden initially */
+position: absolute;
+bottom: -100px; /* Adjust as needed */
+left: 50%;
+transform: translateX(-50%);
+width: 200px; /* Adjust as needed */
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+background: white;
+padding: 10px;
+border-radius: 8px;
+z-index: 10;
+}
+
+.info-bubble img {
+width: 100%; /* Make image fit in the bubble */
+}
+
+.info-icon {
+
+
+margin-left: 15px;
+
+}
+/* Apply a Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Form input and textarea styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Button Styling */
+button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+/* Add this to your CSS file or within a <style> tag */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="5" viewBox="0 0 4 5"%3E%3Cpath fill="%23000" d="M2 0L0 2h4zm0 5L0 3h4z"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+
+
+
+.terms-form-container {
+/* Existing styles */
+padding: 15px;
+
+border: 1px solid #ccc;
+border-radius: 5px;
+background-color: #f8f8f8;
+
+/* New styles to add */
+overflow-y: auto; /* Allows vertical scrolling if content overflows */
+word-wrap: break-word; /* Breaks long words that would otherwise overflow */
+max-height: 30vh; /* Set a maximum height */
+}
+
+/* Optional: Style for the scrollbar in terms-form-container */
+.terms-form-container::-webkit-scrollbar {
+width: 6px;
+}
+
+.terms-form-container::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+
+.terms-form-container::-webkit-scrollbar-thumb {
+background: #888;
+}
+
+.terms-form-container::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+/* ... existing styles for small screens ... */
+
+/* Hide the info form by default only on small screens */
+#infoFormContainer {
+    display: none;
+}
+
+/* Ensure dropdown is visible on small screens */
+.dropdown {
+    display: block;
+}
+}
+
+@media screen and (min-width: 769px) {
+/* ... styles for larger screens ... */
+
+/* Ensure both forms are visible on larger screens */
+#infoFormContainer, #bookingFormContainer {
+    display: block;
+}
+
+/* Hide the dropdown on larger screens */
+.dropdown {
+    display: none;
+}
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  line-height: 1.6;
+  background-image: url('images/mountain.jpeg'); /* Path to your image */
+  background-size: cover; /* Cover the entire page */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+
+}
+
+/* Navbar styling */
+.navbar {
+    /* existing styles */
+    justify-content: center; /* Center all items in the navbar */
+}
+
+.logo {
+    
+    flex: 0 1 auto; /* Adjust flex settings for the logo */
+    margin-right: 25px; /* Push everything else to the right */
+}
+
+.nav-links, .icons {
+    display: none; /* Optionally hide nav links and icons on small screens */
+}
+
+
+h2 {
+  color: #333;
+  text-align: center;
+}
+
+form {
+  background: #fff;
+  padding: 1.2vw;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-top: 3px;
+  color: #666;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+  font-size: 3.8vw;
+}
+
+button {
+  background-color: #0056b3;
+  color: white;
+  padding: 20px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #004494;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+
+.form-container {
+width: 36%; /* Adjust width as needed */
+height: 70vh; /* Set a fixed height */
+overflow-y: auto; /* Enable vertical scrolling */
+padding: 20px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+background: #fff;
+border-radius: 8px;
+
+
+font-size: 5vw;
+position: relative; /* To maintain the layout */
+}
+
+.form-container::-webkit-scrollbar {
+display: none; /* for Webkit browsers like Chrome and Safari */
+}
+
+.form-container, #infoFormContainer {
+width: 100%; /* This will make the form container take the full width */
+margin-left: 0; /* Reset any margins that were pushing it to the side */
+margin-right: 0; /* Reset any margins that were pushing it to the side */
+}
+
+/* Style for radio buttons and their labels */
+.form-container input[type="radio"] {
+  display: inline-block;
+  margin-right: 10px; /* Adds some space between the radio button and the label */
+}
+
+.form-container label {
+  display: inline-block;
+  margin-right: 20px; /* Adds some space between each radio button-label pair */
+}
+#card-element {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  background: white;
+}
+
+
+.info-container::-webkit-scrollbar {
+width: 6px; /* Width of the scrollbar */
+}
+
+.info-container::-webkit-scrollbar-track {
+background: #f1f1f1; /* Track color */
+}
+
+.info-container::-webkit-scrollbar-thumb {
+background: #888; /* Handle color */
+}
+
+.info-container::-webkit-scrollbar-thumb:hover {
+background: #555; /* Handle color on hover */
+}
+.info-item {
+width: 100%;
+text-align: center;
+margin-bottom: 5px; /* Reduce the space between items */
+}
+
+
+.info-title {
+font-weight: bold;
+margin-bottom: 5px; /* Space between title and answer */
+font-size: 1.2rem;
+}
+
+.info-answer {
+font-size: 1.2rem;
+margin-bottom: 15px;
+}
+.info-answer span {
+margin-right: 10px; /* Space between each addon */
+white-space: nowrap; /* Prevents breaking into new line */
+}
+.price {
+margin-top: auto; /* Pushes the price section to the bottom */
+}
+
+.addon-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around; /* Adjusts the alignment */
+gap: 10px; /* Keeps space between the items */
+}
+
+.addon-item {
+width: 40%; /* Sets the width to less than half of the container width to fit two items per row */
+display: flex; /* This will make the addon items flex items, enabling them to wrap as needed */
+/* Other styles as required */
+font-size: 3.85vw;
+}
+
+/* Make sure the addon items are visible */
+.addon-item.displayed {
+display: flex; /* Ensures that the addon items that should be visible are displayed */
+
+}
+
+/* Since we're using flexbox, we no longer need to hide the checkboxes themselves */
+.addon-item input[type="checkbox"] {
+display: block; /* or inline-block, depending on your layout */
+}
+.addon-item input[type="checkbox"] {
+display: none; /* Hide the actual checkbox */
+}
+
+.addon-item .addon-label {
+color: white; /* White text */
+width: 100%; /* Take full width */
+height: 100%; /* Take full height */
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+/* Optional: change hover effect on the addon item */
+
+.addon-background {
+position: relative; /* This is essential for absolute positioning inside */
+background-size: cover;
+background-position: center;
+width: 100%;
+height: 12vh; /* Adjust the height as needed */
+filter: grayscale(100%);
+border-radius: 10px;
+margin-left: 15px;
+}
+
+.addon-text, .addon-price {
+position: absolute;
+left: 0;
+right: 0;
+margin: auto;
+text-align: center;
+color: white;
+font-weight: bold;
+/*  background-color: rgba(0, 0, 0, 0.5); */
+text-shadow:
+  -1px -1px 0px rgba(0, 0, 0, 0.25), /* top left */
+  1px -1px 0px rgba(0, 0, 0, 0.25), /* top right */
+  -1px  1px 0px rgba(0, 0, 0, 0.25), /* bottom left */
+  1px  1px 0px rgba(0, 0, 0, 0.25); /* bottom right */
+}
+
+.addon-text {
+top: 10px;
+}
+
+.addon-price {
+bottom: 10px;
+}
+
+
+.addon-item input[type="checkbox"]:checked + .addon-label .addon-background,
+.addon-item input[type="checkbox"]:checked ~ .addon-background {
+  filter: grayscale(0%);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+  transform: scale(1.1); /* Increase the size by 5% on hover */
+}
+
+.info-icon {
+position: relative;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.info-popup {
+visibility: hidden;
+width: 120px;
+background-color: black;
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 5px 0;
+position: absolute;
+z-index: 1;
+bottom: 125%;
+left: 50%;
+margin-left: -60px;
+opacity: 0;
+transition: opacity 0.3s, visibility 0.3s; /* Smooth transition for visibility and opacity */
+}
+
+.terms-form-container {
+/* Existing styles */
+padding: 15px;
+
+border: 1px solid #ccc;
+border-radius: 5px;
+background-color: #f8f8f8;
+font-size: 13px;
+/* New styles to add */
+overflow-y: auto; /* Allows vertical scrolling if content overflows */
+word-wrap: break-word; /* Breaks long words that would otherwise overflow */
+max-height: 30vh; /* Set a maximum height */
+}
+
+/* Optional: Style for the scrollbar in terms-form-container */
+.terms-form-container::-webkit-scrollbar {
+width: 6px;
+}
+
+.terms-form-container::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+
+.terms-form-container::-webkit-scrollbar-thumb {
+background: #888;
+}
+
+.terms-form-container::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
+
+.service-type-container {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+.service-item {
+flex: 1;
+margin-right: 10px; /* Space between items */
+cursor: pointer;
+text-align: center;
+}
+
+.service-item:last-child {
+margin-right: 0;
+}
+
+.service-item input[type="radio"] {
+display: none;
+}
+
+.service-background {
+background-size: cover;
+background-position: center;
+
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+transform: scale(1.0); /* Default scale */
+transition: transform 0.3s ease; /* Smooth transition for the transform property */
+
+}
+
+.service-item:hover .service-background {
+transform: scale(1.02); /* Scale up when hovered */
+}
+
+.service-label {
+position: relative; /* Make this a relative container */
+padding-top: 20px; /* Add space for the label above */
+}
+
+.service-background {
+position: relative; /* Ensure this is positioned relative */
+height: 10vh; /* Adjust as needed */
+width: 10vh;
+padding-top: 20px; /* Add space at the top inside the box */
+box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+
+}
+
+.service-background label {
+position: absolute; /* Absolute positioning */
+top: -50px; /* Move it above the box */
+left: 50%; /* Center horizontally */
+transform: translateX(-50%); /* Adjust for exact centering */
+background-color: white; /* Background color of the label */
+padding: 0 10px; /* Padding inside the label */
+border-radius: 5px; /* Rounded corners */
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for better visibility */
+
+}
+
+.service-text {
+color: white;
+font-weight: bold;
+text-shadow: 1px 1px 2px black;
+}
+
+#service1-background {
+background-image: url('images/OffTheLot.png');
+}
+
+#service2-background {
+background-image: url('images/OffTheLot.png');
+}
+
+#service3-background {
+background-image: url('images/OffTheLot.png');
+}
+
+.service-item input[type="radio"]:checked + .service-label .service-background {
+filter: grayscale(0%);
+}
+
+
+
+
+
+.select-type-container {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+.select-item {
+flex: 1;
+margin-right: 10px; /* Space between items */
+cursor: pointer;
+text-align: center;
+}
+
+.select-item:last-child {
+margin-right: 0;
+}
+
+.select-item input[type="radio"] {
+display: none;
+}
+
+.select-background {
+background-size: cover;
+background-position: center;
+
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+transform: scale(1.0); /* Default scale */
+transition: transform 0.3s ease; /* Smooth transition for the transform property */
+
+}
+
+.select-item:hover .service-background {
+transform: scale(1.02); /* Scale up when hovered */
+}
+
+.select-label {
+position: relative; /* Make this a relative container */
+padding-top: 20px; /* Add space for the label above */
+}
+
+.select-background {
+position: relative; /* Ensure this is positioned relative */
+height: 10vh; /* Adjust as needed */
+width: 10vh;
+padding-top: 20px; /* Add space at the top inside the box */
+box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+}
+
+.select-background label {
+position: absolute; /* Absolute positioning */
+top: -50px; /* Move it above the box */
+left: 50%; /* Center horizontally */
+transform: translateX(-50%); /* Adjust for exact centering */
+background-color: white; /* Background color of the label */
+padding: 0 10px; /* Padding inside the label */
+border-radius: 5px; /* Rounded corners */
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for better visibility */
+
+}
+
+.select-text {
+color: white;
+font-weight: bold;
+text-shadow: 1px 1px 2px black;
+}
+
+#select1-background {
+  background-image: url('images/ExteriorDetail.jpg');
+  }
+  
+  #select2-background {
+  background-image: url('images/ExteriorDetail.jpg');
+  
+  }
+  
+  #select3-background {
+  background-image: url('images/InteriorDetail.jpeg');
+  }
+  
+
+.select-item input[type="radio"]:checked + .service-label .service-background {
+filter: grayscale(0%);
+}
+
+
+
+
+
+
+.grayed-out {
+filter: grayscale(0%);
+transform: scale(.55) translateY(20px); /* Scale and move down */
+transition: transform 0.2s ease-in-out;  
+}
+
+.info-bubble {
+display: none; /* Hidden initially */
+position: absolute;
+bottom: -100px; /* Adjust as needed */
+left: 50%;
+transform: translateX(-50%);
+width: 200px; /* Adjust as needed */
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+background: white;
+padding: 10px;
+border-radius: 8px;
+z-index: 10;
+}
+
+.info-bubble img {
+width: 100%; /* Make image fit in the bubble */
+}
+
+.info-icon {
+
+
+margin-left: 15px;
+
+}
+/* Apply a Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Form input and textarea styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Button Styling */
+button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+}
+
+#switchToInfoFormBtn {
+display: none; /* Hide the button by default */
+width: 100%;
+padding: 10px;
+margin-top: 20px;
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+/* Make the button visible on small screens (phones) */
+#switchToInfoFormBtn {
+    display: block;
+}
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 769px) {
+/* Keep the button hidden on large screens (computers) */
+#switchToInfoFormBtn {
+    display: none;
+}
+}

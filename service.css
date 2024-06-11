@@ -1,0 +1,1224 @@
+/* General styles for body and html to ensure full height and smooth scrolling */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('images/mountain.jpeg'); /* Replace with your image URL */
+  background-size: cover;
+  background-repeat: no-repeat; /* Prevent image from repeating */
+  background-attachment: fixed; /* Fix the background position */
+  background-position: center;
+  overflow-x: hidden; /* This hides horizontal overflow content */
+    
+}
+/* Navbar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 1rem;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Logo */
+.logo {
+  flex: 1;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+}
+.logo a {
+text-decoration: none; /* Remove underline */
+color: white;  /* Set text color */
+text-shadow:
+0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.logo img {
+  height: 7.5vh; /* Adjust based on your logo size and navbar height */
+  width: auto; /* Keeps the aspect ratio of the image */
+  /* Add more styling as needed */
+}
+/* Style for when mouse hovers over the link */
+.logo a:hover {
+color: #555555;  /* Slightly lighter text color */
+
+}
+/* Nav links */
+.nav-links {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease-in-out;
+  text-shadow:
+  -1px -1px 0px rgba(0, 0, 0, 0.25), /* top left */
+  1px -1px 0px rgba(0, 0, 0, 0.25), /* top right */
+  -1px  1px 0px rgba(0, 0, 0, 0.25), /* bottom left */
+  1px  1px 0px rgba(0, 0, 0, 0.25); /* bottom right */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px); /* apply blur effect */
+}
+
+
+.nav-links a:hover {
+  border-radius: 10px;
+  backdrop-filter: blur(15px); /* apply blur effect */
+  background-color: #5555556e;
+  transform: translateY(-1px);
+}
+
+/* Icons */
+.icons {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 16px;
+}
+.icons a {
+  margin-left: 1.5rem;
+}
+.icons i {
+  font-size: 1.2rem;
+  color: white;
+}
+.icons i:hover {
+  color: #555555;
+}
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: #57575700;
+  min-width: 160px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  padding: 2px 12px;
+  z-index: 1;
+  margin-top: -3vh;
+}
+ 
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+.main-content {
+  height: 100vh;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scroll-snap-type: y mandatory;
+}
+
+.section  {
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items to start, moving them to the top */
+  padding-top: 5vh; /* Push content down to 3/4 from the top */
+  color: #fff; /* Light text color for better contrast */
+}
+/* Improvements for background images */
+.section > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.lander img {
+  max-width: 55vh;
+  margin-top: -2vh;
+  filter: saturate(2) brightness(1) contrast(1.2);
+}
+
+
+.boxes-container {
+  display: inline-block;
+  justify-content: center;
+ 
+  padding-top: 20px; /* Adjust as needed for spacing under the logo */
+  margin-top: 10vh;
+  border-radius: 20px;
+  margin-left: 2vh;
+  margin-right: 2vh;
+}
+
+.box {
+  width: 35vh; /* Adjust width as needed */
+  height: 35vh; /* Adjust height as needed */
+  background-color: #f0f0f0; /* Example background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20px;
+  display: block;
+}
+.box img {
+  width: 35vh; /* Adjust width as needed */
+  height: 35vh; /* Adjust height as needed */
+
+ border-radius: 20px;
+
+
+}
+.box-title {
+  font-size: 3vh;
+  font-weight: bold;
+  margin-bottom: 10px; /* Adjust space between title and box */
+  text-align: center; /* Center the title if desired */
+
+}
+
+
+
+.header {
+  z-index: 10; /* Ensure content is above the image */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  padding: 1vh;
+  border-radius: 10px; /* Rounded corners for the content background */
+  max-width: 50vh; /* Limit content width for better readability */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+  /* Removed positioning properties specific to centering */
+  margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+
+/* Text styling for clarity and aesthetics */
+.section-content h1, .section-content h2, .section-content h3 {
+  margin-bottom: 20px;
+  font-size: 4vh;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+.button-container {
+  margin-top: auto; /* This pushes the button to the bottom */
+  width: 100%; /* Ensure it spans the width of its container */
+  text-align: center; /* Center the button inside the container */
+  transform: none; /* Remove translateX as it's no longer absolutely positioned */
+}
+
+.service-box::after, .loyalty-box::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.service-box2 .button-container {
+  margin-top: 11vh; /* Additional spacing from the price or content above */
+}
+.Price, .button-container {
+  position: absolute;
+  bottom: 2vh; /* Adjust based on your needs */
+  left: 50%;
+  transform: translateX(-50%);
+}
+.loyalty-button, .service-quote-button {
+  display: inline-block;
+  padding: 2vh 4vh;
+  font-size: 3vh; /* Adjust based on your design */
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4CAF50; /* Original green color */
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  box-shadow: 1px 1px 1px;
+  transition: all 0.3s ease;
+}
+
+.loyalty-button:hover, .service-quote-button:hover {
+  background-color: #388E3C; /* Slightly darker shade of green */
+  transform: translate(1px, 1px);
+  box-shadow: 0px 0px 0px;
+}
+
+
+
+
+.services-images {
+  display: flex;
+  justify-content: center;
+  gap: 25vh; /* Adjust gap between images if needed */
+  margin-top: 5vh; /* Adjust top margin if needed */
+  margin-bottom: 2vh; /* Adjust this value to increase/decrease space between images and boxes */
+}
+
+
+.services-images img {
+  width: 20vh; /* Example size, adjust as needed */
+  height: 20vh;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative; /* Override any absolute positioning */
+  z-index: 0; /* Ensure it doesn't inherit negative z-index */
+  opacity: 1; /* Ensure full opacity */
+  
+}
+#service1, #service3 {
+  margin-top: 6vh; /* Moves the image down by 100px */
+}
+
+.services-images img:hover, .circle:hover {
+  cursor: pointer;
+
+  }
+
+  .services-images img:hover {
+  transition: transform .25s ease-in-out;
+  transform: translateY(-2.5px); /* Slight lift on hover */
+  box-shadow: 0px 12px 24px rgba(0,0,0,0.7); /* Increased shadow on hover */
+}
+.services-extra {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 50px; /* Adjust as needed for spacing between boxes */
+  padding: 0 20px; /* Adjust side padding if needed */
+  margin-top: 1vh; /* Increase this value to create more space between service images and boxes */
+}
+
+
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the label and image */
+
+  
+}
+
+.service-label {
+  font-size: 3vh; /* Adjust size as needed */
+  color: #000000; /* Adjust color as needed */
+
+  font-weight: bold; /* Optional: makes the label text bold */
+}
+
+
+
+/* Lower service label 1 */
+#service-label1 {
+  transform: translateY(6vh); /* Adjust this value as needed */
+}
+
+/* Lower service label 3 */
+#service-label3 {
+  transform: translateY(6vh); /* Adjust this value as needed */
+}
+
+/* Unique background colors for loyalty boxes */
+
+/* Unique background colors for service boxes */
+#serviceBox1 {
+  background-color: #1f1f1f; /* Orange */
+}
+
+#serviceBox2 {
+  background-color: #323232; /* Purple */
+}
+
+#serviceBox3 {
+  display: none; /* Show the new combined box */
+
+}
+
+.service-box {
+  position: relative;
+  height: 38vh;
+  width: 50vh;
+  background-color: #3b3b3b;
+  color: #fff;
+  padding: 2vh;
+  border-radius: 10px;
+ 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border: .35vh solid #fff; 
+  bottom: -5vh;
+  
+}
+
+.service-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.service-interior, .service-exterior {
+  position: relative; /* Ensures that positioning of children is relative to this container */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.Price {
+  position: absolute;
+  bottom: -11vh; /* Positions the paragraph 20px from the bottom of its parent container */
+  width: 100%; /* Ensures the paragraph spans the width of its container */
+  text-align: center; /* Centers the text */
+  margin: 0; /* Removes default margin to ensure precise positioning */
+  font-weight: bold;
+}
+
+.service-interior h4, .service-exterior h4 {
+  font-size: 3.5vh; /* Example size, adjust as needed */
+  /* Optional: You might want to adjust margins to better fit the new size */
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+
+
+.service-box h3 {
+  margin-top: 0;
+  margin-bottom: 10px; /* Increased space between the title and the description */
+  font-size: 4.5vh;
+  text-align: center;
+}
+
+.service-box p {
+  margin: 3px;
+  font-size: 2.3vh; /* Optional: Adjust font size for better readability */
+}
+
+
+.service-tag-wrapper {
+  position: relative;
+  display: inline-block; /* This makes the wrapper fit the content, aiding in positioning */
+}
+.service-price {
+  text-align: center;
+  font-size: 3vh;
+  color: #fff;
+  font-weight: bold;
+  /* Add transform to shift the price upwards. Adjust the value as needed. */
+  transform: translateY(10vh); /* Example: Move up by 20px */
+  display: inline-block; /* or block, depending on your layout needs */
+  width: 100%; /* Ensures it spans the width of its container */
+  position: absolute;
+  bottom: 20vh; /* Adjust as needed */
+  left: 0; /* Adjust as needed */
+}
+
+.service-price-container {
+  position: relative; /* Establishes a positioning context for absolute positioning inside */
+  /* Other styling as needed, like padding, margins, etc. */
+}
+
+.button-container {
+  position: relative; /* Ensures the button stays in flow, adjust positioning as needed */
+  margin-top: 17vh; /* Example spacing above the button */
+}
+
+
+
+
+.service-interior::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0; /* Extend upwards */
+  bottom: -10vh; /* Extend downwards */
+  width: 1px;
+  background-color: #fff;
+}
+
+/* Silver effect for Image 1 */
+#service1 {
+  filter: brightness(1.1) contrast(1.2) grayscale(.9);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.5); /* Increased shadow on hover */
+
+}
+
+/* Gold effect for Image 2 */
+#service2 {
+  filter: sepia(.8) saturate(2) brightness(1) contrast(1.2);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.5); /* Increased shadow on hover */
+
+}
+
+#service3 {
+  filter: saturate(2) brightness(1) contrast(1.2);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.5); /* Increased shadow on hover */
+
+}
+.most-popular-tag {
+  display: block;
+  background-color: #fddc21; /* Gold background for visibility */
+  color: #000; /* Black text color */
+  text-align: center;
+  padding: 2vh;
+  font-weight: bold;
+  position: absolute;
+  bottom:  -10vh; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%); /* Center the tag below the image */
+  border-radius: 15px;
+  font-size: 2vh;
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.3); /* Increased shadow on hover */
+   box-shadow: 0 0 20px #ffd700; /* Soft glow */
+}
+
+
+
+.silver-border {
+  position: relative;
+  border: solid .3vh transparent;
+  border-radius: 8px;
+  border-image: linear-gradient(45deg, #f8f9fa, #adb5bd, #f8f9fa, #6c757d, #f8f9fa) .5 stretch;
+  z-index: 1; /* Ensure the element is above the pseudo-element */
+}
+.sil2ver-border {
+  border: .3vh solid transparent; /* Adjust border size as needed */
+  border-image: linear-gradient(45deg, #f8f9fa, #adb5bd, #f8f9fa, #6c757d, #f8f9fa) .5 stretch;
+  box-shadow: 0 0 20px #ced4da; /* Soft glow */
+
+}
+.gold-border {
+  position: relative;
+  border: solid .3vh transparent;
+  border-radius: 8px;
+  border-image: linear-gradient(45deg, #fff9c4, #fdd835, #c6a700, #fdd835, #fff9c4) .5 stretch;
+  z-index: 1; /* Ensure the element is above the pseudo-element */
+}
+
+
+.ult-border {
+  position: relative;
+  border: solid .3vh transparent;
+  border-radius: 8px;
+  border-image: linear-gradient(to right, #add8e6, #ffb6c1, #ffffe0) 1 stretch;
+  z-index: 1; /* Ensure the element is above the pseudo-element */
+}
+
+.silver-border::after {
+  content: '';
+  position: absolute;
+  top: 5px; /* Adjust these values to control the shadow's spread */
+  left: 5px;
+  z-index: -1;
+  width: calc(100% - 10px); /* Adjust based on the shadow spread */
+  height: calc(100% - 10px);
+  border-radius: 8px; /* Match the border-radius of the parent */
+  background-image: linear-gradient(45deg, #f8f9fa, #adb5bd, #f8f9fa, #6c757d, #f8f9fa);
+  opacity: .5; /* Adjust for shadow intensity */
+  filter: blur(8px); /* Adjust for shadow softness */
+
+}
+
+.gold-border::after {
+  content: '';
+  position: absolute;
+  top: 5px; /* Adjust these values to control the shadow's spread */
+  left: 5px;
+  z-index: -1;
+  width: calc(100% - 10px); /* Adjust based on the shadow spread */
+  height: calc(100% - 10px);
+  border-radius: 8px; /* Match the border-radius of the parent */
+  background-image: linear-gradient(45deg, #fff9c4, #fdd835, #c6a700, #fdd835, #fff9c4);
+  opacity: .5; /* Adjust for shadow intensity */
+  filter: blur(8px); /* Adjust for shadow softness */
+
+}
+
+.ult-border::after {
+  content: '';
+  position: absolute;
+  top: 5px; /* Adjust these values to control the shadow's spread */
+  left: 5px;
+  z-index: -1;
+  width: calc(100% - 10px); /* Adjust based on the shadow spread */
+  height: calc(100% - 10px);
+  border-radius: 8px; /* Match the border-radius of the parent */
+  background-image: linear-gradient(to right, #add8e6, #ffb6c1, #ffffe0);
+  opacity: .5; /* Adjust for shadow intensity */
+  filter: blur(8px); /* Adjust for shadow softness */
+
+}
+
+
+
+
+.footer {
+  position: bottom;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;  /* semi-transparent black */
+  color: white;
+  text-align: center;
+  padding: 1px 0;
+  z-index: 1000;  /* high z-index to float above other elements */
+  transform: translateY(100%);
+  }
+  
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns */
+    grid-gap: 1px; /* Adjust the gap between columns */
+    max-width: 600px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+  .footer-column {
+    flex: 1;
+    flex-basis: calc(33.33% - 100px); /* Adjust as needed */
+    margin: 0 5px; /* Adjust margin for spacing */
+  }
+  .footer-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  
+  .footer-item {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  
+  @media (max-width: 600px) {
+
+  
+    .nav-links {
+      display: none;  /* Hide navigation links */
+    }
+    .icons {
+      display: none;
+    }
+    
+    .navbar {
+      flex-direction: column;
+    }
+    
+    /* Add more responsive styles here */
+  
+
+  }
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+  body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/mountain.jpeg'); /* Replace with your image URL */
+    background-size: cover;
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    background-attachment: fixed; /* Fix the background position */
+    background-position: center;
+    overflow-x: hidden; /* This hides horizontal overflow content */
+      
+  }
+  /* Navbar styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 1rem;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  /* Logo */
+  .logo {
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  
+  }
+  .logo a {
+  text-decoration: none; /* Remove underline */
+  color: white;  /* Set text color */
+  text-shadow:
+  0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .logo img {
+    height: 7.5vh; /* Adjust based on your logo size and navbar height */
+    width: auto; /* Keeps the aspect ratio of the image */
+    /* Add more styling as needed */
+  }
+  /* Style for when mouse hovers over the link */
+  .logo a:hover {
+  color: #555555;  /* Slightly lighter text color */
+  
+  }
+  /* Nav links */
+  .nav-links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease-in-out;
+    text-shadow:
+    -1px -1px 0px rgba(0, 0, 0, 0.25), /* top left */
+    1px -1px 0px rgba(0, 0, 0, 0.25), /* top right */
+    -1px  1px 0px rgba(0, 0, 0, 0.25), /* bottom left */
+    1px  1px 0px rgba(0, 0, 0, 0.25); /* bottom right */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px); /* apply blur effect */
+  }
+  
+  
+  .nav-links a:hover {
+    border-radius: 10px;
+    backdrop-filter: blur(15px); /* apply blur effect */
+    background-color: #5555556e;
+    transform: translateY(-1px);
+  }
+  
+  /* Icons */
+  
+  .dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #57575700;
+    min-width: 160px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+    padding: 2px 12px;
+    z-index: 1;
+    margin-top: -3vh;
+  }
+   
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  .main-content {
+    height: 100vh;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scroll-snap-type: y mandatory;
+  }
+  
+  .section  {
+    height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to start, moving them to the top */
+    padding-top: 5vh; /* Push content down to 3/4 from the top */
+    color: #fff; /* Light text color for better contrast */
+  }
+  /* Improvements for background images */
+  .section > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.7;
+  }
+  
+  .lander img {
+    max-width: 55vh;
+    margin-top: -2vh;
+    filter: saturate(2) brightness(1) contrast(1.2);
+  }
+  
+  
+  .boxes-container {
+    display: inline-block;
+    justify-content: center;
+   
+    padding-top: 20px; /* Adjust as needed for spacing under the logo */
+    margin-top: 10vh;
+    border-radius: 20px;
+    margin-left: 2vh;
+    margin-right: 2vh;
+  }
+  
+  .box {
+    width: 35vh; /* Adjust width as needed */
+    height: 35vh; /* Adjust height as needed */
+    background-color: #f0f0f0; /* Example background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    display: block;
+  }
+  .box img {
+    width: 35vh; /* Adjust width as needed */
+    height: 35vh; /* Adjust height as needed */
+  
+   border-radius: 20px;
+  
+  
+  }
+  .box-title {
+    font-size: 3vh;
+    font-weight: bold;
+    margin-bottom: 10px; /* Adjust space between title and box */
+    text-align: center; /* Center the title if desired */
+  
+  }
+  
+  
+  
+  .header {
+    z-index: 10; /* Ensure content is above the image */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 1vh;
+    border-radius: 10px; /* Rounded corners for the content background */
+    max-width: 50vh; /* Limit content width for better readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    /* Removed positioning properties specific to centering */
+    margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  }
+  
+  /* Text styling for clarity and aesthetics */
+  .section-content h1, .section-content h2, .section-content h3 {
+    margin-bottom: 20px;
+    font-size: 4vh;
+  }
+  
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  
+  
+  
+  .button-container {
+    margin-top: auto; /* This pushes the button to the bottom */
+    width: 100%; /* Ensure it spans the width of its container */
+    text-align: center; /* Center the button inside the container */
+    transform: none; /* Remove translateX as it's no longer absolutely positioned */
+  }
+  
+  .service-box::after, .loyalty-box::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .service-box2 .button-container {
+    margin-top: 11vh; /* Additional spacing from the price or content above */
+  }
+  .Price, .button-container {
+    position: absolute;
+    bottom: 2vh; /* Adjust based on your needs */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .loyalty-button, .service-quote-button {
+    display: inline-block;
+    padding: 2vh 4vh;
+    font-size: 3vh; /* Adjust based on your design */
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Original green color */
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+    box-shadow: 1px 1px 1px;
+    transition: all 0.3s ease;
+  }
+  
+  .loyalty-button:hover, .service-quote-button:hover {
+    background-color: #388E3C; /* Slightly darker shade of green */
+    transform: translate(1px, 1px);
+    box-shadow: 0px 0px 0px;
+  }
+  
+  
+  
+  
+  .services-images {
+    display: flex;
+    justify-content: center;
+    gap: 0vh; /* Adjust gap between images if needed */
+    margin-top: 1vh; /* Adjust top margin if needed */
+    margin-bottom: 2vh; /* Adjust this value to increase/decrease space between images and boxes */
+  }
+  
+  
+  .services-images img {
+    width: 15vh; /* Example size, adjust as needed */
+    height: 15vh;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative; /* Override any absolute positioning */
+    z-index: 0; /* Ensure it doesn't inherit negative z-index */
+    opacity: 1; /* Ensure full opacity */
+    
+  }
+  #service1, #service3 {
+    margin-top: 6vh; /* Moves the image down by 100px */
+  }
+  
+  .services-images img:hover, .circle:hover {
+    cursor: pointer;
+  
+    }
+  
+    .services-images img:hover {
+    transition: transform .25s ease-in-out;
+    transform: translateY(-2.5px); /* Slight lift on hover */
+    box-shadow: 0px 12px 24px rgba(0,0,0,0.7); /* Increased shadow on hover */
+  }
+  .services-extra {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 50px; /* Adjust as needed for spacing between boxes */
+    padding: 0 20px; /* Adjust side padding if needed */
+    margin-top: 1vh; /* Increase this value to create more space between service images and boxes */
+  }
+  
+  
+  
+  .service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the label and image */
+  
+    
+  }
+  
+  .service-label {
+    font-size: 2vh; /* Adjust size as needed */
+    color: #000000; /* Adjust color as needed */
+  
+    font-weight: bold; /* Optional: makes the label text bold */
+  }
+  
+  
+  
+  /* Lower service label 1 */
+  #service-label1 {
+    transform: translateY(6vh); /* Adjust this value as needed */
+  }
+  
+  /* Lower service label 3 */
+  #service-label3 {
+    transform: translateY(6vh); /* Adjust this value as needed */
+  }
+  
+  /* Unique background colors for loyalty boxes */
+  
+  /* Unique background colors for service boxes */
+  #serviceBox1 {
+    background-color: #1f1f1f; /* Orange */
+  }
+  
+  #serviceBox2 {
+    background-color: #323232; /* Purple */
+  }
+  
+  
+  
+  .service-box {
+    position: relative;
+    height: 38vh;
+    width: 20vh;
+    background-color: #3b3b3b;
+    color: #fff;
+    padding: 2vh;
+    border-radius: 10px;
+   
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border: .35vh solid #fff; 
+    bottom: -5vh;
+    
+  }
+  
+  .service-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .service-interior, .service-exterior {
+    position: relative; /* Ensures that positioning of children is relative to this container */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .Price {
+    position: absolute;
+    bottom: -5vh; /* Positions the paragraph 20px from the bottom of its parent container */
+    width: 100%; /* Ensures the paragraph spans the width of its container */
+    text-align: center; /* Centers the text */
+    margin: 0; /* Removes default margin to ensure precise positioning */
+    font-weight: bold;
+  }
+  
+  .service-interior h4, .service-exterior h4 {
+    font-size: 2vh; /* Example size, adjust as needed */
+    /* Optional: You might want to adjust margins to better fit the new size */
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+  
+  
+  .service-box h3 {
+    margin-top: 0;
+    margin-bottom: 10px; /* Increased space between the title and the description */
+    font-size: 4vh;
+    text-align: center;
+  }
+  
+  .service-box p {
+    margin-left: -.2vh;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    font-size: 1.8vh; /* Optional: Adjust font size for better readability */
+  }
+  
+  
+  .service-tag-wrapper {
+    position: relative;
+    display: inline-block; /* This makes the wrapper fit the content, aiding in positioning */
+  }
+  .service-price {
+    text-align: center;
+    font-size: 3vh;
+    color: #fff;
+    font-weight: bold;
+    /* Add transform to shift the price upwards. Adjust the value as needed. */
+    transform: translateY(10vh); /* Example: Move up by 20px */
+    display: inline-block; /* or block, depending on your layout needs */
+    width: 100%; /* Ensures it spans the width of its container */
+    position: absolute;
+    bottom: 23vh; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
+  }
+  
+  .service-price-container {
+    position: relative; /* Establishes a positioning context for absolute positioning inside */
+    /* Other styling as needed, like padding, margins, etc. */
+  }
+  
+  .button-container {
+    position: relative; /* Ensures the button stays in flow, adjust positioning as needed */
+    margin-top: 17vh; /* Example spacing above the button */
+  }
+  
+  
+  
+  
+  .service-interior::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0; /* Extend upwards */
+    bottom: -10vh; /* Extend downwards */
+    width: 1px;
+    background-color: #fff;
+  }
+  
+  /* Silver effect for Image 1 */
+  #service1 {
+    filter: brightness(1.1) contrast(1.2) grayscale(.9);
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.5); /* Increased shadow on hover */
+  
+  }
+  
+  /* Gold effect for Image 2 */
+  #service2 {
+    filter: sepia(.8) saturate(2) brightness(1) contrast(1.2);
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.5); /* Increased shadow on hover */
+  
+  }
+  
+  #service3 {
+    filter: saturate(2) brightness(1) contrast(1.2);
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.5); /* Increased shadow on hover */
+  
+  }
+  .most-popular-tag {
+    display: block;
+    background-color: #fddc21; /* Gold background for visibility */
+    color: #000; /* Black text color */
+    text-align: center;
+    padding: 2vh;
+    font-weight: bold;
+    position: absolute;
+    bottom:  -8vh; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%); /* Center the tag below the image */
+    border-radius: 15px;
+    font-size: 1.5vh;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.3); /* Increased shadow on hover */
+     box-shadow: 0 0 20px #ffd700; /* Soft glow */
+  }
+  
+  
+  
+  .silver-border {
+    position: relative;
+    border: solid .3vh transparent;
+    border-radius: 8px;
+    border-image: linear-gradient(45deg, #f8f9fa, #adb5bd, #f8f9fa, #6c757d, #f8f9fa) .5 stretch;
+    z-index: 1; /* Ensure the element is above the pseudo-element */
+  }
+  .sil2ver-border {
+    border: .3vh solid transparent; /* Adjust border size as needed */
+    border-image: linear-gradient(45deg, #f8f9fa, #adb5bd, #f8f9fa, #6c757d, #f8f9fa) .5 stretch;
+    box-shadow: 0 0 20px #ced4da; /* Soft glow */
+  
+  }
+  .gold-border {
+    position: relative;
+    border: solid .3vh transparent;
+    border-radius: 8px;
+    border-image: linear-gradient(45deg, #fff9c4, #fdd835, #c6a700, #fdd835, #fff9c4) .5 stretch;
+    z-index: 1; /* Ensure the element is above the pseudo-element */
+  }
+  
+  
+  .ult-border {
+    position: relative;
+    border: solid .3vh transparent;
+    border-radius: 8px;
+    border-image: linear-gradient(to right, #add8e6, #ffb6c1, #ffffe0) 1 stretch;
+    z-index: 1; /* Ensure the element is above the pseudo-element */
+  }
+  
+  .silver-border::after {
+    content: '';
+    position: absolute;
+    top: 5px; /* Adjust these values to control the shadow's spread */
+    left: 5px;
+    z-index: -1;
+    width: calc(100% - 10px); /* Adjust based on the shadow spread */
+    height: calc(100% - 10px);
+    border-radius: 8px; /* Match the border-radius of the parent */
+    background-image: linear-gradient(45deg, #f8f9fa, #adb5bd, #f8f9fa, #6c757d, #f8f9fa);
+    opacity: .5; /* Adjust for shadow intensity */
+    filter: blur(8px); /* Adjust for shadow softness */
+  
+  }
+  
+  .gold-border::after {
+    content: '';
+    position: absolute;
+    top: 5px; /* Adjust these values to control the shadow's spread */
+    left: 5px;
+    z-index: -1;
+    width: calc(100% - 10px); /* Adjust based on the shadow spread */
+    height: calc(100% - 10px);
+    border-radius: 8px; /* Match the border-radius of the parent */
+    background-image: linear-gradient(45deg, #fff9c4, #fdd835, #c6a700, #fdd835, #fff9c4);
+    opacity: .5; /* Adjust for shadow intensity */
+    filter: blur(8px); /* Adjust for shadow softness */
+  
+  }
+}
+@media screen and (max-width: 600px) {
+  #serviceBox1, #serviceBox2 {
+    display: none; /* Hide original boxes */
+  }
+
+  #serviceBox3 {
+    display: block; /* Show the new combined box */
+    
+    position: relative;
+    height: 60vh;
+    width: 40vh;
+    background-color: #3b3b3b;
+    color: #fff;
+    padding: 2vh;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border: .35vh solid #fff; 
+    bottom: -3vh;
+    
+  }
+}
+

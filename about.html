@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="icon" href="images/OffTheLot.png" type="image/x-icon">
+  <title>About Off The Lot</title>
+
+</head>
+<style>
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/link3-Photoroom.png'); /* Replace with your image URL */
+    background-size: contain;
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    background-attachment: fixed; /* Fix the background position */
+    background-position: center;
+}
+
+</style>
+<body> 
+  <div class="navbar">
+    <div class="logo"><a href="index.html"><img src="images/mainlogo.png" alt="Logo" /></a></div>
+    <div class="nav-links">
+      
+
+      <a href="LoyaltyProgram.html">Membership</a>
+      <a href="CarDetailingServices.html">Detailing</a>
+     <a href="CarDetailingGallery.html">Gallery</a>
+    </div>
+    <div class="icons">
+      <a href="#" title="Customer Support" id="support-icon"><i class="fas fa-headset"></i></a>
+      <div id="contact-info" class="dropdown-content">
+        <p>Phone: 206-841-7619</p>
+        <p>Email: offthelotservices@gmail.com</p>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>    
+
+  <div class="hero">
+    <h1>About Us</h1>
+
+  </div>
+
+  <div class="two-columns1"> 
+      <div class="image-container">
+      <img src="images/Deca.png" alt="Our Professionals">
+    </div>
+    <div class="text-container">
+      <h2>About Me</h2>
+      <div class="text-para">
+        <p>At Off the Lot, I strive to be give as much value to our customers as possible. Every detail I do is given my utmost effort and attention. </p>
+        <p>I started Off The Lot in 2022. I wanted to make something that really brought value to the world. Being fresh out of highschool starting a business can be daunting though.   </p>
+        <p>As I look to the future, I am excited to continue expanding our services and reaching more car enthusiasts like you. Join me on this journey, and let's elevate your car's appearance together.</p>
+        <p>Experience the Off The Lot difference today!</p>
+        <p>-Collin</p>
+      </div>
+    </div>
+    
+ 
+  </div>
+
+  <div class="two-columns">
+    <div class="image-container">
+      <img src="images/AboutUs3.png" alt="Off The Lot's Mission">
+    </div>
+    <div class="text-container">
+      <h2>My Mission</h2>
+      <div class="text-para">
+        <p>At Off The Lot, our mission is simple yet profound: to redefine the car detailing experience. We're driven by a commitment to excellence and a passion for cars. Our core values of quality, integrity, and customer satisfaction guide every aspect of our business.</p>
+        <p>We believe that a well-maintained vehicle is more than just transportation; it's an expression of pride and personal style. Our mission is to empower car owners to showcase their vehicles at their very best. We achieve this by providing meticulous detailing services, using eco-friendly products, and continuously improving our techniques.</p>
+        <p>Our aim is not just to meet but to exceed your expectations. We want every car to gleam with perfection and reflect our dedication to craftsmanship. We're on a mission to elevate the car detailing industry and set new standards of excellence.</p>
+      </div>
+    </div>
+    
+
+
+</div>
+<!-- Footer -->
+<div class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <a href="index.html" class="footer-item">&copy;OTL</a>
+    </div>
+    <div class="footer-column">
+      <a href="LoyaltyProgram.html" class="footer-item">Membership</a>
+    </div>
+
+    <div class="footer-column">
+      <a href="CarDetailingServices.html" class="footer-item">Detailing</a>
+    </div>
+    <div class="footer-column">
+      <a href="faq.html" class="footer-item">FAQ</a>
+    </div>
+    <div class="footer-column">
+      <a href="CarDetailingGallery.html" class="footer-item">Gallery</a>
+    </div>
+    <div class="footer-column">
+      <a href="about.html" class="footer-item">About Us</a>
+  </div>
+
+  <script>
+    // JavaScript to trigger animations when elements are in view
+    document.addEventListener("DOMContentLoaded", function () {
+      const elements = document.querySelectorAll(".image-container");
+  
+      const isInViewport = (element) => {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        return (
+          rect.top <= windowHeight &&
+          rect.bottom >= 1000  /* Changed this line to make animation trigger earlier */
+        );
+      };
+  
+      const handleScroll = () => {
+        elements.forEach((element) => {
+          if (isInViewport(element)) {
+            element.querySelector('img').style.opacity = '1';  /* Changed this line */
+          }
+        });
+      };
+  
+      window.addEventListener("scroll", handleScroll);
+    });
+    function toggleDropdown(id) {
+    const element = document.getElementById(id);
+    if (element.style.display === 'none' || element.style.display === '') {
+      element.style.display = 'block';
+    } else {
+      element.style.display = 'none';
+    }
+  }
+
+  document.getElementById('support-icon').addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent the default action
+  var dropdownContent = document.getElementById('contact-info');
+  if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
+    dropdownContent.style.display = "block";
+  } else {
+    dropdownContent.style.display = "none";
+  }
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Off The Lot - Mobile Auto Detailing</title>
+  <meta name="description"
+  content="Premium Detailing starting at $250!">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/OffTheLot.png" type="image/x-icon">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GMH5GMF90J">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GMH5GMF90J');
+</script>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+       
+    <div class="logo"><a href="#"><img src="images/mainlogo.png" alt="Logo" /></a></div>
+
+<div class="nav-links">
+    
+    
+      
+      <a href="LoyaltyProgram.html">Membership</a>
+      <a href="CarDetailingServices.html">Detailing</a>
+     <a href="CarDetailingGallery.html">Gallery</a>
+    
+    </div>  
+    <div class="icons">
+      <a href="#" title="Customer Support" id="support-icon"><i class="fas fa-headset"> Contact</i></a>
+      <div id="contact-info" class="dropdown-content">
+        <p>Phone: 206-841-7619</p>
+        <p>Email: offthelotservices@gmail.com</p>
+      </div>
+    </div>
+    
+  </div>
+
+ 
+  <!-- Sections -->
+  <div class="main-content">
+
+      <div class="section1">
+    
+        <img src="images/needle.jpg" alt="Full Car Detailing Service">
+      
+      <div class="section-content1">
+        <h1>Welcome to Off The Lot</h1>
+        <h1 style="color: #fbf69a">Spring Special</h1>
+        <p style="color: #fff875"><class style="color: #ffe921" style="font-size: 43px;">10% Off   </class>   Your First Detail!</p>
+        <a href="booking2.html">
+          <button>Get a Quote!</button>
+        </a>
+      </div>
+      <i class="fas fa-angle-down bounce-arrow"></i> <!-- Bouncing arrow icon -->
+    </div> 
+
+    <div class="section2">
+      <video autoplay loop muted playsinline>
+        <source src="videos/LoyaltyProgram.mp4" type="video/mp4" alt="Car Detailing Loyalty Program">
+        Your browser does not support the video tag.
+    </video>
+    
+      <div class="section-content2">
+        <h1>Membership</h1>
+        <p>Detailing and Exclusive Rewards starting at $120!
+        </p>
+      <a href="LoyaltyProgram.html">
+        <button>Learn More</button>
+      </a>
+      </div>
+      <i class="fas fa-angle-down bounce-arrow"></i> <!-- Bouncing arrow icon -->
+    </div>
+  
+
+    <div class="section3">
+      <img src="images/mountain.jpeg" alt="Full Car Detailing Service">
+      <div class="section-content3">
+        <h1>Detailing</h1>
+        <p>Premium Detailing Starting at $250!</p>
+  
+        <a href="CarDetailingServices.html"> <button>Learn More</button></a>
+      </div>
+      <i class="fas fa-angle-down bounce-arrow"></i> <!-- Bouncing arrow icon -->
+    </div>
+    
+    <div class="section4">
+      <img src="gallery/Blue1.jpg" alt="Deluxe Car Detailing Service">
+      <div class="section-content4">
+        <h1>Gallery</h1>
+        <p>Our Commitment to Quality is Unmatched </p>
+        <a href="CarDetailingGallery.html"> <button>Learn More</button></a>
+      </div>
+      <i class="fas fa-angle-down bounce-arrow"></i> <!-- Bouncing arrow icon -->
+    </div>
+    
+    <div class="section5">
+      <img src="images/me2.jpg" alt="Full Car Detailing Service">
+      <div class="section-content5">
+        <h1>About Me</h1>
+        <p>Why Choose Off The Lot?</p>
+       
+        <a href="about.html"> <button>Learn More</button></a>
+      </div>
+    </div> <!--
+    <div class="section">
+      <video autoplay loop muted>
+        <source src="videos/AdobeStock_533774397 (1).mov" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="section-content">
+        <h1>OTL DETAIL</h1>
+        <p>Starting at $550</p>
+        <a href="#"> <button>Book Now!</button> </a>
+        <a href="OTL.html"> <button>Learn More</button></a>
+      </div>
+    </div>
+-->
+
+  </div>
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <a href="index.html" class="footer-item">&copy;OTL</a>
+        </div>
+        <div class="footer-column">
+          <a href="LoyaltyProgram.html" class="footer-item">Membership</a>
+        </div>
+
+        <div class="footer-column">
+          <a href="CarDetailingServices.html" class="footer-item">Detailing</a>
+        </div>
+        <div class="footer-column">
+          <a href="faq.html" class="footer-item">FAQ</a>
+        </div>
+        <div class="footer-column">
+          <a href="CarDetailingGallery.html" class="footer-item">Gallery</a>
+        </div>
+        <div class="footer-column">
+          <a href="about.html" class="footer-item">About Me</a>
+      </div>
+
+  <script>
+
+
+
+const footer = document.querySelector('.footer');
+const mainContent = document.querySelector('.main-content');
+
+mainContent.addEventListener('scroll', () => {
+  // Check if the user has scrolled to the bottom
+  if (mainContent.scrollHeight - mainContent.scrollTop === mainContent.clientHeight) {
+    footer.style.transform = 'translateY(0)';
+  } else {
+    footer.style.transform = 'translateY(100%)';
+  }
+});
+
+
+    // Select all nav links and add hover effect as before
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    navLinks.forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        navLinks.forEach(nav => nav.classList.add('hover-effect'));
+      });
+      link.addEventListener('mouseleave', () => {
+        navLinks.forEach(nav => nav.classList.remove('hover-effect'));
+      });
+    });
+    const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    } else {
+      entry.target.classList.remove('animate');
+    }
+  });
+});
+
+document.querySelectorAll('.section-content').forEach(section => {
+  observer.observe(section);
+});
+
+window.onload = function() {
+      const deluxeButton = document.querySelector('.deluxe-button');
+      deluxeButton.classList.add('ready');
+    };
+
+    document.getElementById('support-icon').addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent the default action
+  var dropdownContent = document.getElementById('contact-info');
+  if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
+    dropdownContent.style.display = "block";
+  } else {
+    dropdownContent.style.display = "none";
+  }
+});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="booking.css">
+    <title>Car Detailing Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/OffTheLot.png" type="image/x-icon">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQVpGBjodo48v457KBtnzPTwJwmz-4XpI&callback=initMap&libraries=places"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+    background-image: url('images/mountain.jpeg'); /* Path to your image */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+
+}
+#service1-background {
+  background-image: url('images/OffTheLot.png');
+}
+
+</style>
+<body>
+    <div class="navbar">
+        <div class="logo"><a href="index.html"><img src="images/mainlogo.png" alt="Logo" /></a></div>       
+      </div>
+    <div class="container">
+        <div class="form-container" id="bookingFormContainer"> <h2>Get Your Qoute Now!</h2>
+            <form id="serviceTypeForm">
+                <div class="service-type-container">
+                    <label class="service-item" for="premium">
+                        <div class="service-label">
+                            <div class="service-background" id="service2-background">
+                                <div>
+                                    <input type="radio" id="premium" name="serviceType" value="B" data-price="250" data-code="a1" hidden>
+                                    <label for="premium">Clean</label>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                      <label class="service-item" for="basic">
+                        <div class="service-label">
+                            <div class="service-background" id="service1-background">
+                                <div>
+                                    <input type="radio" id="basic" name="serviceType" value="A" data-price="320" data-code="a2" checked hidden>
+                                    <label for="basic">Shine</label>                           
+                                </div>
+                            </div>                                                     
+                        </div>
+                    </label>
+                    <label class="service-item" for="deluxe">                       
+                        <div class="service-label">
+                            <div class="service-background" id="service3-background">
+                                <div>
+                                    <input type="radio" id="deluxe" name="serviceType" value="C" data-price="480" data-code="a3" hidden>
+                                    <label for="deluxe">Deep</label>
+                                </div>
+                            </div>                           
+                        </div>
+                    </label>
+                </div>
+            </form>
+
+
+
+            
+            <form id="select-container">
+                <div class="select-type-container">
+                    <label class="select-item" for="exterior">
+                        <div class="select-label">
+                            <div class="select-background" id="select1-background">
+                                <div>
+                                    <input type="radio" id="exterior" name="selectType" value="D" data-price="280" data-code="b1" hidden>
+                                    <label for="">Exterior</label>  
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="select-item" for="both">
+                        <div class="select-label">
+                            <div class="select-background" id="select2-background">
+                                <div>
+                                    <input type="radio" id="both" name="selectType" value="E" data-price="480" data-code="b2" checked hidden>
+                                    <label for="1">Package</label>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </label>
+                    <label class="select-item" for="interior">
+                        <div class="select-label">
+                            <div class="select-background" id="select3-background">
+                                <div>
+                                    <input type="radio" id="interior" name="selectType" value="F" data-price="280" data-code="b3" hidden>
+                                    <label for="this">Interior</label>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </form>
+
+
+            <!-- Existing form elements go here -->
+            <form id="bookingForm">
+ 
+
+        <label for="userAddress">Address Of Service:(Street Address, City, State)</label>
+        <input type="text" id="userAddress" name="userAddress">
+
+    </form>
+    <form id="bookingForm">
+    <label for="vehicleSize">Vehicle Size:</label>
+    <select id="vehicleSize">
+        <option value="" data-price="0"></option>
+       <option value="prod_PHOL5PCTtptRjX" name="vehicleSize" data-price="0" data-code="c1">Small (Compact)</option>
+        <option value="prod_PHOJ4ZmepOWYtq" name="vehicleSize" data-price="0" data-code="c2">Medium (Sedan)</option>
+        <option value="prod_P8u3OHIunqr7vj" name="vehicleSize" data-price="15" data-code="c3">Large (SUV) +15%</option>
+        <option value="prod_P8u5kQ9KIKnRMh" name="vehicleSize" data-price="20" data-code="c4">Extra Large (Truck/Van) +20%</option>
+    </select>
+    
+    </form>
+    <div id="productSelection">
+        <form id="bookingForm">
+            <label for="vehicleSize">Please Select All That Apply Your Detail:</label>
+            <hr>
+            <div class="addon-container">
+                <label class="addon-item addon-interior" for="addon1">
+                    <input type="checkbox" id="addon1" name="addons" data-price="50" value="prod_P8tGR3G56syXrD" data-code="d1" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon1-background">
+                            <span class="addon-text">Pet Hair</span>
+                            <span class="addon-price">$50</span>
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">Any Pet hair in the car needs to be removed. If pets ride in the car, you would need to select this option.</span>
+                    </span>
+                </label>
+                
+                
+                
+                
+                <label class="addon-item addon-exterior" for="addon2">
+                    <input type="checkbox" id="addon2" name="addons" data-price="50" value="prod_P8tt37QCRSV6Gs" data-code="d2" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon2-background">
+                            <span class="addon-text">Sap</span>
+                            <span class="addon-price">$50</span>
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">If there is any Sap on the Exterior of the vehicle you would need to select this option.</span>
+                    </span>
+                </label>
+
+                <label class="addon-item addon-exterior" for="addon3">
+                    <input type="checkbox" id="addon3" name="addons" data-price="50" value="prod_PLCBKd9EVDLZdS" data-code="d3" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon3-background">
+                            <span class="addon-text">Bug/Tar</span> <!-- Existing text -->
+                            <span class="addon-price">$50</span> <!-- New price span -->
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">If there is any Bug/Tar on the Exterior of the vehicle you would need to select this option.</span>
+                    </span>
+                </label>
+                <label class="addon-item addon-interior" for="addon9">
+                    <input type="checkbox" id="addon9" name="addons" data-price="0" value="prod_PMDzg9ZV656Wi9" data-code="d4" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon9-background">
+                            <span class="addon-text">Mold</span> <!-- Existing text -->
+                            <span class="addon-price">Variable</span> <!-- New price span -->
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">If there is any Mold on the Interior of the vehicle you would need to select this option.</span>
+                    </span>
+                </label>
+<label class="addon-item addon-exterior" for="addon7">
+                    <input type="checkbox" id="addon7" name="addons" data-price="75" value="prod_PMDy0TE074b44a" data-code="d5" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon7-background">
+                            <span class="addon-text">High Exterior Soil</span> <!-- Existing text -->
+                            <span class="addon-price">$75</span> <!-- New price span -->
+                        </div>
+                    </div>
+                     <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">High soil level on the Exterior of the vehicle would need to select this option</span>
+                    </span>
+                    
+                </label>
+                <label class="addon-item addon-interior" for="addon8">
+                    <input type="checkbox" id="addon8" name="addons" data-price="75" value="prod_PMDzYJGCCQCwUP" data-code="d6" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon8-background">
+                            <span class="addon-text">High Interior Soil</span> <!-- Existing text -->
+                            <span class="addon-price">$75</span> <!-- New price span -->
+                        </div>
+                    </div>
+                   <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">High soil level on the Interior of the vehicle would need to select this option</span>
+                    </span>
+                </label>
+                <label class="addon-item addon-interior" for="addon4">
+                    <input type="checkbox" id="addon4" name="addons" data-price="0" value="prod_PLCAfFt5VE1RpE" data-code="d7" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon4-background">
+                            <span class="addon-text">Bio Spills</span> <!-- Existing text -->
+                            <span class="addon-price">Variable</span> <!-- New price span -->
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">Bio Spills include Blood or Bodily Fluids, Food and Beverage Spills, Pet-Related Spills and Medical Waste. If any apply you would need to select this option. </span>
+                    </span>
+                </label>
+
+                <label class="addon-item addon-interior" for="addon5">
+                    <input type="checkbox" id="addon5" name="addons" data-price="0" value="prod_PKnltie7hBvrZD" data-code="d8" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon5-background">
+                            <span class="addon-text">Paint/Dye Spills</span> <!-- Existing text -->
+                            <span class="addon-price">Variable</span> <!-- New price span -->
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">If there are any Paint/Dye Spills on the Interior of the vehicle you would need to select this option.</span>
+                    </span>
+                </label>
+
+                <label class="addon-item addon-interior" for="addon6">
+                    <input type="checkbox" id="addon6" name="addons" data-price="50" value="prod_PLC6h2cNZo7bGy" data-code="d9" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon6-background">
+                            <span class="addon-text">No Electricty</span> <!-- Existing text -->
+                            <span class="addon-price">$50</span> <!-- New price span -->
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">If Electricty is not provided or available for any reason you would need to select this option.</span>
+                    </span>
+                </label>
+ 
+            </div>
+        </form>
+    </div>
+    
+    
+
+   
+    <button id="switchToInfoFormBtn">Continue ></button>
+    </div>
+    
+    </form>
+    <div class="form-container" id="infoFormContainer">
+        <h2>Booking Information</h2>
+        
+        <div class="info-item">
+            <div class="info-title">Detail Type:</div>
+            <div class="info-answer" id="displayService"></div>
+        </div>
+        <div class="info-item">
+            <div class="info-title">Service Type:</div>
+            <div class="info-answer" id="displaySelectType"></div>
+        </div>
+        <div class="info-item">
+            <div class="info-title">Address:</div>
+            <div class="info-answer" id="displayAddress"></div>
+        </div>
+    
+        <div class="info-item">
+            <div class="info-title">Vehicle Size:</div>
+            <div class="info-answer" id="displayVehicleSize"></div>
+        </div>
+    
+        <div class="info-item">
+            <div class="info-title">Add-ons:</div>
+            <div class="info-answer" id="displayAddons"></div>
+        </div>
+        <div class="info-item">
+            <div class="info-title">Booking Code:</div>
+            <div class="info-answer" id="displayCode"></div>
+        </div>
+        <!-- Other items here -->
+    
+        <div class="price-container" id="desktopPriceContainer">
+            <div class="price">
+                <span id="price">$320.00</span>
+                <button id="checkoutButton">Continue to Booking</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+    <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    setupEventListeners();
+    updateAllDisplays();
+    initMap();
+    updatePrice();
+    toggleAddons();
+    checkAllConditions(); // Initial check on page load
+});
+
+// Function to check the state of both checkboxes and enable/disable the checkout button
+function checkAllConditions() {
+    var addressProvided = document.getElementById("userAddress").value.trim() !== "";
+    var vehicleSizeSelected = document.getElementById("vehicleSize").value !== "";
+}
+
+// Event listeners for checkboxes, address input, and vehicle size dropdown
+document.getElementById('userAddress').addEventListener('input', checkAllConditions); // 'input' event for real-time validation
+document.getElementById('vehicleSize').addEventListener('change', checkAllConditions);
+
+document.querySelectorAll('.info-icon').forEach(function(icon) {
+    icon.addEventListener('click', function(event) {
+        // Stop the event from propagating to parent elements
+        event.stopPropagation();
+        event.preventDefault();
+
+        // Toggle the visibility of the info popup
+        var popup = this.querySelector('.info-popup');
+        if (popup.style.visibility === 'visible') {
+            popup.style.visibility = 'hidden';
+            popup.style.opacity = '0';
+        } else {
+            popup.style.visibility = 'visible';
+            popup.style.opacity = '1';
+        }
+    });
+});
+
+function generateCode() {
+    let finalCode = '';
+
+    // Service Type
+    const selectedService = document.querySelector('input[name="serviceType"]:checked');
+    if (selectedService) {
+        finalCode += selectedService.getAttribute('data-code');
+    }
+
+    // Select Type
+    const selectedSelect = document.querySelector('input[name="selectType"]:checked');
+    if (selectedSelect) {
+        finalCode += selectedSelect.getAttribute('data-code');
+    }
+
+    // Vehicle Size
+    const selectedVehicleSize = document.getElementById('vehicleSize').querySelector('option:checked');
+    if (selectedVehicleSize) {
+        finalCode += selectedVehicleSize.getAttribute('data-code');
+    }
+
+    // Addons
+    const selectedAddons = document.querySelectorAll('input[name="addons"]:checked');
+    selectedAddons.forEach(addon => {
+        finalCode += addon.getAttribute('data-code');
+    });
+
+    // Append distance-based code
+    if (distance <= 10) {
+        finalCode += 'e1'; // Under 10 miles
+    } else if (distance > 10 && distance <= 15) {
+        finalCode += 'e2'; // Above 10 up to 15 miles
+    } else if (distance > 15) {
+        finalCode += 'e3'; // Higher than 15 miles
+    }
+
+    // Display the final code
+    document.getElementById("displayCode").innerText = finalCode;
+}
+
+document.querySelectorAll('input[name="serviceType"], input[name="selectType"], input[name="addons"], #vehicleSize').forEach(input => {
+    input.addEventListener('change', generateCode);
+});
+
+document.getElementById('checkoutButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default form action
+
+    // Initialize an empty errorMessage string.
+    let errorMessage = '';
+
+    // Check if address is provided.
+    var addressProvided = document.getElementById("userAddress").value.trim() !== "";
+    if (!addressProvided) {
+        errorMessage += "Address is required.\n";
+    }
+
+    // Check if vehicle size is selected.
+    var vehicleSizeSelected = document.getElementById("vehicleSize").value !== "";
+    if (!vehicleSizeSelected) {
+        errorMessage += "Please select a vehicle size.\n";
+    }
+
+    // Assume all conditions are met initially
+    var allConditionsMet = errorMessage === "";
+
+    if (allConditionsMet) {
+        var bookingFormContainer = document.getElementById('bookingFormContainer');
+
+        // Clear existing content
+        bookingFormContainer.innerHTML = '';
+
+        // Create the Calendly widget div and append it to the container
+        var calendlyWidgetDiv = document.createElement('div');
+        calendlyWidgetDiv.className = 'calendly-inline-widget';
+        calendlyWidgetDiv.setAttribute('data-url', 'https://calendly.com/offthelot/your-detail');
+        calendlyWidgetDiv.style.minWidth = '320px';
+        calendlyWidgetDiv.style.height = '830px'; // Ensure visibility of the widget
+        bookingFormContainer.appendChild(calendlyWidgetDiv);
+
+        // Dynamically load the Calendly script
+        var calendlyScript = document.createElement('script');
+        calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
+        document.body.appendChild(calendlyScript);
+
+        // Hide the "Continue to Booking" button
+        document.getElementById('checkoutButton').style.display = 'none';
+    } else {
+        // If conditions are not met, display the collected error messages.
+        alert(errorMessage);
+    }
+});
+
+document.getElementById('userAddress').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevents the default form submit action
+        calculateDistance();    // Call your function to process the address
+    }
+});
+ 
+let map, service;
+const businessAddress = "17243 10th ave NW, Shoreline, Washington";
+let distance = 0;
+
+const firstDistanceThreshold = 10;
+const secondDistanceThreshold = 15;
+
+function initMap() {
+    map = new google.maps.Map(document.createElement('div'));
+    service = new google.maps.DistanceMatrixService();
+}
+
+function calculateDistance() {
+    const userAddress = document.getElementById("userAddress").value;
+
+    service.getDistanceMatrix({
+        origins: [businessAddress],
+        destinations: [userAddress],
+        travelMode: 'DRIVING',
+    }, function(response, status) {
+        if (status == 'OK') {
+            distance = response.rows[0].elements[0].distance.value / 1609.34; // Convert meters to miles
+            updatePrice(); // Assuming this updates the price based on the new distance
+            updateAddressDisplay(); // Update any displays or UI components that depend on the address
+
+            // Call generateCode to update the booking code based on the new distance
+            generateCode();
+        } else {
+            alert('Error calculating distance: ' + status);
+        }
+    });
+}
+
+function updatePrice() {
+    let finalPrice = 0; // Initialize finalPrice
+
+    // Get the selected service and select types
+    const selectedServiceRadio = document.querySelector('input[name="serviceType"]:checked');
+    const selectedServiceType = selectedServiceRadio.value;
+    const selectedSelectType = document.querySelector('input[name="selectType"]:checked').value;
+
+    // Determine price based on combination of service and select types
+    if (selectedServiceType === 'A' && selectedSelectType === 'F') {
+        finalPrice = 250; // Case for A + F
+    } else if (selectedServiceType === 'B' && selectedSelectType === 'F') {
+        finalPrice = 180; // Case for B + F
+    } else if (selectedServiceType === 'C' && selectedSelectType === 'F') {
+        finalPrice = 320; // Case for B + F
+    } else if (selectedServiceType === 'A' && selectedSelectType === 'D') {
+        finalPrice = 250; // Case for B + F
+    } else if (selectedServiceType === 'B' && selectedSelectType === 'D') {
+        finalPrice = 180; // Case for B + F
+    } else if (selectedServiceType === 'C' && selectedSelectType === 'D') {
+        finalPrice = 320; // Case for B + F
+    } else {
+        finalPrice = parseFloat(selectedServiceRadio.getAttribute('data-price'));
+    }
+
+    // Adjust final price based on vehicle size
+    const vehicleSizeOption = document.querySelector('#vehicleSize option:checked');
+    if (vehicleSizeOption && vehicleSizeOption.getAttribute('data-price') !== "0") {
+        // Calculate the percentage increase
+        const percentageIncrease = parseFloat(vehicleSizeOption.getAttribute('data-price')) / 100;
+        finalPrice += finalPrice * percentageIncrease; // Increase finalPrice by the percentage
+    }
+
+    // Consider distance charges
+    if (distance > firstDistanceThreshold && distance <= secondDistanceThreshold) {
+        finalPrice += 25; // Adjust this value as per your pricing
+    } else if (distance > secondDistanceThreshold) {
+        finalPrice += 50; // Adjust this value as per your pricing
+    }
+
+    // Add price of selected addons
+    document.querySelectorAll('input[name="addons"]:checked').forEach(function(addon) {
+        finalPrice += parseFloat(addon.getAttribute('data-price'));
+    });
+
+    // Update the displayed price
+    document.getElementById("price").innerHTML = "$" + finalPrice.toFixed(2);
+    updateAllDisplays();
+}
+
+function updateAllDisplays() {
+    updateServiceDisplay();
+    updateSelectTypeDisplay(); // Add this line
+    updateVehicleSizeDisplay();
+    updateAddonsDisplay();
+}
+
+function updateSelectTypeDisplay() {
+    // Find the checked select type radio button
+    const selectedSelectTypeRadio = document.querySelector('input[name="selectType"]:checked');
+    // Find the label text associated with the checked radio button
+    if (selectedSelectTypeRadio) {
+        const selectTypeLabel = document.querySelector('label[for="' + selectedSelectTypeRadio.id + '"]').textContent.trim();
+        document.getElementById("displaySelectType").innerText = selectTypeLabel;
+    } else {
+        document.getElementById("displaySelectType").innerText = "Not Selected";
+    }
+}
+
+function updateServiceDisplay() {
+    const selectedServiceLabel = document.querySelector('input[name="serviceType"]:checked + label').textContent;
+    document.getElementById("displayService").innerText = selectedServiceLabel;
+}
+
+function updateAddressDisplay() {
+    const address = document.getElementById("userAddress").value;
+    document.getElementById("displayAddress").innerText = address;
+}
+
+function updateVehicleSizeDisplay() {
+    const vehicleSize = document.getElementById("vehicleSize").options[document.getElementById("vehicleSize").selectedIndex].text;
+    document.getElementById("displayVehicleSize").innerText = vehicleSize;
+}
+
+function updateAddonsDisplay() {
+    const addons = document.getElementsByName('addons');
+    let addonsContainer = document.getElementById("displayAddons");
+    addonsContainer.innerHTML = ''; // Clear existing content
+
+    for (let i = 0; i < addons.length; i++) {
+        if (addons[i].checked) {
+            // Find the corresponding .addon-text for this addon
+            let addonText = document.querySelector('label[for="' + addons[i].id + '"] .addon-text').textContent;
+
+            let div = document.createElement('div');
+            div.textContent = addonText; // Use only the text, not the price
+            addonsContainer.appendChild(div);
+        }
+    }
+}
+
+document.querySelectorAll('input[name="selectType"]').forEach(element => {
+    element.addEventListener('change', updateAddonsOnSelectChange);
+});
+
+function updateAddonsOnSelectChange() {
+    // Hide all addons initially
+    const allAddons = document.querySelectorAll('.addon-item');
+    allAddons.forEach(addon => addon.style.display = 'none');
+
+    // Determine which addons to show based on selected select type
+    let addonClassesToShow = [];
+    const selectedSelectValue = document.querySelector('input[name="selectType"]:checked').value;
+    
+    if (selectedSelectValue === 'D') { // Exterior
+        addonClassesToShow = ['.addon-exterior'];
+    } else if (selectedSelectValue === 'E') { // Complete Detail
+        addonClassesToShow = ['.addon-both', '.addon-exterior', '.addon-interior'];
+    } else if (selectedSelectValue === 'F') { // Interior
+        addonClassesToShow = ['.addon-interior'];
+    }
+
+    // Show the relevant addons
+    addonClassesToShow.forEach(selector => {
+        document.querySelectorAll(selector).forEach(addon => addon.style.display = 'block');
+    });
+}
+
+// Initialize the correct addon display on page load based on the selected "Select Type"
+window.addEventListener('DOMContentLoaded', () => {
+    const selectedSelect = document.querySelector('input[name="selectType"]:checked');
+    if (selectedSelect) {
+        updateAddonsOnSelectChange.call(selectedSelect);
+    }
+});
+
+function updateAddonsOnServiceChange(newServiceType) {
+    // Define which add-ons are relevant for each service type
+    const exteriorAddons = new Set(['addon2', 'addon3', 'addon7', 'addon8', 'addon9', 'addon10', 'addon11']);
+    const interiorAddons = new Set(['addon1', 'addon4', 'addon5', 'addon6', 'addon12']);
+
+    // Determine which set of add-ons to keep based on the new service type
+    let addonsToKeep;
+    if (newServiceType === 'D') { // Deluxe Exterior
+        addonsToKeep = exteriorAddons;
+    } else if (newServiceType === 'F') { // Deluxe Interior
+        addonsToKeep = interiorAddons;
+    } else { // Deluxe Detail or other services
+        addonsToKeep = new Set([...exteriorAddons, ...interiorAddons]);
+    }
+
+    // Iterate through each add-on checkbox
+    document.querySelectorAll('input[name="addons"]').forEach(addon => {
+        // If the add-on is not in the set to keep, uncheck and hide it
+        if (!addonsToKeep.has(addon.id)) {
+            addon.checked = false;
+            addon.closest('.addon-item').classList.remove('displayed');
+        }
+    });
+
+    // Update the display and cart
+    updateAddonsDisplay();
+    updatePrice();
+}
+
+document.querySelectorAll('input[name="selectType"]').forEach(radio => {
+    radio.addEventListener('change', (event) => {
+        updateAddonsOnServiceChange(event.target.value);
+    });
+});
+
+function setupEventListeners() {
+    document.getElementById('vehicleSize').addEventListener('change', () => {
+        updatePrice();
+        updateVehicleSizeDisplay();
+    });
+
+    document.querySelectorAll('input[name="addons"]').forEach(element => {
+        element.addEventListener('change', updatePrice);
+    });
+
+    document.querySelectorAll('input[name="serviceType"]').forEach(element => {
+        element.addEventListener('change', () => {
+            updatePrice();
+            toggleAddons();
+        });
+    });
+
+    document.getElementById('userAddress').addEventListener('change', calculateDistance);
+}
+
+function toggleAddons() {
+    const selectedService = document.querySelector('input[name="serviceType"]:checked').value;
+    updateAddonsDisplay();
+}
+
+// Function to handle changes for Service Type
+function handleServiceTypeChange() {
+    // Iterate over all service items and add 'grayed-out'
+    document.querySelectorAll('.service-item').forEach(item => {
+        item.classList.add('grayed-out');
+    });
+    // Remove 'grayed-out' from the selected service item
+    this.closest('.service-item').classList.remove('grayed-out');
+}
+
+// Apply the event listener to each service type input element
+document.querySelectorAll('input[name="serviceType"]').forEach(element => {
+    element.addEventListener('change', handleServiceTypeChange);
+});
+
+// Function to handle changes for Select Type
+function handleSelectTypeChange() {
+    // Iterate over all select items and add 'grayed-out'
+    document.querySelectorAll('.select-item').forEach(item => {
+        item.classList.add('grayed-out');
+    });
+    // Remove 'grayed-out' from the selected select item
+    this.closest('.select-item').classList.remove('grayed-out');
+}
+
+// Apply the event listener to each select type input element
+document.querySelectorAll('input[name="selectType"]').forEach(element => {
+    element.addEventListener('change', handleSelectTypeChange);
+});
+
+// Initialize the 'grayed-out' state based on preselected options when the page loads
+window.addEventListener('DOMContentLoaded', (event) => {
+    const preselectedService = document.querySelector('input[name="serviceType"]:checked');
+    if (preselectedService) {
+        handleServiceTypeChange.call(preselectedService);
+    }
+    const preselectedSelect = document.querySelector('input[name="selectType"]:checked');
+    if (preselectedSelect) {
+        handleSelectTypeChange.call(preselectedSelect);
+    }
+});
+
+
+
+        </script>
+        
+</body>
+</html>

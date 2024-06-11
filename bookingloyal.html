@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="loyaltybooking.css">
+    <title>Car Detailing Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/OffTheLot.png" type="image/x-icon">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQVpGBjodo48v457KBtnzPTwJwmz-4XpI&callback=initMap&libraries=places"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+    background-image: url('images/LoyaltyProgram.jpeg'); /* Path to your image */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+
+}
+#service1-background {
+  background-image: url('images/OffTheLot.png');
+}
+
+</style>
+<body>
+    <div class="navbar">
+        <div class="logo"><a href="index.html"><img src="images/mainlogo.png" alt="Logo" /></a></div>
+       
+      </div>
+    <div class="container">
+        <div class="form-container" id="bookingFormContainer"> <h2>Get Your Loyalty Qoute Now!</h2>
+            <form id="serviceTypeForm">
+                <div class="service-type-container">
+                    <label class="service-item" for="premium">
+                        <div class="service-label">
+                            <div class="service-background" id="service2-background">
+                                <div>
+                                    <input type="radio" id="premium" name="serviceType" value="B" data-price="120" data-code="a1" hidden>
+                                    <label for="premium">Clean Package</label>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                      <label class="service-item" for="basic">
+                        <div class="service-label">
+                            <div class="service-background" id="service1-background">
+                                <div>
+                                    <input type="radio" id="basic" name="serviceType" value="A" data-price="120" data-code="a2" checked hidden>
+                                    <label for="basic">Shine Interior</label>                           
+                                </div>
+                            </div>                                                     
+                        </div>
+                    </label>
+                    <label class="service-item" for="deluxe">                       
+                        <div class="service-label">
+                            <div class="service-background" id="service3-background">
+                                <div>
+                                    <input type="radio" id="deluxe" name="serviceType" value="C" data-price="120" data-code="a3" hidden>
+                                    <label for="deluxe">Shine Exterior</label>
+                                </div>
+                            </div>                           
+                        </div>
+                    </label>
+                </div>
+            </form>
+
+            <!-- Existing form elements go here -->
+            <form id="bookingForm">
+ 
+
+        <label for="userAddress">Address Of Service:(Street Address, City, State)</label>
+        <input type="text" id="userAddress" name="userAddress">
+
+    </form>
+    <form id="bookingForm">
+    <label for="vehicleSize">Vehicle Size:</label>
+    <select id="vehicleSize">
+        <option value="" data-price="0"></option>
+       <option value="prod_PHOL5PCTtptRjX" name="vehicleSize" data-price="0" data-code="c1">Small (Compact)</option>
+        <option value="prod_PHOJ4ZmepOWYtq" name="vehicleSize" data-price="0" data-code="c2">Medium (Sedan)</option>
+        <option value="prod_P8u3OHIunqr7vj" name="vehicleSize" data-price="15" data-code="c3">Large (SUV) +$15</option>
+        <option value="prod_P8u5kQ9KIKnRMh" name="vehicleSize" data-price="25" data-code="c4">Extra Large (Truck/Van) +$25</option>
+    </select>
+    
+    </form>
+    <div id="productSelection">
+        <form id="bookingForm">
+            <label for="vehicleSize">Please Select All That Apply Your Detail:</label>
+            <hr>
+            <div class="addon-container">
+                <label class="addon-item addon-interior" for="addon1">
+                    <input type="checkbox" id="addon1" name="addons" data-price="50" value="prod_P8tGR3G56syXrD" data-code="d1" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon1-background">
+                            <span class="addon-text">Pet Hair</span>
+                            <span class="addon-price">$50</span>
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">Any Pet hair in the car needs to be removed. If pets ride in the car, you would need to select this option.</span>
+                    </span>
+                </label>
+                
+                
+                
+                
+                <label class="addon-item addon-exterior" for="addon2">
+                    <input type="checkbox" id="addon2" name="addons" data-price="50" value="prod_P8tt37QCRSV6Gs" data-code="d2" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon2-background">
+                            <span class="addon-text">Sap</span>
+                            <span class="addon-price">$50</span>
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">If there is any Sap on the Exterior of the vehicle you would need to select this option.</span>
+                    </span>
+                </label>
+
+                <label class="addon-item addon-exterior" for="addon3">
+                    <input type="checkbox" id="addon3" name="addons" data-price="50" value="prod_PLCBKd9EVDLZdS" data-code="d3" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon3-background">
+                            <span class="addon-text">Bug/Tar</span> <!-- Existing text -->
+                            <span class="addon-price">$50</span> <!-- New price span -->
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">If there is any Bug/Tar on the Exterior of the vehicle you would need to select this option.</span>
+                    </span>
+                </label>
+                <label class="addon-item addon-interior" for="addon9">
+                    <input type="checkbox" id="addon9" name="addons" data-price="0" value="prod_PMDzg9ZV656Wi9" data-code="d4" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon9-background">
+                            <span class="addon-text">Mold</span> <!-- Existing text -->
+                            <span class="addon-price">Variable</span> <!-- New price span -->
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">If there is any Mold on the Interior of the vehicle you would need to select this option.</span>
+                    </span>
+                </label>
+<label class="addon-item addon-exterior" for="addon7">
+                    <input type="checkbox" id="addon7" name="addons" data-price="75" value="prod_PMDy0TE074b44a" data-code="d5" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon7-background">
+                            <span class="addon-text">High Exterior Soil</span> <!-- Existing text -->
+                            <span class="addon-price">$75</span> <!-- New price span -->
+                        </div>
+                    </div>
+                     <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">High soil level on the Exterior of the vehicle would need to select this option</span>
+                    </span>
+                    
+                </label>
+                <label class="addon-item addon-interior" for="addon8">
+                    <input type="checkbox" id="addon8" name="addons" data-price="75" value="prod_PMDzYJGCCQCwUP" data-code="d6" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon8-background">
+                            <span class="addon-text">High Interior Soil</span> <!-- Existing text -->
+                            <span class="addon-price">$75</span> <!-- New price span -->
+                        </div>
+                    </div>
+                   <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">High soil level on the Interior of the vehicle would need to select this option</span>
+                    </span>
+                </label>
+                <label class="addon-item addon-interior" for="addon4">
+                    <input type="checkbox" id="addon4" name="addons" data-price="0" value="prod_PLCAfFt5VE1RpE" data-code="d7" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon4-background">
+                            <span class="addon-text">Bio Spills</span> <!-- Existing text -->
+                            <span class="addon-price">Variable</span> <!-- New price span -->
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">Bio Spills include Blood or Bodily Fluids, Food and Beverage Spills, Pet-Related Spills and Medical Waste. If any apply you would need to select this option. </span>
+                    </span>
+                </label>
+
+                <label class="addon-item addon-interior" for="addon5">
+                    <input type="checkbox" id="addon5" name="addons" data-price="0" value="prod_PKnltie7hBvrZD" data-code="d8" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon5-background">
+                            <span class="addon-text">Paint/Dye Spills</span> <!-- Existing text -->
+                            <span class="addon-price">Variable</span> <!-- New price span -->
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">If there are any Paint/Dye Spills on the Interior of the vehicle you would need to select this option.</span>
+                    </span>
+                </label>
+
+                <label class="addon-item addon-interior" for="addon6">
+                    <input type="checkbox" id="addon6" name="addons" data-price="50" value="prod_PLC6h2cNZo7bGy" data-code="d9" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon6-background">
+                            <span class="addon-text">No Electricty</span> <!-- Existing text -->
+                            <span class="addon-price">$50</span> <!-- New price span -->
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; <!-- Info icon -->
+                        <span class="info-popup">If Electricty is not provided or available for any reason you would need to select this option.</span>
+                    </span>
+                </label>
+ 
+            </div>
+        </form>
+    </div>
+    
+    
+    </form>
+    <div id="productSelection">
+      <!--  <form id="bookingForm">
+            <label for="vehicleSize">Please Select Add-ons:</label>
+            <hr>
+            <div class="addon-container">
+               
+
+                
+
+                
+
+                <label class="addon-item addon-exterior" for="addon10">
+                    <input type="checkbox" id="addon10" name="addons" data-price="50" value="prod_P8tt37QCRSV6Gs" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon10-background">
+                            <span class="addon-text">Anti Fog Coating</span> 
+                            <span class="addon-price">$35</span> 
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; 
+                        <span class="info-popup">Any Sap on the Exterior of the vehicle would need to select this option</span>
+                    </span>
+                </label>
+
+                <label class="addon-item addon-exterior" for="addon11">
+                    <input type="checkbox" id="addon11" name="addons" data-price="50" value="prod_P8tt37QCRSV6Gs" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon11-background">
+                            <span class="addon-text">Paint Decontimation</span> 
+                            <span class="addon-price">$35</span> 
+                        </div>
+                    </div>
+                    <span class="info-icon">&#9432; 
+                        <span class="info-popup">Any Sap on the Exterior of the vehicle would need to select this option</span>
+                    </span>
+                </label>
+
+                <label class="addon-item addon-interior" for="addon12">
+                    <input type="checkbox" id="addon12" name="addons" data-price="50" value="prod_P8tt37QCRSV6Gs" hidden>
+                    <div class="addon-label">
+                        <div class="addon-background" id="addon12-background">
+                            <span class="addon-text">Leather Conditioner</span> 
+                            <span class="addon-price">$25</span> 
+                    </div>
+                    <span class="info-icon">&#9432; 
+                        <span class="info-popup">Any Sap on the Exterior of the vehicle would need to select this option</span>
+                    </span>
+                </label>
+
+            </div>
+        </form>-->
+    
+        <form>
+            <div class="terms-form-container">
+                <h3>Instructions</h3>
+                <p>Please read instructions carefully:</p>
+                <hr>
+                <ul> 
+                    <h4>Vehicle Preparation:</h4>
+                    <li>Clear your vehicle of all personal items, including items in the trunk and center console.</li>
+                    <li>If there are specific areas of concern (like tough stains or sensitive electronics), make a note to inform the detailing team upon their arrival.</li>
+                   <h4>Parking and Access:</h4>
+                   <li>Ensure your vehicle is parked in a spacious, accessible area. This could be your driveway, a designated parking spot, or a similar location where the detailing team can work unhindered.</li>
+                   <li>The area should ideally provide enough space for the detailing team to move around the vehicle comfortably.</li>
+                   <li>If parking under cover is available please park under cover so we can avoid weather related issues.</li>
+                   <h4>Water and Power Access</h4>
+                   <li>Some mobile detailing services may require access to an electrical outlet and a water source. If this is the case, ensure these are accessible from where your vehicle is parked.</li>
+                   <h4>During the Detailing Appointment</h4>
+                   <li>Be available at the scheduled time to briefly call or meet and discuss any specific instructions or concerns if necessary.</li>
+                   <li>The detailing team might need access to your vehicle's interior, so be prepared to unlock the car or provide keys if necessary.</li>
+                   <h4>Post-Detailing</h4>
+                    <li>Once the service is completed, inspect your vehicle to ensure you're satisfied with the work.</li>
+                    <li>Provide any feedback to the detailing team and complete the payment process, if not already done.</li>
+                </ul>
+                <hr>
+                <input type="checkbox" id="agreeInstructions" name="agreeInstructions">
+                <label for="agreeInstructions">I have read and agree to the Instructions</label>
+            </div>
+            
+            
+        </form>
+        <form>
+            <div class="terms-form-container">
+                <h3>Terms of Service</h3>
+                <p>Please read the following terms of service carefully.</p>
+              <hr>
+               <ul>
+                <h4>Booking Terms and conditions</h4>
+                <li>Customers should removal all personal items. If items are not removed they may be thrown away. We are not liable for any lose of personal items.</li>
+                <li>Our detailing times are an estimate only. Each vehicle is different and may require more or less time to complete the detail.</li>
+                <li>We hold the discretion to employ any external service provider for your vehicle's detailing. Furthermore, we retain the ability to replace the detailing contractor on short notice, without incurring any penalties</li>
+                <li>We strive to adhere to the scheduled arrival times for bookings, but unexpected events might lead to delays. Such delays do not invalidate our cancellation policy</li>
+                <li>We reserve the right to take debit or credit card details to secure the booking. Debit/Credit cards are processed by Stripe.</li>
+                <li>We hold the authority to modify or reschedule a booking due to variations in staff availability, weather conditions, or issues with machinery or equipment.</li>
+                <li>Off The Lot disclaims responsibility for any harm or loss to personal belongings, which includes the vehicle under service, its contents, or the area of service. It is important to verify that your vehicle is being serviced in a place that is both lawful and safe. Should you have any doubts or concerns, please promptly bring them to the technician's attention.</li>
+                <li>Every order needs confirmation of the address, package details, and the vehicle's condition. The confirmation of service requests at the time of booking is not assured, and Off The Lot reserves the right to cancel them at any moment based on its own judgment.</li>
+                <li>Off The Lot reserves the right to refuse service to anyone.</li>
+                <li>Off The Lot reserves the right to decline any customer requests that exceed the scope of the detailing services originally booked.</li>
+                <li>Off The Lot maintains a strict policy against verbal or physical abuse towards its staff. In any such instances, appropriate measures will be taken.</li>
+                <h4>Cancellation Policy</h4>
+                <li>We require 72 hours notice to cancel any booking/detailing service.</li>
+                <li>Failure to provide 72 hours advance notice of cancellation will result in a 15% fee.</li>
+                <li>Same-day appointments that are canceled will may also incur a 15% fee at our discretion.</li>
+                <li>Failure to be present at the time and location of the ordered service may result in %30 fee at our discretion.</li>
+                <h4>Service Guarantee</h4>
+                <li>If it is evident and likely that the service technician did not complete the package as requested, or if there is undeniable proof of substandard workmanship, we will take responsibility for the costs and either refund or redo the parts of the service that were either not done or not done satisfactorily.</li>
+                <li>If you decline a follow-up appointment to address unsatisfactory aspects of your service, your refund will be limited to 20% of the service's total cost.</li>
+                <li>Failure to disclose any high soils voids our service guarantee. No refunds, redos or any additional work will be performed outside of the original service.</li>
+                <li>Some issues may require services beyond those you initially requested. Refusing the services recommended by customer service or your on-site technician may invalidate the service guarantee</li>
+                <li>Any claims of disatisafction must me filled with 48 hours of service. To fill a claim email offthelotservices@gmail.com.</li>
+                <h4>Providing Feedback and Photos</h4>
+                <li>We reserve the right at Off The Lot's discretion to utilize photographs of your vehicle for marketing objectives and to display them on our website or any of our social media platforms.</li>
+         <li>Feedback will be requested after each service.</li>
+         <li>No personal information is shared on our website or any other media.</li>
+               </ul>
+                <hr>
+                <input type="checkbox" id="agreeTerms" name="agreeTerms">
+                <label for="agreeTerms">I have read and agree to the Terms of Service</label>
+            </div>
+            
+        </form>
+    </div>
+    <button id="switchToInfoFormBtn">Continue ></button>
+    </div>
+    
+    </form>
+    <div class="form-container" id="infoFormContainer">
+        <h2>Booking Information</h2>
+        
+        <div class="info-item">
+            <div class="info-title">Loyalty Detail Type:</div>
+            <div class="info-answer" id="displayService"></div>
+        </div>
+        
+        <div class="info-item">
+            <div class="info-title">Service Type:</div>
+            <div class="info-answer" id="displaySelectType"></div>
+        </div>
+        <div class="info-item">
+            <div class="info-title">Address:</div>
+            <div class="info-answer" id="displayAddress"></div>
+        </div>
+    
+        <div class="info-item">
+            <div class="info-title">Vehicle Size:</div>
+            <div class="info-answer" id="displayVehicleSize"></div>
+        </div>
+    
+        <div class="info-item">
+            <div class="info-title">Add-ons:</div>
+            <div class="info-answer" id="displayAddons"></div>
+        </div>
+        <div class="info-item">
+            <div class="info-title">Booking Code:</div>
+            <div class="info-answer" id="displayCode"></div>
+        </div>
+        <!-- Other items here -->
+    
+        <div class="price-container" id="desktopPriceContainer">
+            <div class="price">
+                <span id="price">$120.00</span>
+                <button id="checkoutButton">Continue to Booking</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+    <script>
+
+
+document.getElementById('checkoutButton').addEventListener('click', function(event) {
+    event.preventDefault();  // Prevent default form submission behavior
+
+    if (validateRequiredFields()) {
+        // Check if the device is likely a phone
+        if (window.innerWidth <= 768 || 'ontouchstart' in window) {
+            // Open the Calendly link in a new tab
+            window.open('https://calendly.com/offthelot/your-loyatly-detail', '_blank');
+        } 
+    } 
+});
+
+
+function validateRequiredFields() {
+    var isValid = true;
+    var errorMessage = '';
+
+    // Validation for address input
+    var addressProvided = document.getElementById("userAddress").value.trim() !== "";
+    if (!addressProvided) {
+        errorMessage += 'Please provide a service address.\n';
+        isValid = false;
+    }
+
+    // Validation for checkboxes
+    var agreeTermsChecked = document.getElementById('agreeTerms').checked;
+    var agreeInstructionsChecked = document.getElementById('agreeInstructions').checked;
+    if (!agreeTermsChecked || !agreeInstructionsChecked) {
+        errorMessage += 'Please agree to the Terms of Service and Instructions.\n';
+        isValid = false;
+    }
+
+    // Validation for vehicle size selection
+    var vehicleSizeSelected = document.getElementById("vehicleSize").value !== "";
+    if (!vehicleSizeSelected) {
+        errorMessage += 'Please select a vehicle size.\n';
+        isValid = false;
+    }
+
+    // Display error messages if validation fails
+    if (!isValid) {
+        alert(errorMessage);
+    }
+
+    return isValid;
+}
+
+
+document.getElementById('switchToInfoFormBtn').addEventListener('click', function() {
+    if (validateRequiredFields()) {
+        document.getElementById('infoFormContainer').style.display = 'block';
+        document.getElementById('bookingFormContainer').style.display = 'none';
+    }
+});
+     document.addEventListener('DOMContentLoaded', function() {
+    setupEventListeners();
+    updateAllDisplays();
+    initMap();
+    updatePrice();
+    toggleAddons()
+    checkBothCheckboxes(); // Call this function on load to set the initial state of the checkout button
+    checkAllConditions(); // Initial check on page load
+});
+
+
+// Function to check the state of both checkboxes and enable/disable the checkout button
+function checkAllConditions() {
+    var agreeTermsChecked = document.getElementById('agreeTerms').checked;
+    var agreeInstructionsChecked = document.getElementById('agreeInstructions').checked;
+    var addressProvided = document.getElementById("userAddress").value.trim() !== "";
+    var vehicleSizeSelected = document.getElementById("vehicleSize").value !== "";
+}
+
+
+// Event listeners for checkboxes, address input, and vehicle size dropdown
+document.getElementById('agreeTerms').addEventListener('change', checkAllConditions);
+document.getElementById('agreeInstructions').addEventListener('change', checkAllConditions);
+document.getElementById('userAddress').addEventListener('input', checkAllConditions); // 'input' event for real-time validation
+document.getElementById('vehicleSize').addEventListener('change', checkAllConditions);
+
+
+document.querySelectorAll('.info-icon').forEach(function(icon) {
+    icon.addEventListener('click', function(event) {
+        // Stop the event from propagating to parent elements
+        event.stopPropagation();
+        event.preventDefault();
+
+        // Toggle the visibility of the info popup
+        var popup = this.querySelector('.info-popup');
+        if (popup.style.visibility === 'visible') {
+            popup.style.visibility = 'hidden';
+            popup.style.opacity = '0';
+        } else {
+            popup.style.visibility = 'visible';
+            popup.style.opacity = '1';
+        }
+    });
+});
+
+
+
+
+
+
+
+
+function generateCode() {
+    let finalCode = '';
+
+    // Service Type
+    const selectedService = document.querySelector('input[name="serviceType"]:checked');
+    if (selectedService) {
+        finalCode += selectedService.getAttribute('data-code');
+    }
+
+    // Select Type
+    const selectedSelect = document.querySelector('input[name="selectType"]:checked');
+    if (selectedSelect) {
+        finalCode += selectedSelect.getAttribute('data-code');
+    }
+
+    // Vehicle Size
+    const selectedVehicleSize = document.getElementById('vehicleSize').querySelector('option:checked');
+    if (selectedVehicleSize) {
+        finalCode += selectedVehicleSize.getAttribute('data-code');
+    }
+
+    // Addons
+    const selectedAddons = document.querySelectorAll('input[name="addons"]:checked');
+    selectedAddons.forEach(addon => {
+        finalCode += addon.getAttribute('data-code');
+    });
+
+    // Append distance-based code
+    if (distance <= 10) {
+        finalCode += 'e1'; // Under 10 miles
+    } else if (distance > 10 && distance <= 15) {
+        finalCode += 'e2'; // Above 10 up to 15 miles
+    } else if (distance > 15) {
+        finalCode += 'e3'; // Higher than 15 miles
+    }
+
+    // Display the final code
+    document.getElementById("displayCode").innerText = finalCode;
+}
+
+document.querySelectorAll('input[name="serviceType"], input[name="selectType"], input[name="addons"], #vehicleSize').forEach(input => {
+    input.addEventListener('change', generateCode);
+});
+
+
+
+
+
+
+document.getElementById('checkoutButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default form action
+
+    // Initialize an empty errorMessage string.
+    let errorMessage = '';
+
+    // Check if address is provided.
+    var addressProvided = document.getElementById("userAddress").value.trim() !== "";
+    if (!addressProvided) {
+        errorMessage += "Address is required.\n";
+    }
+
+    // Check if both checkboxes are checked.
+    var agreeTermsChecked = document.getElementById('agreeTerms').checked;
+    if (!agreeTermsChecked) {
+        errorMessage += "You must agree to the Terms of Service.\n";
+    }
+
+    var agreeInstructionsChecked = document.getElementById('agreeInstructions').checked;
+    if (!agreeInstructionsChecked) {
+        errorMessage += "You must agree to the Instructions.\n";
+    }
+
+    // Check if vehicle size is selected.
+    var vehicleSizeSelected = document.getElementById("vehicleSize").value !== "";
+    if (!vehicleSizeSelected) {
+        errorMessage += "Please select a vehicle size.\n";
+    }
+
+    // Assume all conditions are met initially
+    var allConditionsMet = errorMessage === "";
+
+    if (allConditionsMet) {
+        var bookingFormContainer = document.getElementById('bookingFormContainer');
+
+        // Clear existing content
+        bookingFormContainer.innerHTML = '';
+
+        // Create the Calendly widget div and append it to the container
+        var calendlyWidgetDiv = document.createElement('div');
+        calendlyWidgetDiv.className = 'calendly-inline-widget';
+        calendlyWidgetDiv.setAttribute('data-url', 'https://calendly.com/offthelot/your-loyatly-detail');
+        calendlyWidgetDiv.style.minWidth = '320px';
+        calendlyWidgetDiv.style.height = '830px'; // Ensure visibility of the widget
+        bookingFormContainer.appendChild(calendlyWidgetDiv);
+
+        // Dynamically load the Calendly script
+        var calendlyScript = document.createElement('script');
+        calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
+        document.body.appendChild(calendlyScript);
+
+        // Hide the "Continue to Booking" button
+        document.getElementById('checkoutButton').style.display = 'none';
+
+        // Optionally, hide or adjust the layout of other containers as needed
+    } else {
+        // If conditions are not met, display the collected error messages.
+        alert(errorMessage);
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById('userAddress').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevents the default form submit action
+        calculateDistance();    // Call your function to process the address
+    }
+});
+ 
+        let map, service;
+        const businessAddress = "17243 10th ave NW, Shoreline, Washington";
+        let distance = 0;
+       
+        const firstDistanceThreshold = 10;
+        const secondDistanceThreshold = 15;
+       
+        function initMap() {
+            map = new google.maps.Map(document.createElement('div'));
+            service = new google.maps.DistanceMatrixService();
+        }
+       
+        function calculateDistance() {
+    const userAddress = document.getElementById("userAddress").value;
+
+    service.getDistanceMatrix({
+        origins: [businessAddress],
+        destinations: [userAddress],
+        travelMode: 'DRIVING',
+    }, function(response, status) {
+        if (status == 'OK') {
+            distance = response.rows[0].elements[0].distance.value / 1609.34; // Convert meters to miles
+            updatePrice(); // Assuming this updates the price based on the new distance
+            updateAddressDisplay(); // Update any displays or UI components that depend on the address
+
+            // Call generateCode to update the booking code based on the new distance
+            generateCode();
+        } else {
+            alert('Error calculating distance: ' + status);
+        }
+    });
+}
+
+
+
+
+        function updatePrice() {
+            let finalPrice = 0;
+       
+            const selectedServiceRadio = document.querySelector('input[name="serviceType"]:checked');
+            if (selectedServiceRadio) {
+                finalPrice += parseFloat(selectedServiceRadio.getAttribute('data-price'));
+            }
+       
+            const vehicleSizeOption = document.querySelector('#vehicleSize option:checked');
+            if (vehicleSizeOption) {
+                finalPrice += parseFloat(vehicleSizeOption.getAttribute('data-price'));
+            }
+       
+            if (distance > firstDistanceThreshold && distance <= secondDistanceThreshold) {
+                finalPrice += 25; // Adjust this value as per your pricing
+            } else if (distance > secondDistanceThreshold) {
+                finalPrice += 50; // Adjust this value as per your pricing
+            }
+       
+            const selectedAddons = document.querySelectorAll('input[name="addons"]:checked');
+            selectedAddons.forEach(function(addon) {
+                finalPrice += parseFloat(addon.getAttribute('data-price'));
+            });
+       
+            document.getElementById("price").innerHTML = "$" + finalPrice.toFixed(2);
+            updateAllDisplays();
+        }
+       
+
+
+        
+
+
+
+
+
+
+
+
+        
+function updateAllDisplays() {
+    updateServiceDisplay();
+    updateSelectTypeDisplay(); // Add this line
+    updateVehicleSizeDisplay();
+    updateAddonsDisplay();
+}
+
+function updateSelectTypeDisplay() {
+    // Find the checked select type radio button
+    const selectedSelectTypeRadio = document.querySelector('input[name="selectType"]:checked');
+    // Find the label text associated with the checked radio button
+    if (selectedSelectTypeRadio) {
+        const selectTypeLabel = document.querySelector('label[for="' + selectedSelectTypeRadio.id + '"]').textContent.trim();
+        document.getElementById("displaySelectType").innerText = selectTypeLabel;
+    } else {
+        document.getElementById("displaySelectType").innerText = "Not Selected";
+    }
+}
+        function updateServiceDisplay() {
+            const selectedServiceLabel = document.querySelector('input[name="serviceType"]:checked + label').textContent;
+            document.getElementById("displayService").innerText = selectedServiceLabel;
+        }
+       
+        function updateAddressDisplay() {
+            const address = document.getElementById("userAddress").value;
+            document.getElementById("displayAddress").innerText = address;
+        }
+       
+        function updateVehicleSizeDisplay() {
+            const vehicleSize = document.getElementById("vehicleSize").options[document.getElementById("vehicleSize").selectedIndex].text;
+            document.getElementById("displayVehicleSize").innerText = vehicleSize;
+        }
+       
+        function updateAddonsDisplay() {
+    const addons = document.getElementsByName('addons');
+    let addonsContainer = document.getElementById("displayAddons");
+    addonsContainer.innerHTML = ''; // Clear existing content
+
+
+    for (let i = 0; i < addons.length; i++) {
+        if (addons[i].checked) {
+            // Find the corresponding .addon-text for this addon
+            let addonText = document.querySelector('label[for="' + addons[i].id + '"] .addon-text').textContent;
+
+
+            let div = document.createElement('div');
+            div.textContent = addonText; // Use only the text, not the price
+            addonsContainer.appendChild(div);
+        }
+    }
+}
+document.querySelectorAll('input[name="selectType"]').forEach(element => {
+    element.addEventListener('change', updateAddonsOnSelectChange);
+});
+
+function updateAddonsOnSelectChange() {
+    // Hide all addons initially
+    const allAddons = document.querySelectorAll('.addon-item');
+    allAddons.forEach(addon => addon.style.display = 'none');
+
+    // Determine which addons to show based on selected select type
+    let addonClassesToShow = [];
+    const selectedSelectValue = document.querySelector('input[name="selectType"]:checked').value;
+    
+    if (selectedSelectValue === 'D') { // Exterior
+        addonClassesToShow = ['.addon-exterior'];
+    } else if (selectedSelectValue === 'E') { // Complete Detail
+        addonClassesToShow = ['.addon-both', '.addon-exterior', '.addon-interior'];
+    } else if (selectedSelectValue === 'F') { // Interior
+        addonClassesToShow = ['.addon-interior'];
+    }
+
+    // Show the relevant addons
+    addonClassesToShow.forEach(selector => {
+        document.querySelectorAll(selector).forEach(addon => addon.style.display = 'block');
+    });
+}
+
+// Initialize the correct addon display on page load based on the selected "Select Type"
+window.addEventListener('DOMContentLoaded', () => {
+    const selectedSelect = document.querySelector('input[name="selectType"]:checked');
+    if (selectedSelect) {
+        updateAddonsOnSelectChange.call(selectedSelect);
+    }
+});
+
+
+
+function updateAddonsOnServiceChange(newServiceType) {
+    // Define which add-ons are relevant for each service type
+    const exteriorAddons = new Set(['addon2', 'addon3', 'addon7', 'addon8', 'addon9', 'addon10', 'addon11']);
+    const interiorAddons = new Set(['addon1', 'addon4', 'addon5', 'addon6', 'addon12']);
+
+    // Determine which set of add-ons to keep based on the new service type
+    let addonsToKeep;
+    if (newServiceType === 'D') { // Deluxe Exterior
+        addonsToKeep = exteriorAddons;
+    } else if (newServiceType === 'F') { // Deluxe Interior
+        addonsToKeep = interiorAddons;
+    } else { // Deluxe Detail or other services
+        addonsToKeep = new Set([...exteriorAddons, ...interiorAddons]);
+    }
+
+    // Iterate through each add-on checkbox
+    document.querySelectorAll('input[name="addons"]').forEach(addon => {
+        // If the add-on is not in the set to keep, uncheck and hide it
+        if (!addonsToKeep.has(addon.id)) {
+            addon.checked = false;
+            addon.closest('.addon-item').classList.remove('displayed');
+        }
+    });
+
+    // Update the display and cart
+    updateAddonsDisplay();
+    updatePrice();
+}
+
+document.querySelectorAll('input[name="selectType"]').forEach(radio => {
+    radio.addEventListener('change', (event) => {
+        updateAddonsOnServiceChange(event.target.value);
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Event listener for service type radio buttons
+
+
+// Existing functions updateAddonsDisplay() and updatePrice() to be defined or updated as needed
+
+
+   function setupEventListeners() {
+            document.getElementById('vehicleSize').addEventListener('change', () => {
+                updatePrice();
+                updateVehicleSizeDisplay();
+            });
+       
+            document.querySelectorAll('input[name="addons"]').forEach(element => {
+                element.addEventListener('change', updatePrice);
+            });
+       
+            document.querySelectorAll('input[name="serviceType"]').forEach(element => {
+                element.addEventListener('change', () => {
+                    updatePrice();
+                    toggleAddons();
+                });
+            });
+       
+            document.getElementById('userAddress').addEventListener('change', calculateDistance);
+       
+            document.getElementById('checkoutButton').addEventListener('click', function(event) {
+    event.preventDefault();
+
+
+    var errorMessage = '';
+    var allConditionsMet = true;
+
+
+    var agreeTermsChecked = document.getElementById('agreeTerms').checked;
+    if (!agreeTermsChecked) {
+        errorMessage += 'Please agree to the Terms of Service.\n';
+        allConditionsMet = false;
+    }
+
+
+    var agreeInstructionsChecked = document.getElementById('agreeInstructions').checked;
+    if (!agreeInstructionsChecked) {
+        errorMessage += 'Please agree to the Instructions.\n';
+        allConditionsMet = false;
+    }
+
+
+    var addressProvided = document.getElementById("userAddress").value.trim() !== "";
+    if (!addressProvided) {
+        errorMessage += 'Please provide a service address.\n';
+        allConditionsMet = false;
+    }
+
+
+    var vehicleSizeSelected = document.getElementById("vehicleSize").value !== "";
+    if (!vehicleSizeSelected) {
+        errorMessage += 'Please select a vehicle size.\n';
+        allConditionsMet = false;
+    }
+
+
+    if (!allConditionsMet) {
+        alert(errorMessage);
+    } 
+});
+
+
+
+function validateRequiredFields() {
+    var isValid = true;
+    var errorMessage = '';
+
+    // Validation for address input
+    var addressProvided = document.getElementById("userAddress").value.trim() !== "";
+    if (!addressProvided) {
+        errorMessage += 'Please provide a service address.\n';
+        isValid = false;
+    }
+
+    // Validation for checkboxes
+    var agreeTermsChecked = document.getElementById('agreeTerms').checked;
+    var agreeInstructionsChecked = document.getElementById('agreeInstructions').checked;
+    if (!agreeTermsChecked || !agreeInstructionsChecked) {
+        errorMessage += 'Please agree to the Terms of Service and Instructions.\n';
+        isValid = false;
+    }
+
+    // Validation for vehicle size selection
+    var vehicleSizeSelected = document.getElementById("vehicleSize").value !== "";
+    if (!vehicleSizeSelected) {
+        errorMessage += 'Please select a vehicle size.\n';
+        isValid = false;
+    }
+
+    // Add more validations as needed
+
+    if (!isValid) {
+        alert(errorMessage);
+    }
+
+    return isValid;
+}
+
+
+
+        }
+       
+
+       
+        function toggleAddons() {
+            const selectedService = document.querySelector('input[name="serviceType"]:checked').value;
+            updateAddonsDisplay();
+        }
+       
+       
+ // Function to handle changes for Service Type
+function handleServiceTypeChange() {
+    // Iterate over all service items and add 'grayed-out'
+    document.querySelectorAll('.service-item').forEach(item => {
+        item.classList.add('grayed-out');
+    });
+    // Remove 'grayed-out' from the selected service item
+    this.closest('.service-item').classList.remove('grayed-out');
+}
+
+// Apply the event listener to each service type input element
+document.querySelectorAll('input[name="serviceType"]').forEach(element => {
+    element.addEventListener('change', handleServiceTypeChange);
+});
+
+// Function to handle changes for Select Type
+function handleSelectTypeChange() {
+    // Iterate over all select items and add 'grayed-out'
+    document.querySelectorAll('.select-item').forEach(item => {
+        item.classList.add('grayed-out');
+    });
+    // Remove 'grayed-out' from the selected select item
+    this.closest('.select-item').classList.remove('grayed-out');
+}
+
+// Apply the event listener to each select type input element
+document.querySelectorAll('input[name="selectType"]').forEach(element => {
+    element.addEventListener('change', handleSelectTypeChange);
+});
+
+// Initialize the 'grayed-out' state based on preselected options when the page loads
+window.addEventListener('DOMContentLoaded', (event) => {
+    const preselectedService = document.querySelector('input[name="serviceType"]:checked');
+    if (preselectedService) {
+        handleServiceTypeChange.call(preselectedService);
+    }
+    const preselectedSelect = document.querySelector('input[name="selectType"]:checked');
+    if (preselectedSelect) {
+        handleSelectTypeChange.call(preselectedSelect);
+    }
+});
+
+
+
+        </script>
+        
+</body>
+</html>

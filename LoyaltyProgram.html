@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="loyal-styles.css">
+    <link rel="icon" href="images/OffTheLot.png" type="image/x-icon">
+  <title>Off The Lot Detailing Services</title>
+
+
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo"><a href="index.html"><img src="images/mainlogo.png" alt="Logo" /></a></div>
+    <div class="nav-links">
+     
+      <a href="LoyaltyProgram.html">Membership</a>
+      <a href="CarDetailingServices.html">Detailing</a>
+     <a href="CarDetailingGallery.html">Gallery</a>
+    </div>
+    <div class="icons">
+      <a href="#" title="Customer Support" id="support-icon"><i class="fas fa-headset"></i></a>
+      <div id="contact-info" class="dropdown-content">
+        <p>Phone: 206-841-7619</p>
+        <p>Email: offthelotservices@gmail.com</p>
+      </div>
+    </div>
+  </div>
+      </div>
+    </div>    
+
+
+  <div class="main-content">
+   
+    
+          
+ 
+
+ 
+ 
+
+  
+    <div class="section" id="section3">
+       
+  
+      <div class="section-content">
+   
+
+        
+         <div class="loyalty-icons">
+          <div class="circle" data-loyalty="1" data-color="#4CAF50"><i class="fas fa-gift"></i></div> <!-- Blue -->
+            <div class="circle" data-loyalty="4" data-color="#f44336"><i class="fas fa-tag"></i></div> <!-- Green -->
+        
+            <div class="circle" data-loyalty="3" data-color="#ffeb3b" style="color: #000;"><i class="fas fa-car"></i></div> <!-- Yellow -->
+            <div class="circle" data-loyalty="2" data-color="#2196F3"><i class="fa-solid fa-calendar-days"></i></div> <!-- Red -->
+            <div class="circle" data-loyalty="5" data-color="#e91e63"><i class="fas fa-thumbs-up"></i></div> <!-- Pink -->
+          </div>
+          
+          
+  
+           <div class="loyalty-extra">
+            <div class="loyalty-box" id="loyaltyBox1">
+              <h3>Member Benefits</h3>
+              <hr>
+              <div class="loyalty-options" id="option1"><i class="fas fa-car"  style="color: #ffeb3b;" ></i> Monthly Detailing</div>
+              <div class="loyalty-options" id="option2" ><i class="fas fa-gift" style="color: #4CAF50;"></i> Exclusive Rewards</div>
+              <div class="loyalty-options" id="option3"><i class="fas fa-tag"  style="color: #f44336;"></i> Discounts </div>
+              <div class="loyalty-options" id="option4"><i class="fa-solid fa-calendar-days"  style="color: #2196F3;"></i> Priority Booking </div>
+        
+        
+        <div class="loyalty-options" id="option5"><i class="fas fa-thumbs-up"  style="color: #e91e63;"></i> Satisfaction Guarantee </div>
+        
+        
+       
+        
+        <div class="loyalty-call">Click Circles To Learn More!</div>
+              </div>
+            <div class="loyalty-box" id="loyaltyBox2">
+              <h3>Join Membership</h3>
+              <hr>
+           <p>Our Membership starting at $120 a month, ensures your vehicle always shines inside and out. Benefit from exclusive member advantages, making car care cost-effective and convenient.</p>
+          
+              <div class="loyalty-price">Starting at $120 a month</div>
+              <div class="loyalty-button-container">
+                <a href="bookingloyal.html" class="loyalty-button">Get a Quote!</a>
+              </div>
+            </div>
+            
+            
+  </div>
+</div>
+</div>
+
+  </div>
+  <div class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <a href="index.html" class="footer-item">&copy;OTL</a>
+      </div>
+      <div class="footer-column">
+        <a href="LoyaltyProgram.html" class="footer-item">Membership</a>
+      </div>
+      <div class="footer-column">
+        <a href="CarDetailingServices.html" class="footer-item">Detailing</a>
+      </div>
+      <div class="footer-column">
+        <a href="faq.html" class="footer-item">FAQ</a>
+      </div>
+      <div class="footer-column">
+        <a href="CarDetailingGallery.html" class="footer-item">Gallery</a>
+      </div>
+      <div class="footer-column">
+        <a href="about.html" class="footer-item">About Me</a>
+    </div>
+   
+  <script>
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const icons = document.querySelectorAll('.circle');
+    const loyaltyBox1 = document.getElementById('loyaltyBox2');
+
+
+    
+    icons.forEach(icon => {
+      icon.addEventListener('click', function() {
+        const borderColor = this.getAttribute('data-color');
+            loyaltyBox1.style.border = `.35vh solid ${borderColor}`;
+        const loyaltyId = this.getAttribute('data-loyalty');
+        
+        // Example content change based on the clicked icon
+        switch(loyaltyId) {
+          case '1':
+            loyaltyBox1.innerHTML = '<h3>Exclusive Rewards</h3><hr><p>Get rewards and special offers as you stay a member.</p><br><p>10% off per referal up to 50% per month.<div class="loyalty-price">Starting at $120 a month</div>  <div class="loyalty-button-container"> <a href="bookingloyal.html" class="loyalty-button">Get a Quote!</a></div></div>';
+            break;
+          case '2':
+            loyaltyBox1.innerHTML = '<h3>Priority Booking</h3><hr><p>In full schedules members are given priority.</p><br><p>Sundays are reserved for Members.</p><br><p>Book anytime 24 hours in advance and we will come if available! <div class="loyalty-price">Starting at $120 a month</div>  <div class="loyalty-button-container"> <a href="bookingloyal.html" class="loyalty-button">Get a Quote!</a></div></div>';
+            break;
+          case '3':
+            loyaltyBox1.innerHTML = '<h3>Monthly Detailing</h3><hr><div class="loyalty-monthly"><p>Every month, Pick your choice of </p><div class="loyalty-details"><div class="loyalty-full">Clean Package</div><br><div class="loyalty-details">Shine Interior</div><br><div class="loyalty-details">Shine Exterior</div><br></div><div class="loyalty-price">Starting at $120 a month</div>  <div class="loyalty-button-container"> <a href="bookingloyal.html" class="loyalty-button">Get a Quote!</a></div></div>';
+            break;
+          case '4':
+            loyaltyBox1.innerHTML = '<h3>Discounts</h3><hr><p>20% off all services.</p><br><p>25% off all add-ons.</p><br><p>After 6 months, members get a one time 50% discount for any service.</p><div class="loyalty-price">Starting at $120 a month</div>  <div class="loyalty-button-container"> <a href="bookingloyal.html" class="loyalty-button">Get a Quote!</a></div></div>';
+            break;
+          case '5':
+            loyaltyBox1.innerHTML = '<h3>Service Guarantee</h3><hr><p>We guarantee your satisfaction!</p><div class="loyalty-price">Starting at $120 a month </div>  <div class="loyalty-button-container"> <a href="bookingloyal.html" class="loyalty-button">Get a Quote!</a></div></div>';
+            break;
+          default:
+            loyaltyBox1.innerHTML = '<h3>Service Box 1</h3><p>Description of Service Box 1.</p>';
+        }
+      });
+    });
+  });
+
+  document.getElementById('support-icon').addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent the default action
+  var dropdownContent = document.getElementById('contact-info');
+  if (dropdownContent.style.display === "none" || dropdownContent.style.display === "") {
+    dropdownContent.style.display = "block";
+  } else {
+    dropdownContent.style.display = "none";
+  }
+});
+  </script>
+  
+  
+  
+</body>
+</html>

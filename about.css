@@ -1,0 +1,406 @@
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+ /* Navbar styling */
+ .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Logo */
+.logo {
+  flex: 1;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+}
+.logo a {
+text-decoration: none; /* Remove underline */
+color: white;  /* Set text color */
+text-shadow:
+0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.logo img {
+  height: 7.5vh; /* Adjust based on your logo size and navbar height */
+  width: auto; /* Keeps the aspect ratio of the image */
+  /* Add more styling as needed */
+}
+/* Style for when mouse hovers over the link */
+.logo a:hover {
+color: #555555;  /* Slightly lighter text color */
+
+}
+/* Nav links */
+.nav-links {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease-in-out;
+  text-shadow:
+  -1px -1px 0px rgba(0, 0, 0, 0.25), /* top left */
+  1px -1px 0px rgba(0, 0, 0, 0.25), /* top right */
+  -1px  1px 0px rgba(0, 0, 0, 0.25), /* bottom left */
+  1px  1px 0px rgba(0, 0, 0, 0.25); /* bottom right */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px); /* apply blur effect */
+}
+
+.nav-links a:hover {
+  border-radius: 10px;
+  backdrop-filter: blur(15px); /* apply blur effect */
+  background-color: #5555556e;
+  transform: translateY(-1px);
+}
+
+/* Icons */
+.icons {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 16px;
+}
+.icons a {
+  margin-left: 1.5rem;
+}
+.icons i {
+  font-size: 1.2rem;
+  color: white;
+}
+.icons i:hover {
+  color: #555555;
+}
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: #57575783;
+  min-width: 160px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px);
+  padding: 2px 12px;
+  z-index: 1;
+  margin-top: -3vh;
+}
+
+.hide {
+  display: none;
+}
+  .hero {
+    background-image: url('images/me.jpg');
+    height: 650px;
+    background-size: contain;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero h1, .hero p {
+    margin: 0;
+    padding: 0;
+  }
+  .hero h1 {
+    font-size: 4.5em;
+margin-bottom: -10em;
+letter-spacing: 2px;
+font-weight: 300;
+color: rgba(0, 0, 0, 0);
+  }
+  .hero p {
+    font-size: 1.5em;
+    margin-top: 10px;
+   
+  }
+  .hero1 p {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: white;
+     opacity: 1;
+  }
+  .content {
+    padding: 80px;
+    text-align: center;
+    background-color: #ffffff00;
+  }
+  .content h2 {
+    font-size: 5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  .two-columns {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px;
+    background-color: #f4f4f4;
+    /* animation: slideIn 1s ease-in-out; */  /* Commented out this line */
+  }
+  .two-columns > div {
+    width: 45%;
+  }
+
+  .two-columns1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px;
+    background-color: #f4f4f4;
+    /* animation: slideIn 1s ease-in-out; */ /* Commented out this line */
+    flex-direction: row-reverse; /* Change flex direction to reverse the order */
+  }
+  
+  .two-columns1 > div {
+    width: 45%;
+  }
+  
+
+  .text-container {
+    text-align: center; /* Center-align the text */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+  
+  .text-container h2 {
+    font-size: 6em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  .text-para {
+    font-size: 26px;
+  }
+  .image-container img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0;  /* Added this line */
+  transition: opacity 1s ease-in-out;  /* Added this line */
+  border-radius: 25px;
+  
+}
+  
+ 
+  .text-container ul li,
+.image-container ul li {
+font-size: 2em; /* Adjust the value to your preferred font size */
+margin-bottom: 10px; /* Add some spacing between list items */
+}
+
+
+.footer {
+position: bottom;
+bottom: 0;
+left: 0;
+width: 100%;
+background-color: transparent;  /* semi-transparent black */
+color: white;
+text-align: center;
+padding: 1px 0;
+z-index: 1000;  /* high z-index to float above other elements */
+transform: translateY(100%);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns */
+  grid-gap: 1px; /* Adjust the gap between columns */
+  max-width: 600px;
+  margin: 0 auto;
+  z-index: 1;
+}
+.footer-column {
+  flex: 1;
+  flex-basis: calc(33.33% - 100px); /* Adjust as needed */
+  margin: 0 5px; /* Adjust margin for spacing */
+}
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-item {
+  text-decoration: none;
+  color: white;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* For screens smaller than 600px */
+@media (max-width: 600px) {
+  /* Change flex direction to column */
+  .two-columns {
+    flex-direction: column;
+  }
+
+  /* Set width to 100% so they fill the column */
+  .two-columns > div {
+    width: 100%;
+  }
+  
+  .two-columns1 {
+    flex-direction: column;
+  }
+
+  /* Set width to 100% so they fill the column */
+  .two-columns1 > div {
+    width: 100%;
+  }
+  
+  .nav-links {
+    display: none;  /* Hide navigation links */
+  }
+  .icons {
+    display: none;
+  }
+  
+  .navbar {
+    flex-direction: column;
+  }
+  
+  /* Add more responsive styles here */
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 1rem;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  /* Logo */
+  .logo {
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  
+  }
+  .logo a {
+  text-decoration: none; /* Remove underline */
+  color: white;  /* Set text color */
+  text-shadow:
+  0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .logo img {
+    height: 7.5vh; /* Adjust based on your logo size and navbar height */
+    width: auto; /* Keeps the aspect ratio of the image */
+    /* Add more styling as needed */
+  }
+  /* Style for when mouse hovers over the link */
+  .logo a:hover {
+  color: #555555;  /* Slightly lighter text color */
+  
+  }
+  /* Nav links */
+  .nav-links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 1.15rem;
+    letter-spacing: 1px;  
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease-in-out;
+    text-shadow:
+    -1px -1px 0px rgba(0, 0, 0, 0.25), /* top left */
+    1px -1px 0px rgba(0, 0, 0, 0.25), /* top right */
+    -1px  1px 0px rgba(0, 0, 0, 0.25), /* bottom left */
+    1px  1px 0px rgba(0, 0, 0, 0.25); /* bottom right */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px); /* apply blur effect */
+  }
+  
+  
+  .nav-links a:hover {
+    border-radius: 10px;
+    backdrop-filter: blur(15px); /* apply blur effect */
+    background-color: #5555556e;
+    transform: translateY(-1px);
+  }
+  
+}
+
+
+@media only screen and (max-width: 600px) {
+  .dropdown-content {
+    font-size: 20px;  /* Larger font size */
+width: 300px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .term-item {
+    font-size: 20px;  /* Larger font size */
+    width: 1100px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .terms {
+    font-size: 20px;  /* Larger font size */
+    width: 300px;
+  }
+}
+/* CSS for screens smaller than 600px */
+@media (max-width: 600px) {
+  .two-columns, .two-columns1 {
+    flex-direction: column;
+    padding: 20px; /* Adjust padding for spacing on mobile */
+  }
+
+  .two-columns > div, .two-columns1 > div {
+    width: 100%;
+  }
+
+  .image-container img {
+    max-width: 100%; /* Ensure images scale with screen size */
+    height: auto;
+  }
+}
+/* Add this CSS for screens larger than 600px (desktop) */
+@media (min-width: 601px) {
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0; /* Keep the opacity animation for desktop */
+    transition: opacity 1s ease-in-out;
+    border-radius: 100px;
+  }
+}
+
+/* Add this CSS for screens smaller than or equal to 600px (mobile) */
+@media (max-width: 600px) {
+  .image-container img {
+    opacity: 1; /* Set opacity to 1 to make images fully visible */
+    transition: none; /* Remove the opacity transition for mobile */
+  }
+}
+

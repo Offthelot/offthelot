@@ -1,0 +1,835 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Use Google Fonts */
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* Navbar styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;  /* Changed this line */
+    padding: 1rem;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;  /* Added this line */
+    top: 0;  /* Added this line */
+    left: 0;  /* Added this line */
+    width: 100%;  /* Added this line */
+    z-index: 9999;  /* Added this line */
+    position: fixed;
+  }
+  /* Logo */
+  .logo {
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+  }
+  .logo img {
+    height: 7.5vh; /* Adjust based on your logo size and navbar height */
+    width: auto; /* Keeps the aspect ratio of the image */
+    /* Add more styling as needed */
+}
+  .logo a {
+text-decoration: none; /* Remove underline */
+color: white;  /* Set text color */
+text-shadow:
+0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for when mouse hovers over the link */
+.logo a:hover {
+color: #555555;  /* Slightly lighter text color */
+
+}
+  /* Nav links */
+  .nav-links {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease-in-out;
+    text-shadow:
+    -1px -1px 0px rgba(0, 0, 0, 0.25), /* top left */
+    1px -1px 0px rgba(0, 0, 0, 0.25), /* top right */
+    -1px  1px 0px rgba(0, 0, 0, 0.25), /* bottom left */
+    1px  1px 0px rgba(0, 0, 0, 0.25); /* bottom right */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px); /* apply blur effect */
+  }
+  
+
+  .nav-links a:hover {
+    border-radius: 10px;
+    backdrop-filter: blur(15px); /* apply blur effect */
+    background-color: rgba(150, 150, 150, 0.6);
+    transform: translateY(-1px);
+  }
+
+  /* Icons */
+  .icons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 16px;
+  }
+  .icons a {
+    margin-left: 1.5rem;
+  }
+  .icons i {
+    font-size: 1.2rem;
+    color: white;
+  }
+  .icons i:hover {
+    color: #555555;
+  }
+
+
+  .dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #57575700;
+    min-width: 160px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+    padding: 2px 12px;
+    z-index: 1;
+    
+  }
+
+
+
+  /* Scroll snapping */
+  body {
+margin: 0;
+padding: 0;
+scroll-snap-type: y mandatory;
+overflow-y: hidden;
+padding-top: 0px; /* Offset for the fixed navbar */
+scroll-behavior: smooth; /* Add smooth scrolling */
+scroll-snap-destination: 50% 0%; /* Adjust the snapping destination */
+scroll-snap-points-y: repeat(100%); /* Adjust snapping points */
+scroll-snap-type: mandatory proximity; /* Use proximity snapping */
+scroll-padding-top: 0px; /* Adjust scroll padding for smoother snap animation */
+}
+
+.main-content {
+margin-top: 0px; /* Offset for the navbar */
+scroll-snap-type: y mandatory;
+overflow-y: scroll;
+height: calc(100vh - 0px);
+scroll-snap-align: start; /* Add this line to each section */
+scroll-snap-stop: always; /* Add this line to each section */
+}
+  /* SECTION 1 1 1 */
+
+.section1 {
+  height: 100vh;
+  scroll-snap-align: start;
+  background-color: #000; /* Fallback color */
+  position: relative;
+}
+
+.section1 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Place the video behind other content */
+}
+
+.section1 img {
+  position: absolute;  /* Absolute position within the section */
+  top: 0;
+  left: 0;
+  width: 100%;         /* Fill the entire width */
+  height: 100%;        /* Fill the entire height */
+  object-fit: cover;   /* Resize the image to cover the section */
+  z-index: 0        /* Place it behind the content */
+}
+/* Style for Section Content */
+.section-content1 {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) scale(0.9);
+z-index: 1;
+color: white;
+text-align: center;
+width: 100%;
+max-width: 400px;
+opacity: 100%;
+animation: growIn 1s forwards ease-out;
+border-radius: 10px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+background-color: #00000045;
+}
+
+.section-content1 h1 {
+font-size: 2.5em;
+margin-bottom: 0.5em;
+margin-top: 1em;
+letter-spacing: 2px;
+font-weight: 300;
+animation: fontSizeIncrease 1s forwards ease-out;
+}
+
+.section-content1 p {
+font-size: 2.2em;
+margin-bottom: 2.5em;
+font-weight: 300;
+animation: fontSizeIncreaseP 1s forwards ease-out;
+}
+
+.section-content1 button {
+background-color: transparent;
+color: white;
+border: 2px solid white;
+border-radius: 4px;
+padding: 12px 24px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 1em;
+margin: 4px 2px;
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+animation: buttonSizeIncrease 1s forwards ease-out;
+margin-bottom: 2.2em;
+}
+
+.section-content1 button:hover {
+background-color: white;
+color: black;
+}
+
+
+
+
+
+
+  /* SECTION 2 2 2 */
+
+.section2 {
+  height: 100vh;
+  scroll-snap-align: start;
+  background-color: #000; /* Fallback color */
+  position: relative;
+}
+
+.section2 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Place the video behind other content */
+}
+
+.section2 img {
+  position: absolute;  /* Absolute position within the section */
+  top: 0;
+  left: 0;
+  width: 100%;         /* Fill the entire width */
+  height: 100%;        /* Fill the entire height */
+  object-fit: cover;   /* Resize the image to cover the section */
+  z-index: 0        /* Place it behind the content */
+}
+/* Style for Section Content */
+.section-content2 {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) scale(0.9);
+z-index: 1;
+color: white;
+text-align: center;
+width: 100%;
+max-width: 400px;
+opacity: 100%;
+animation: growIn 1s forwards ease-out;
+border-radius: 10px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+background-color: #00000045;
+}
+
+.section-content2 h1 {
+font-size: 2.5em;
+margin-bottom: 0.5em;
+margin-top: 1em;
+letter-spacing: 2px;
+font-weight: 300;
+animation: fontSizeIncrease 1s forwards ease-out;
+}
+
+.section-content2 p {
+font-size: 2.2em;
+margin-bottom: 2.5em;
+font-weight: 300;
+animation: fontSizeIncreaseP 1s forwards ease-out;
+}
+
+.section-content2 button {
+background-color: transparent;
+color: white;
+border: 2px solid white;
+border-radius: 4px;
+padding: 12px 24px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 1em;
+margin: 4px 2px;
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+animation: buttonSizeIncrease 1s forwards ease-out;
+margin-bottom: 2.2em;
+}
+
+.section-content2 button:hover {
+background-color: white;
+color: black;
+}
+
+
+  /* SECTION 3 3 3*/
+  .section3 {
+    height: 100vh;
+    scroll-snap-align: start;
+    background-color: #000; /* Fallback color */
+    position: relative;
+  }
+
+  .section3 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* Place the video behind other content */
+  }
+
+  .section3 img {
+    position: absolute;  /* Absolute position within the section */
+    top: 0;
+    left: 0;
+    width: 100%;         /* Fill the entire width */
+    height: 100%;        /* Fill the entire height */
+    object-fit: cover;   /* Resize the image to cover the section */
+    z-index: 0        /* Place it behind the content */
+  }
+ /* Style for Section Content */
+ .section-content3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  z-index: 1;
+  color: white;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  opacity: 100%;
+  animation: growIn 1s forwards ease-out;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+  background-color: #00000045;
+}
+
+.section-content3 h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+  letter-spacing: 2px;
+  font-weight: 300;
+  animation: fontSizeIncrease 1s forwards ease-out;
+}
+
+.section-content3 p {
+  font-size: 2.2em;
+  margin-bottom: 2.5em;
+  font-weight: 300;
+  animation: fontSizeIncreaseP 1s forwards ease-out;
+}
+
+.section-content3 button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation: buttonSizeIncrease 1s forwards ease-out;
+  margin-bottom: 2.2em;
+}
+
+.section-content3 button:hover {
+  background-color: white;
+  color: black;
+}
+
+
+  /* SECTION 4 4 4 */
+
+  .section4 {
+    height: 100vh;
+    scroll-snap-align: start;
+    background-color: #000; /* Fallback color */
+    position: relative;
+  }
+
+  .section4 video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* Place the video behind other content */
+  }
+
+  .section4 img {
+    position: absolute;  /* Absolute position within the section */
+    top: 0;
+    left: 0;
+    width: 100%;         /* Fill the entire width */
+    height: 100%;        /* Fill the entire height */
+    object-fit: cover;   /* Resize the image to cover the section */
+    z-index: 0        /* Place it behind the content */
+  }
+ /* Style for Section Content */
+ .section-content4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  z-index: 1;
+  color: white;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  opacity: 100%;
+  animation: growIn 1s forwards ease-out;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+  background-color: #00000045;
+}
+
+.section-content4 h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+  letter-spacing: 2px;
+  font-weight: 300;
+  animation: fontSizeIncrease 1s forwards ease-out;
+}
+
+.section-content4 p {
+  font-size: 2.2em;
+  margin-bottom: 2.5em;
+  font-weight: 300;
+  animation: fontSizeIncreaseP 1s forwards ease-out;
+}
+
+.section-content4 button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation: buttonSizeIncrease 1s forwards ease-out;
+  margin-bottom: 2.2em;
+}
+
+.section-content4 button:hover {
+  background-color: white;
+  color: black;
+}
+
+
+
+  /* SECTION 5 5 5 */
+
+ .section5 {
+  height: 100vh;
+  scroll-snap-align: start;
+  background-color: #000; /* Fallback color */
+  position: relative;
+}
+
+.section5 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0; /* Place the video behind other content */
+}
+
+.section5 img {
+  position: absolute;  /* Absolute position within the section */
+  top: 0;
+  left: 0;
+  width: 100%;         /* Fill the entire width */
+  height: 100%;        /* Fill the entire height */
+  object-fit: cover;   /* Resize the image to cover the section */
+  z-index: 0        /* Place it behind the content */
+}
+/* Style for Section Content */
+.section-content5 {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) scale(0.9);
+z-index: 1;
+color: white;
+text-align: center;
+width: 100%;
+max-width: 400px;
+opacity: 100%;
+animation: growIn 1s forwards ease-out;
+border-radius: 10px;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+background-color: #00000045;
+}
+
+.section-content5 h1 {
+font-size: 2.5em;
+margin-bottom: 0.5em;
+margin-top: 1em;
+letter-spacing: 2px;
+font-weight: 300;
+animation: fontSizeIncrease 1s forwards ease-out;
+}
+
+.section-content5 p {
+font-size: 2.2em;
+margin-bottom: 2.5em;
+font-weight: 300;
+animation: fontSizeIncreaseP 1s forwards ease-out;
+}
+
+.section-content5 button {
+background-color: transparent;
+color: white;
+border: 2px solid white;
+border-radius: 4px;
+padding: 12px 24px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 1em;
+margin: 4px 2px;
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+animation: buttonSizeIncrease 1s forwards ease-out;
+margin-bottom: 2.2em;
+}
+
+.section-content5 button:hover {
+background-color: white;
+color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Animation Keyframes */
+@keyframes growIn {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    max-width: 600px;
+  }
+}
+
+@keyframes fontSizeIncrease {
+  to {
+    font-size: 3em;
+  }
+}
+
+@keyframes fontSizeIncreaseP {
+  to {
+    font-size: 2em;
+  }
+}
+
+@keyframes buttonSizeIncrease {
+  to {
+    padding: 15px 30px;
+    font-size: 1.2em;
+  }
+}
+
+/* If you're using JavaScript to animate on scroll */
+.section-content.animate {
+  animation: growIn 1s forwards ease-out;
+  /* Add additional animations for h1, p, button if desired */
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;  /* semi-transparent black */
+  color: white;
+  text-align: center;
+  padding: 1px 0;
+  z-index: 1000;  /* high z-index to float above other elements */
+  transform: translateY(100%);
+  }
+  
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns */
+    grid-gap: 1px; /* Adjust the gap between columns */
+    max-width: 600px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+  .footer-column {
+    flex: 1;
+    flex-basis: calc(33.33% - 100px); /* Adjust as needed */
+    margin: 0 5px; /* Adjust margin for spacing */
+  }
+  .footer-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .footer-item {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+/* Positioning and styling the arrow */
+.bounce-arrow {
+  position: absolute;
+  bottom: 10px; /* Adjust bottom spacing */
+  left: 50%;
+  transform: translateX(-50%) translateY(0); /* Adjust for centering and initial position */
+  color: white;
+  font-size: 5rem; /* Adjust size as needed */
+  z-index: 2; /* Ensure it's above other elements */
+}
+
+/* Keyframes for the bouncing animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-20px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+/* Applying the bounce animation to the arrow */
+.bounce-arrow {
+  animation: bounce 2s infinite;
+}
+
+
+
+  @media (max-width: 600px) {
+
+  
+    .nav-links {
+      display: none;  /* Hide navigation links */
+    }
+    .icons {
+      display: none;
+    }
+    
+    .navbar {
+      flex-direction: column;
+    }
+    
+    /* Add more responsive styles here */
+  
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: transparent;  /* Changed this line */
+      padding: 1rem;
+      color: white;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;  /* Added this line */
+      top: 0;  /* Added this line */
+      left: 0;  /* Added this line */
+      width: 100%;  /* Added this line */
+      z-index: 9999;  /* Added this line */
+      position: fixed;
+    }
+    /* Logo */
+    .logo {
+      flex: 1;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+  
+    }
+    .logo img {
+      height: 7.5vh; /* Adjust based on your logo size and navbar height */
+      width: auto; /* Keeps the aspect ratio of the image */
+      /* Add more styling as needed */
+  }
+    .logo a {
+  text-decoration: none; /* Remove underline */
+  color: white;  /* Set text color */
+  text-shadow:
+  0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for when mouse hovers over the link */
+  .logo a:hover {
+  color: #555555;  /* Slightly lighter text color */
+  
+  }
+    /* Nav links */
+    .nav-links {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+  
+    }
+  
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 400;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s ease-in-out;
+      text-shadow:
+      -1px -1px 0px rgba(0, 0, 0, 0.25), /* top left */
+      1px -1px 0px rgba(0, 0, 0, 0.25), /* top right */
+      -1px  1px 0px rgba(0, 0, 0, 0.25), /* bottom left */
+      1px  1px 0px rgba(0, 0, 0, 0.25); /* bottom right */
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(1px); /* apply blur effect */
+    }
+    
+  
+    .nav-links a:hover {
+      border-radius: 10px;
+      backdrop-filter: blur(15px); /* apply blur effect */
+      background-color: rgba(150, 150, 150, 0.6);
+      transform: translateY(-1px);
+    }
+
+
+
+
+    @keyframes growIn {
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        max-width: 95vw;
+      }
+    }
+    
+    @keyframes fontSizeIncrease {
+      to {
+        font-size: 2em;
+      }
+    }
+    
+    @keyframes fontSizeIncreaseP {
+      to {
+        font-size: 2em;
+      }
+    }
+    
+    @keyframes buttonSizeIncrease {
+      to {
+        padding: 15px 30px;
+        font-size: 1.2em;
+      }
+    }
+    
+  }
+
+  
+
+/* Style the container for dropdown content */
+
+
+/* Optional: Style for displaying the dropdown content below the icon */

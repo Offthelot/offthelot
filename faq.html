@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="faq.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="images/OffTheLot.png" type="image/x-icon">
+  <title>Off The Lot FAQ</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo"><a href="index.html">OFF THE LOT</a></div>
+    <div class="nav-links">
+      <a href="LoyaltyProgram.html">Membership</a>
+      <a href="CarDetailingServices.html">Detailing</a>
+     <a href="CarDetailingGallery.html">Gallery</a>
+    </div>
+    <div class="icons">
+      <a href="#" title="Customer Support"><i class="fas fa-headset"></i></a>
+    </div>
+  </div>
+
+  <div class="terms-conditions">
+    <h2>FAQ + Answers</h2>
+    <hr>
+
+    <!-- Terms & Conditions FAQ -->
+    <div>
+      <h2></h2> 
+      <div class="terms-list">
+        <div class="term-item" onclick="toggleDropdown('term1')">
+          <span class="term-title">
+            <p>What is car detailing?</p>
+          </span>
+          <div class="dropdown-content" id="term1">
+            <p>Car detailing is a comprehensive cleaning and restoration process for a vehicle, both inside and outside. It involves cleaning, polishing, and protecting the vehicle's surfaces to enhance its appearance and condition.</p>
+          </div>
+        </div>
+
+     <div class="term-item" onclick="toggleDropdown('term2')">
+          <span class="term-title">
+            <p>Do you offer any discounts or loyalty programs for repeat customers?</p>
+          </span>
+          <div class="dropdown-content" id="term2">
+            <p>Yes, we value our loyal customers and offer discounts and loyalty programs. Our repeat customers can enjoy special offers, benefits and $95 details. Visit <a href="Loyal.html" class="learn-more-link" target="_blank"> Our Loyalty</a> section for more information.</p>
+          </div>
+        </div>
+
+        <div class="term-item" onclick="toggleDropdown('term3')">
+          <span class="term-title">
+            <p>What should I do to prepare my vehicle for detailing?</p>
+          </span>
+          <div class="dropdown-content" id="term3">
+            <p>Prior to detailing, it's recommended to remove all personal items from your vehicle, empty the trunk, and ensure the vehicle is easily accessible to the detailers. Clearing out clutter helps the detailing process go smoothly.</p>
+          </div>
+        </div>
+
+        <div class="term-item" onclick="toggleDropdown('term4')">
+          <span class="term-title">
+            <p>What payment methods do you accept?</p>
+          </span>
+          <div class="dropdown-content" id="term4">
+            <p>We accept cash, and online payment options.</p>
+          </div>
+        </div>
+
+   
+
+        <div class="term-item" onclick="toggleDropdown('term5')">
+          <span class="term-title">
+            <p>Can I choose specific services or customize my detail package?</p>
+          </span>
+          <div class="dropdown-content" id="term5">
+            <p>We offer our detail packages with addons and not a specific customized detail package.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loyalty FAQ -->
+    <div>
+      <h2></h2>
+      <div class="terms-list">
+        <div class="term-item" onclick="toggleDropdown('term6')">
+          <span class="term-title">
+            <p>How long does a car detailing session take?</p>
+          </span>
+          <div class="dropdown-content" id="term6">
+            <p>The duration of a car detailing session varies based on the service level and the vehicle's condition. On average, it may take several hours to a full day to complete a comprehensive detailing.</p>
+          </div>
+        </div>
+
+        <div class="term-item" onclick="toggleDropdown('term7')">
+          <span class="term-title">
+            <p>Do you offer mobile detailing services?</p>
+          </span>
+          <div class="dropdown-content" id="term7">
+            <p>Yes, we offer mobile detailing services for your convenience. Our team can come to your location to perform the detailing, ensuring a hassle-free experience.</p>
+          </div>
+        </div>
+
+        <div class="term-item" onclick="toggleDropdown('term8')">
+          <span class="term-title">
+            <p>How often should I get my car detailed?</p>
+          </span>
+          <div class="dropdown-content" id="term8">
+            <p>The frequency of car detailing depends on factors like your driving habits and environmental conditions. As a general guideline, we recommend maintence details every 1 to 3 months to maintain its appearance and condition with comprehensive details every 6 months to a year for maximal longevity.</p>
+          </div>
+        </div>
+
+        <div class="term-item" onclick="toggleDropdown('term9')">
+          <span class="term-title">
+            <p>What is the difference between car detailing and car washing?</p>
+          </span>
+          <div class="dropdown-content" id="term9">
+            <p>Car detailing is a more comprehensive process than car washing. While car washing primarily involves cleaning the exterior, car detailing includes cleaning, polishing, and protecting both the interior and exterior surfaces of the vehicle.</p>
+          </div>
+        </div>
+
+        <div class="term-item" onclick="toggleDropdown('term10')">
+          <span class="term-title">
+            <p>Do I need to remove personal items from my car before detailing?</p>
+          </span>
+          <div class="dropdown-content" id="term10">
+            <p>Yes, it's advisable to remove personal items from your car before detailing. This ensures that our detailers can access all areas of the vehicle and perform a thorough job without any obstructions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Details FAQ -->
+    <div>
+      <h2></h2><!---->
+      <div class="terms-list">
+        <div class="term-item" onclick="toggleDropdown('term11')">
+          <span class="term-title">
+            <p>Can detailing improve the resale value of my car?</p>
+          </span>
+          <div class="dropdown-content" id="term11">
+            <p>Yes, detailing can enhance the resale value of your car. A well-maintained and detailed vehicle is more attractive to potential buyers and can fetch a higher price in the resale market.</p>
+          </div>
+        </div>
+
+        <div class="term-item" onclick="toggleDropdown('term12')">
+          <span class="term-title">
+            <p>Is detailing suitable for older or high-mileage vehicles?</p>
+          </span>
+          <div class="dropdown-content" id="term12">
+            <p>Yes, detailing is suitable for older and high-mileage vehicles. It can help rejuvenate the appearance and condition of these vehicles, making them look and feel better, regardless of their age.</p>
+          </div>
+        </div>
+
+        <div class="term-item" onclick="toggleDropdown('term13')">
+          <span class="term-title">
+            <p>Do you offer paint protection or ceramic coating services?</p>
+          </span>
+          <div class="dropdown-content" id="term13">
+            <p>No, we do not offer paint protection or ceramic coating services as our operations are mobile. These types of services require a controlled environment to ensure proper application and curing of the product, which cannot be guaranteed in a mobile setting. We focus on providing high-quality services that are suited to a mobile operation, ensuring convenience without compromising on the finish.
+            </p>
+          </div>
+        </div>
+
+        <div class="term-item" onclick="toggleDropdown('term14')">
+          <span class="term-title">
+            <p>What's the recommended maintenance after car detailing?</p>
+          </span>
+          <div class="dropdown-content" id="term14">
+            <p>After car detailing, it's essential to maintain the vehicle's cleanliness. Regular washing and occasional touch-ups will help preserve the detailing work and keep your car looking its best. Our Loyalty program is the perfect solution for all your maintence needs.</p>
+          </div>
+        </div>
+
+        <div class="term-item" onclick="toggleDropdown('term15')">
+          <span class="term-title">
+            <p>Can detailing remove tar, tree sap, or road paint from my car's exterior?</p>
+          </span>
+          <div class="dropdown-content" id="term15">
+            <p>Yes, detailing can remove substances like tar, tree sap, and road paint from your car's exterior. Our detailers use specialized products and techniques to safely eliminate such contaminants and restore your car's finish.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleDropdown(id) {
+      const element = document.getElementById(id);
+      if (element.style.display === 'none' || element.style.display === '') {
+        element.style.display = 'block';
+      } else {
+        element.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0px;
+    padding: 0;
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Add this line to fix the background image */
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  padding: 1rem;
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Logo */
+.logo {
+  flex: 1;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+}
+.logo a {
+text-decoration: none; /* Remove underline */
+color: white;  /* Set text color */
+text-shadow:
+0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for when mouse hovers over the link */
+.logo a:hover {
+color: #555555;  /* Slightly lighter text color */
+
+}
+/* Nav links */
+.nav-links {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease-in-out;
+  text-shadow:
+  -1px -1px 0px rgba(0, 0, 0, 0.25), /* top left */
+  1px -1px 0px rgba(0, 0, 0, 0.25), /* top right */
+  -1px  1px 0px rgba(0, 0, 0, 0.25), /* bottom left */
+  1px  1px 0px rgba(0, 0, 0, 0.25); /* bottom right */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1px); /* apply blur effect */
+}
+
+.hide {
+  display: none;
+}
+.nav-links a:hover {
+  border-radius: 10px;
+  backdrop-filter: blur(15px); /* apply blur effect */
+  background-color: #5555556e;
+  transform: translateY(-1px);
+}
+
+/* Icons */
+.icons {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 16px;
+}
+.icons a {
+  margin-left: 1.5rem;
+}
+.icons i {
+  font-size: 1.2rem;
+  color: white;
+}
+.icons i:hover {
+  color: #555555;
+}
+
+
+  @media only screen and (max-width: 600px) {
+  .dropdown-content {
+    font-size: 20px;  /* Larger font size */
+width: 300px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .term-item {
+    font-size: 20px;  /* Larger font size */
+    width: 1100px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .terms {
+    font-size: 20px;  /* Larger font size */
+    width: 300px;
+  }
+}
+
+
+/* Terms and Conditions section */
+.terms-conditions {
+background-color: transparent;
+padding: 50px;
+text-align: center;
+color: white;
+}
+
+.terms-conditions h2 {
+font-size: 2.8em;
+margin-bottom: 20px;
+font-weight: bold;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.terms-list {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 2em;
+}
+
+.term-item {
+flex-basis: calc(50% - 1em);
+text-align: center;
+padding: 20px;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 10px;
+transition: background 0.3s ease-in-out;
+}
+
+.term-item:hover {
+background: rgb(68, 68, 68);
+}
+
+.term-item i {
+font-size: 2em;
+margin-bottom: 10px;
+}
+
+.term-item p {
+font-size: 1.2em;
+line-height: 1.5;
+}
+
+
+/* Existing CSS for terms-conditions and term-item */
+
+.dropdown-content {
+display: none;
+background-color: rgba(0, 0, 0, 0.1);
+margin-top: 10px;
+padding: 15px;
+border-radius: 5px;
+}
+
+
+
+.learn-more-link,
+.offer-terms-link {
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid white; /* Add an underline effect */
+  padding: 0px; /* Add some padding for spacing */
+  transition: color 0.3s ease;
+  font-size: 22px;
+}
+@media (max-width: 600px) {
+
+  
+  .nav-links {
+    display: none;  /* Hide navigation links */
+  }
+  .icons {
+    display: none;
+  }
+  
+  .navbar {
+    flex-direction: column;
+  }
+  
+  /* Add more responsive styles here */
+
+
+}

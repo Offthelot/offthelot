@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="booking.css">
+    <title>Car Detailing Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/OffTheLot.png" type="image/x-icon">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQVpGBjodo48v457KBtnzPTwJwmz-4XpI&callback=initMap&libraries=places"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><a href="index.html"><img src="images/mainlogo.png" alt="Logo" /></a></div>       
+    </div>
+    <div class="container">
+        <div class="form-container" id="bookingFormContainer"> 
+            <h2>Get Your Free Quote Now!</h2>
+            <form id="serviceTypeForm">
+                <div class="service-type-container">
+                    <label class="service-item" for="premium">
+                        <div class="service-label">
+                            <div class="service-background" id="service2-background">
+                                <div>
+                                    <input type="radio" id="premium" name="serviceType" value="B" data-price="250" hidden>
+                                    <label for="premium">Clean</label>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="service-item" for="basic">
+                        <div class="service-label">
+                            <div class="service-background" id="service1-background">
+                                <div>
+                                    <input type="radio" id="basic" name="serviceType" value="A" data-price="320" checked hidden>
+                                    <label for="basic">Shine</label>                           
+                                </div>
+                            </div>                                                     
+                        </div>
+                    </label>
+                    <label class="service-item" for="deluxe">                       
+                        <div class="service-label">
+                            <div class="service-background" id="service3-background">
+                                <div>
+                                    <input type="radio" id="deluxe" name="serviceType" value="C" data-price="390" hidden>
+                                    <label for="deluxe">Deep</label>
+                                </div>
+                            </div>                           
+                        </div>
+                    </label>
+                </div>
+            </form>
+            <form id="select-container">
+                <div class="select-type-container">
+                    <label class="select-item" for="exterior">
+                        <div class="select-label">
+                            <div class="select-background" id="select1-background">
+                                <div>
+                                    <input type="radio" id="exterior" name="selectType" value="D" data-price="280" hidden>
+                                    <label for="exterior">Exterior</label>  
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="select-item" for="both">
+                        <div class="select-label">
+                            <div class="select-background" id="select2-background">
+                                <div>
+                                    <input type="radio" id="both" name="selectType" value="E" data-price="390" checked hidden>
+                                    <label for="both">Package</label>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="select-item" for="interior">
+                        <div class="select-label">
+                            <div class="select-background" id="select3-background">
+                                <div>
+                                    <input type="radio" id="interior" name="selectType" value="F" data-price="280" hidden>
+                                    <label for="interior">Interior</label>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </form>
+            <form id="bookingForm">
+                <label for="userAddress">Address Of Service:(Street Address, City, State)</label>
+                <input type="text" id="userAddress" name="userAddress">
+            </form>
+            <form id="bookingForm">
+                <label for="vehicleSize">Vehicle Size:</label>
+                <select id="vehicleSize">
+                    <option value="" data-price="0"></option>
+                    <option value="prod_PHOL5PCTtptRjX" name="vehicleSize" data-price="0">Small (Compact)</option>
+                    <option value="prod_PHOJ4ZmepOWYtq" name="vehicleSize" data-price="0">Medium (Sedan)</option>
+                    <option value="prod_P8u3OHIunqr7vj" name="vehicleSize" data-price="15">Large (SUV) +15%</option>
+                    <option value="prod_P8u5kQ9KIKnRMh" name="vehicleSize" data-price="20">Extra Large (Truck/Van) +20%</option>
+                </select>
+            </form>
+            
+            <!-- Date and Time Selector Form -->
+            <form id="dateTimeForm">
+                <label for="serviceDate">Select Service Date:</label>
+                <input type="date" id="serviceDate" name="serviceDate" required>
+                
+                <label for="serviceTime">Select Service Time:</label>
+                <select id="serviceTime" name="serviceTime" required></select>
+                
+            </form>
+            <div id="productSelection">
+                <form id="bookingForm">
+                    <label for="vehicleSize">Upcharge Add-ons</label>
+                    <hr>
+                    <div class="addon-container">
+                        <label class="addon-item addon-interior" for="addon1">
+                            <input type="checkbox" id="addon1" name="addons" data-price="50" value="prod_P8tGR3G56syXrD" hidden>
+                            <div class="addon-label">
+                                <div class="addon-background" id="addon1-background">
+                                    <span class="addon-text">Pet Hair</span>
+                                    <span class="addon-price">$50</span>
+                                </div>
+                            </div>
+                            <span class="info-icon">&#9432; <!-- Info icon -->
+                                <span class="info-popup">Any Pet hair in the car needs to be removed. If pets ride in the car, you would need to select this option.</span>
+                            </span>
+                        </label>
+                        <label class="addon-item addon-exterior" for="addon2">
+                            <input type="checkbox" id="addon2" name="addons" data-price="50" value="prod_P8tt37QCRSV6Gs" hidden>
+                            <div class="addon-label">
+                                <div class="addon-background" id="addon2-background">
+                                    <span class="addon-text">Sap</span>
+                                    <span class="addon-price">$50</span>
+                                </div>
+                            </div>
+                            <span class="info-icon">&#9432; <!-- Info icon -->
+                                <span class="info-popup">If there is any Sap on the Exterior of the vehicle you would need to select this option.</span>
+                            </span>
+                        </label>
+                        <label class="addon-item addon-exterior" for="addon3">
+                            <input type="checkbox" id="addon3" name="addons" data-price="50" value="prod_PLCBKd9EVDLZdS" hidden>
+                            <div class="addon-label">
+                                <div class="addon-background" id="addon3-background">
+                                    <span class="addon-text">Bug/Tar</span>
+                                    <span class="addon-price">$50</span>
+                                </div>
+                            </div>
+                            <span class="info-icon">&#9432; <!-- Info icon -->
+                                <span class="info-popup">If there is any Bug/Tar on the Exterior of the vehicle you would need to select this option.</span>
+                            </span>
+                        </label>
+                        <label class="addon-item addon-interior" for="addon9">
+                            <input type="checkbox" id="addon9" name="addons" data-price="0" value="prod_PMDzg9ZV656Wi9" hidden>
+                            <div class="addon-label">
+                                <div class="addon-background" id="addon9-background">
+                                    <span class="addon-text">Mold</span>
+                                    <span class="addon-price">Variable</span>
+                                </div>
+                            </div>
+                            <span class="info-icon">&#9432; <!-- Info icon -->
+                                <span class="info-popup">If there is any Mold on the Interior of the vehicle you would need to select this option.</span>
+                            </span>
+                        </label>
+                        <label class="addon-item addon-exterior" for="addon7">
+                            <input type="checkbox" id="addon7" name="addons" data-price="75" value="prod_PMDy0TE074b44a" hidden>
+                            <div class="addon-label">
+                                <div class="addon-background" id="addon7-background">
+                                    <span class="addon-text">High Exterior Soil</span>
+                                    <span class="addon-price">$75</span>
+                                </div>
+                            </div>
+                             <span class="info-icon">&#9432; <!-- Info icon -->
+                                <span class="info-popup">High soil level on the Exterior of the vehicle would need to select this option</span>
+                            </span>
+                        </label>
+                        <label class="addon-item addon-interior" for="addon8">
+                            <input type="checkbox" id="addon8" name="addons" data-price="75" value="prod_PMDzYJGCCQCwUP" hidden>
+                            <div class="addon-label">
+                                <div class="addon-background" id="addon8-background">
+                                    <span class="addon-text">High Interior Soil</span>
+                                    <span class="addon-price">$75</span>
+                                </div>
+                            </div>
+                           <span class="info-icon">&#9432; <!-- Info icon -->
+                                <span class="info-popup">High soil level on the Interior of the vehicle would need to select this option</span>
+                            </span>
+                        </label>
+                        <label class="addon-item addon-interior" for="addon4">
+                            <input type="checkbox" id="addon4" name="addons" data-price="0" value="prod_PLCAfFt5VE1RpE" hidden>
+                            <div class="addon-label">
+                                <div class="addon-background" id="addon4-background">
+                                    <span class="addon-text">Bio Spills</span>
+                                    <span class="addon-price">Variable</span>
+                                </div>
+                            </div>
+                            <span class="info-icon">&#9432; <!-- Info icon -->
+                                <span class="info-popup">Bio Spills include Blood or Bodily Fluids, Food and Beverage Spills, Pet-Related Spills and Medical Waste. If any apply you would need to select this option.</span>
+                            </span>
+                        </label>
+                        <label class="addon-item addon-interior" for="addon5">
+                            <input type="checkbox" id="addon5" name="addons" data-price="0" value="prod_PKnltie7hBvrZD" hidden>
+                            <div class="addon-label">
+                                <div class="addon-background" id="addon5-background">
+                                    <span class="addon-text">Paint/Dye Spills</span>
+                                    <span class="addon-price">Variable</span>
+                                </div>
+                            </div>
+                            <span class="info-icon">&#9432; <!-- Info icon -->
+                                <span class="info-popup">If there are any Paint/Dye Spills on the Interior of the vehicle you would need to select this option.</span>
+                            </span>
+                        </label>
+                        <label class="addon-item addon-interior" for="addon6">
+                            <input type="checkbox" id="addon6" name="addons" data-price="50" value="prod_PLC6h2cNZo7bGy" hidden>
+                            <div class="addon-label">
+                                <div class="addon-background" id="addon6-background">
+                                    <span class="addon-text">No Electricity</span>
+                                    <span class="addon-price">$50</span>
+                                </div>
+                            </div>
+                            <span class="info-icon">&#9432; <!-- Info icon -->
+                                <span class="info-popup">If Electricity is not provided or available for any reason you would need to select this option.</span>
+                            </span>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <form id="personalInfoForm">
+                <label for="userName">Name:</label>
+                <input type="text" id="userName" name="userName" required>
+
+                <label for="userEmail">Email:</label>
+                <input type="email" id="userEmail" name="userEmail" required>
+
+                <label for="userPhone">Phone Number:</label>
+                <input type="tel" id="userPhone" name="userPhone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890">
+            </form>
+            <div class="price-container" id="desktopPriceContainer">
+                <div class="price">
+                    <span id="price">$320.00</span>
+                    <button id="checkoutButton">Book Now!</button>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="form-container" id="infoFormContainer">
+            <h2>Booking Information</h2>
+            
+            <div class="info-item">
+                <div class="info-title">Detail Type:</div>
+                <div class="info-answer" id="displayService"></div>
+            </div>
+            <div class="info-item">
+                <div class="info-title">Service Type:</div>
+                <div class="info-answer" id="displaySelectType"></div>
+            </div>
+            <div class="info-item">
+                <div class="info-title">Address:</div>
+                <div class="info-answer" id="displayAddress"></div>
+            </div>
+            <div class="info-item">
+                <div class="info-title">Vehicle Size:</div>
+                <div class="info-answer" id="displayVehicleSize"></div>
+            </div>
+            <div class="info-item">
+                <div class="info-title">Add-ons:</div>
+                <div class="info-answer" id="displayAddons"></div>
+            </div>
+            <div class="info-item">
+                <div class="info-title">Service Date:</div>
+                <div class="info-answer" id="displayServiceDate"></div>
+            </div>
+            <div class="info-item">
+                <div class="info-title">Service Time:</div>
+                <div class="info-answer" id="displayServiceTime"></div>
+            </div>
+                 <div class="info-item">
+                <div class="info-title">Name:</div>
+                <div class="info-answer" id="displayName"></div>
+            </div>
+            <div class="info-item">
+                <div class="info-title">Email:</div>
+                <div class="info-answer" id="displayEmail"></div>
+            </div>
+            <div class="info-item">
+                <div class="info-title">Phone Number:</div>
+                <div class="info-answer" id="displayPhone"></div>
+            </div>
+
+           
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+            updateAllDisplays();
+            initMap();
+            updatePrice();
+            toggleAddons();
+            checkAllConditions(); // Initial check on page load
+        
+            // Restrict date picker to future dates
+            restrictDatePicker();
+            // Populate time selector with 15-minute increments in 12-hour format with AM/PM within 9 AM to 3 PM
+            populateTimeSelector();
+            // Check if options are populated correctly
+            ensureTimeOptions();
+        });
+        
+        function restrictDatePicker() {
+            const dateInput = document.getElementById("serviceDate");
+            const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+            dateInput.setAttribute('min', today);
+        }
+        
+        function populateTimeSelector() {
+            const timeSelect = document.getElementById("serviceTime");
+            timeSelect.innerHTML = ''; // Clear existing options
+            console.log('Populating time selector'); // Debugging
+        
+            const startTime = 9 * 60; // 9 AM in minutes
+            const endTime = 15 * 60; // 3 PM in minutes
+        
+            for (let i = startTime; i <= endTime; i += 15) {
+                const hours = Math.floor(i / 60);
+                const minutes = i % 60;
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                const displayHours = hours % 12 || 12; // Convert to 12-hour format
+                const displayMinutes = minutes.toString().padStart(2, '0');
+                const timeValue = `${displayHours}:${displayMinutes} ${ampm}`;
+                const option = document.createElement("option");
+                option.value = timeValue;
+                option.text = timeValue;
+                timeSelect.appendChild(option);
+                console.log(`Added option: ${timeValue}`); // Debugging
+            }
+        
+            console.log(`Total options added: ${timeSelect.options.length}`); // Debugging
+        }
+        
+        function ensureTimeOptions() {
+            const timeSelect = document.getElementById("serviceTime");
+            if (timeSelect.options.length === 0) {
+                console.warn("Time options were not populated correctly, repopulating...");
+                populateTimeSelector();
+            }
+        }
+        
+        function checkAllConditions() {
+            var addressProvided = document.getElementById("userAddress").value.trim() !== "";
+            var vehicleSizeSelected = document.getElementById("vehicleSize").value !== "";
+            var serviceDateSelected = document.getElementById("serviceDate").value !== "";
+            var serviceTimeSelected = document.getElementById("serviceTime").value !== "";
+            var userNameProvided = document.getElementById("userName").value.trim() !== "";
+            var userEmailProvided = document.getElementById("userEmail").value.trim() !== "";
+            var userPhoneProvided = document.getElementById("userPhone").value.trim() !== "";
+        
+            return addressProvided && vehicleSizeSelected && serviceDateSelected && serviceTimeSelected && userNameProvided && userEmailProvided && userPhoneProvided;
+        }
+        
+        document.getElementById('userAddress').addEventListener('input', checkAllConditions);
+        document.getElementById('vehicleSize').addEventListener('change', checkAllConditions);
+        document.getElementById('serviceDate').addEventListener('change', checkAllConditions);
+        document.getElementById('serviceTime').addEventListener('change', checkAllConditions);
+        document.getElementById('userName').addEventListener('input', checkAllConditions);
+        document.getElementById('userEmail').addEventListener('input', checkAllConditions);
+        document.getElementById('userPhone').addEventListener('input', checkAllConditions);
+        
+        document.querySelectorAll('.info-icon').forEach(function(icon) {
+            icon.addEventListener('click', function(event) {
+                event.stopPropagation();
+                event.preventDefault();
+                var popup = this.querySelector('.info-popup');
+                if (popup.style.visibility === 'visible') {
+                    popup.style.visibility = 'hidden';
+                    popup.style.opacity = '0';
+                } else {
+                    popup.style.visibility = 'visible';
+                    popup.style.opacity = '1';
+                }
+            });
+        });
+        
+        function updateAllDisplays() {
+            updateServiceDisplay();
+            updateSelectTypeDisplay();
+            updateVehicleSizeDisplay();
+            updateAddonsDisplay();
+            updateServiceDateDisplay();
+            updateServiceTimeDisplay();
+            updatePersonalInfoDisplay();
+        }
+        
+        function updateServiceDisplay() {
+            const selectedServiceLabel = document.querySelector('input[name="serviceType"]:checked + label').textContent;
+            document.getElementById("displayService").innerText = selectedServiceLabel;
+        }
+        
+        function updateSelectTypeDisplay() {
+            const selectedSelectTypeRadio = document.querySelector('input[name="selectType"]:checked');
+            if (selectedSelectTypeRadio) {
+                const selectTypeLabel = document.querySelector('label[for="' + selectedSelectTypeRadio.id + '"]').textContent.trim();
+                document.getElementById("displaySelectType").innerText = selectTypeLabel;
+            } else {
+                document.getElementById("displaySelectType").innerText = "Not Selected";
+            }
+        }
+        
+        function updateVehicleSizeDisplay() {
+            const vehicleSize = document.getElementById("vehicleSize").options[document.getElementById("vehicleSize").selectedIndex].text;
+            document.getElementById("displayVehicleSize").innerText = vehicleSize;
+        }
+        
+        function updateAddonsDisplay() {
+            const addons = document.getElementsByName('addons');
+            let addonsContainer = document.getElementById("displayAddons");
+            addonsContainer.innerHTML = '';
+        
+            for (let i = 0; i < addons.length; i++) {
+                if (addons[i].checked) {
+                    let addonText = document.querySelector('label[for="' + addons[i].id + '"] .addon-text').textContent;
+                    let div = document.createElement('div');
+                    div.textContent = addonText;
+                    addonsContainer.appendChild(div);
+                }
+            }
+        }
+        
+        function updateServiceDateDisplay() {
+            const serviceDate = document.getElementById("serviceDate").value;
+            document.getElementById("displayServiceDate").innerText = serviceDate;
+        }
+        
+        function updateServiceTimeDisplay() {
+            const serviceTime = document.getElementById("serviceTime").value;
+            document.getElementById("displayServiceTime").innerText = serviceTime;
+        }
+        
+        function updatePersonalInfoDisplay() {
+            const userName = document.getElementById("userName").value;
+            document.getElementById("displayName").innerText = userName;
+        
+            const userEmail = document.getElementById("userEmail").value;
+            document.getElementById("displayEmail").innerText = userEmail;
+        
+            const userPhone = document.getElementById("userPhone").value;
+            document.getElementById("displayPhone").innerText = userPhone;
+        }
+        
+        function updatePrice() {
+            let finalPrice = 0;
+        
+            const selectedServiceRadio = document.querySelector('input[name="serviceType"]:checked');
+            const selectedServiceType = selectedServiceRadio.value;
+            const selectedSelectType = document.querySelector('input[name="selectType"]:checked').value;
+        
+            if (selectedServiceType === 'A' && selectedSelectType === 'F') {
+                finalPrice = 250;
+            } else if (selectedServiceType === 'B' && selectedSelectType === 'F') {
+                finalPrice = 180;
+            } else if (selectedServiceType === 'C' && selectedSelectType === 'F') {
+                finalPrice = 320;
+            } else if (selectedServiceType === 'A' && selectedSelectType === 'D') {
+                finalPrice = 250;
+            } else if (selectedServiceType === 'B' && selectedSelectType === 'D') {
+                finalPrice = 180;
+            } else if (selectedServiceType === 'C' && selectedSelectType === 'D') {
+                finalPrice = 320;
+            } else {
+                finalPrice = parseFloat(selectedServiceRadio.getAttribute('data-price'));
+            }
+        
+            const vehicleSizeOption = document.querySelector('#vehicleSize option:checked');
+            if (vehicleSizeOption && vehicleSizeOption.getAttribute('data-price') !== "0") {
+                const percentageIncrease = parseFloat(vehicleSizeOption.getAttribute('data-price')) / 100;
+                finalPrice += finalPrice * percentageIncrease;
+            }
+        
+            if (distance > 10 && distance <= 15) {
+                finalPrice += 25;
+            } else if (distance > 15) {
+                finalPrice += 50;
+            }
+        
+            document.querySelectorAll('input[name="addons"]:checked').forEach(function(addon) {
+                finalPrice += parseFloat(addon.getAttribute('data-price'));
+            });
+        
+            document.getElementById("price").innerHTML = "$" + finalPrice.toFixed(2);
+            updateAllDisplays();
+        }
+        
+        let map, service;
+        const businessAddress = "17243 10th ave NW, Shoreline, Washington";
+        let distance = 0;
+        
+        const firstDistanceThreshold = 10;
+        const secondDistanceThreshold = 15;
+        
+        function initMap() {
+            map = new google.maps.Map(document.createElement('div'));
+            service = new google.maps.DistanceMatrixService();
+        }
+        
+        function calculateDistance() {
+            const userAddress = document.getElementById("userAddress").value;
+        
+            service.getDistanceMatrix({
+                origins: [businessAddress],
+                destinations: [userAddress],
+                travelMode: 'DRIVING',
+            }, function(response, status) {
+                if (status == 'OK') {
+                    distance = response.rows[0].elements[0].distance.value / 1609.34;
+                    updatePrice();
+                    updateAddressDisplay();
+                } else {
+                    alert('Error calculating distance: ' + status);
+                }
+            });
+        }
+        
+        function updateAddressDisplay() {
+            const address = document.getElementById("userAddress").value;
+            document.getElementById("displayAddress").innerText = address;
+        }
+        
+        document.querySelectorAll('input[name="selectType"]').forEach(element => {
+            element.addEventListener('change', () => {
+                updateAddonsOnSelectChange();
+                updateAllDisplays();
+                updatePrice();
+            });
+        });
+        
+        function updateAddonsOnSelectChange() {
+            const allAddons = document.querySelectorAll('.addon-item');
+            allAddons.forEach(addon => addon.style.display = 'none');
+        
+            let addonClassesToShow = [];
+            const selectedSelectValue = document.querySelector('input[name="selectType"]:checked').value;
+        
+            if (selectedSelectValue === 'D') {
+                addonClassesToShow = ['.addon-exterior'];
+            } else if (selectedSelectValue === 'E') {
+                addonClassesToShow = ['.addon-both', '.addon-exterior', '.addon-interior'];
+            } else if (selectedSelectValue === 'F') {
+                addonClassesToShow = ['.addon-interior'];
+            }
+        
+            addonClassesToShow.forEach(selector => {
+                document.querySelectorAll(selector).forEach(addon => addon.style.display = 'block');
+            });
+        }
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            const selectedSelect = document.querySelector('input[name="selectType"]:checked');
+            if (selectedSelect) {
+                updateAddonsOnSelectChange.call(selectedSelect);
+            }
+        });
+        
+        document.getElementById('checkoutButton').addEventListener('click', function(event) {
+            event.preventDefault();
+        
+            let errorMessage = '';
+        
+            var addressProvided = document.getElementById("userAddress").value.trim() !== "";
+            if (!addressProvided) {
+                errorMessage += "Address is required.\n";
+            }
+        
+            var vehicleSizeSelected = document.getElementById("vehicleSize").value !== "";
+            if (!vehicleSizeSelected) {
+                errorMessage += "Please select a vehicle size.\n";
+            }
+        
+            var serviceDateSelected = document.getElementById("serviceDate").value !== "";
+            if (!serviceDateSelected) {
+                errorMessage += "Please select a service date.\n";
+            }
+        
+            var serviceTimeSelected = document.getElementById("serviceTime").value !== "";
+            if (!serviceTimeSelected) {
+                errorMessage += "Please select a service time.\n";
+            }
+        
+            var userNameProvided = document.getElementById("userName").value.trim() !== "";
+            if (!userNameProvided) {
+                errorMessage += "Name is required.\n";
+            }
+        
+            var userEmailProvided = document.getElementById("userEmail").value.trim() !== "";
+            if (!userEmailProvided) {
+                errorMessage += "Email is required.\n";
+            }
+        
+            var userPhoneProvided = document.getElementById("userPhone").value.trim() !== "";
+            if (!userPhoneProvided) {
+                errorMessage += "Phone number is required.\n";
+            }
+        
+            var allConditionsMet = errorMessage === "";
+        
+            if (allConditionsMet) {
+                const formData = new FormData();
+        
+                formData.append('Detail Type', document.querySelector('input[name="serviceType"]:checked + label').textContent);
+                formData.append('Service Type', document.querySelector('label[for="' + document.querySelector('input[name="selectType"]:checked').id + '"]').textContent.trim());
+                formData.append('Address', document.getElementById("userAddress").value);
+                formData.append('Vehicle Size', document.getElementById("vehicleSize").options[document.getElementById("vehicleSize").selectedIndex].text);
+        
+                document.querySelectorAll('input[name="addons"]:checked').forEach(addon => {
+                    formData.append('Add-ons', document.querySelector('label[for="' + addon.id + '"] .addon-text').textContent);
+                });
+        
+                formData.append('Service Date', document.getElementById("serviceDate").value);
+                formData.append('Service Time', document.getElementById("serviceTime").value);
+                formData.append('Name', document.getElementById("userName").value);
+                formData.append('Email', document.getElementById("userEmail").value);
+                formData.append('Phone Number', document.getElementById("userPhone").value);
+        
+                fetch("https://formspree.io/f/mqkrvakg", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                }).then(response => {
+                    if (response.ok) {
+                        alert("Booking submitted successfully!");
+                    } else {
+                        alert("Failed to submit booking. Please enter a valid email address.");
+                    }
+                }).catch(error => {
+                    alert("An error occurred. Please try again.");
+                });
+            } else {
+                alert(errorMessage);
+            }
+        });
+        
+        document.getElementById('userAddress').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                calculateDistance();
+            }
+        });
+        
+        function setupEventListeners() {
+            document.getElementById('vehicleSize').addEventListener('change', () => {
+                updatePrice();
+                updateVehicleSizeDisplay();
+            });
+        
+            document.querySelectorAll('input[name="addons"]').forEach(element => {
+                element.addEventListener('change', () => {
+                    updatePrice();
+                    updateAddonsDisplay();
+                });
+            });
+        
+            document.querySelectorAll('input[name="serviceType"]').forEach(element => {
+                element.addEventListener('change', () => {
+                    updatePrice();
+                    toggleAddons();
+                    updateServiceDisplay();
+                });
+            });
+        
+            document.getElementById('userAddress').addEventListener('change', () => {
+                calculateDistance();
+                updateAddressDisplay();
+            });
+        
+            document.getElementById('serviceDate').addEventListener('change', updateServiceDateDisplay);
+            document.getElementById('serviceTime').addEventListener('change', updateServiceTimeDisplay);
+        
+            document.getElementById('userName').addEventListener('input', updatePersonalInfoDisplay);
+            document.getElementById('userEmail').addEventListener('input', updatePersonalInfoDisplay);
+            document.getElementById('userPhone').addEventListener('input', updatePersonalInfoDisplay);
+        }
+        
+        function toggleAddons() {
+            const selectedService = document.querySelector('input[name="serviceType"]:checked').value;
+            updateAddonsDisplay();
+        }
+        
+        function handleServiceTypeChange() {
+            document.querySelectorAll('.service-item').forEach(item => {
+                item.classList.add('grayed-out');
+            });
+            this.closest('.service-item').classList.remove('grayed-out');
+        }
+        
+        document.querySelectorAll('input[name="serviceType"]').forEach(element => {
+            element.addEventListener('change', handleServiceTypeChange);
+        });
+        
+        function handleSelectTypeChange() {
+            document.querySelectorAll('.select-item').forEach(item => {
+                item.classList.add('grayed-out');
+            });
+            this.closest('.select-item').classList.remove('grayed-out');
+        }
+        
+        document.querySelectorAll('input[name="selectType"]').forEach(element => {
+            element.addEventListener('change', handleSelectTypeChange);
+        });
+        
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const preselectedService = document.querySelector('input[name="serviceType"]:checked');
+            if (preselectedService) {
+                handleServiceTypeChange.call(preselectedService);
+            }
+            const preselectedSelect = document.querySelector('input[name="selectType"]:checked');
+            if (preselectedSelect) {
+                handleSelectTypeChange.call(preselectedSelect);
+            }
+        });
+        </script>
+        
+</body>
+</html>
